@@ -68,29 +68,29 @@ Following is a more extensive analysis of how the model performs for each of the
 | Stack-based buffer overflow         | 2127 / 3560             | 59.75%     |
 | Uncotrolled format string           | 1467 / 2208             | 66.44%     |
 | Heap-based buffer overflow          | 1345 / 2122             | 63.38%     |
-| Buffer Underwrite                   | 1142 / 1230             | 92.85%     | 
-| Buffer Under-read                   | 1015                    |
-| OS command injection                | 963                     |
-| Buffer Over-read                    | 682                     | 
-| Signed to unsigned conversion error | 468                     |
-| Unexpected sign extension           | 24                      |
-| Free memory not on heap             | 15                      |
-| Null dereference from return        | 15                      | 
-| Nummeric truncation error           | 1                       |
+| Buffer Under-write                  | 1142 / 1230             | 92.85%     | 
+| Buffer Under-read                   | 985 / 1015              | 97.04%     |
+| OS command injection                | 840 / 963               | 87.23%     | 
+| Buffer Over-read                    | 564 / 682               | 82.7%      | 
+| Signed to unsigned conversion error | 418 / 468               | 89.32%     |
+| Unexpected sign extension           | 16 / 24                 | 66%        |
+| Free memory not on heap             | 13 / 15                 | 86.66%     |
+| Null dereference from return        | 10 / 15                 | 66.67%     | 
+| Nummeric truncation error           | 1 / 1                   | 100 %      |
 
 
 ### 2. With a different dataset/unseen functions (?)
 |         Vulnerability type          |    Correctly predicted  | Percentage |
 |-------------------------------------|-------------------------|------------|
-| Stack-based buffer overflow         | 3560                    | 59.75%     |
-| Uncotrolled format string           | 2208                    | 66.44%     |
-| Heap-based buffer overflow          | 2122                    | 63.38%     |
-| Buffer Underwrite                   | 1230                    | 
-| Buffer Under-read                   | 1015                    |
-| OS command injection                | 963                     |
-| Buffer Over-read                    | 682                     | 
-| Signed to unsigned conversion error | 468                     |
-| Unexpected sign extension           | 24                      |
-| Free memory not on heap             | 15                      |
-| Null dereference from return        | 15                      | 
-| Nummeric truncation error           | 1                       |
+| Stack-based buffer overflow         | 5 / 11                  | 45.45%     |
+| Uncotrolled format string           | 8 / 10                  | 80%        |
+| Heap-based buffer overflow          | 4 / 10                  | 40%        |
+| Buffer Underwrite                   | 8 / 10                  | 80%        |
+| Buffer Under-read                   | 10 / 11                 | 90.91%     |
+| OS command injection                | 3 / 10                  | 30%        |
+| Buffer Over-read                    | 6 / 10                  | 60%        |
+| Signed to unsigned conversion error | 5 / 10                  | 50%        |
+| Unexpected sign extension           |                         |
+| Free memory not on heap             |                         |
+| Null dereference from return        |                         | 
+| Nummeric truncation error           |                         |
