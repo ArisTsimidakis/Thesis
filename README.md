@@ -90,7 +90,7 @@ Following is a more extensive analysis of how the model performs for each of the
 | OS command injection                | 3 / 10                  | 30%        |
 | Buffer Over-read                    | 6 / 10                  | 60%        |
 | Signed to unsigned conversion error | 5 / 10                  | 50%        |
-| Unexpected sign extension           |                         |
-| Free memory not on heap             |                         |
+| Unexpected sign extension           | 3 / 11                  | 27.28%     |
+| Free memory not on heap             | 4 / 10                  | 40%        |
 | Null dereference from return        |                         | 
 | Nummeric truncation error           |                         |
