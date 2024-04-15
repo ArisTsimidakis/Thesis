@@ -11,6 +11,7 @@ from prettytable import PrettyTable
 from torch.cuda.amp import autocast
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
 from sklearn.metrics import confusion_matrix
 from transformers import AdamW, get_linear_schedule_with_warmup
 from sklearn.metrics import precision_recall_fscore_support
@@ -132,7 +133,7 @@ class TextCNN(nn.Module):
 
 class CNN_Classifier():
     def __init__(self, max_len=100, n_classes=2, epochs=100, batch_size = 32, learning_rate = 0.001, \
-                    result_save_path = "Dataset-sard/images/test2", item_num = 0, hidden_size = 128):
+                    result_save_path = "Dataset-sard/test", item_num = 0, hidden_size = 128):
         self.model = TextCNN(hidden_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.max_len = max_len
@@ -146,6 +147,7 @@ class CNN_Classifier():
         self.result_save_path = result_save_path + str(item_num) + "_epo" + str(epochs) + "_bat" + str(batch_size) + ".result"
         self.model_save_path = os.path.join(result_save_path, "pytorch_files")
         if not os.path.exists(self.model_save_path): os.makedirs(self.model_save_path)
+        self.writer = SummaryWriter(log_dir = os.path.join(self.model_save_path, "tensorboard_logs"))
 
     def preparation(self, X_train,  y_train, X_valid, y_valid):
         # create datasets
@@ -165,7 +167,7 @@ class CNN_Classifier():
         )
         self.loss_fn = torch.nn.CrossEntropyLoss().to(self.device)
 
-    def fit(self):
+    def fit(self, epoch):
         self.model = self.model.train()
         losses = []
         labels = []
@@ -179,10 +181,14 @@ class CNN_Classifier():
             with autocast():
                 outputs,_  = self.model( vectors )
                 loss = self.loss_fn(outputs, targets)
+                
             scaler.scale(loss).backward()
             scaler.step(self.optimizer)
             scaler.update()
             preds = torch.argmax(outputs, dim=1).flatten()       
+            
+            self.writer.add_scalar('Training loss', loss.item(), epoch)
+            self.writer.add_scalar('Training accuracy', torch.sum(preds == targets)/len(targets), epoch)
             
             losses.append(loss.item())
             predictions += list(np.array(preds.cpu()))   
@@ -196,6 +202,9 @@ class CNN_Classifier():
         
         labels = np.array(labels)
         predictions = np.array(predictions)
+        
+        fig = self.plot_confusion_matrix(labels, predictions, normalize = True)
+        self.writer.add_figure(f'Epoch training conf. matrix', fig, epoch)
         
         train_loss = np.mean(losses)
         score_dict = get_MCM_score(labels, predictions)
@@ -211,7 +220,7 @@ class CNN_Classifier():
         
         return prediction
 
-    def eval(self):
+    def eval(self, epoch):
         print("start evaluating...")
         self.model = self.model.eval()
         losses = []
@@ -240,7 +249,13 @@ class CNN_Classifier():
         pre = np.array(pre)
         
         val_acc = correct_predictions.double() / len(self.valid_set)
-        print("val_acc : ",val_acc)
+        val_loss = np.mean(losses)
+        fig = self.plot_confusion_matrix(label, pre, normalize = True)
+        
+        self.writer.add_scalar('Validation loss', val_loss, epoch)
+        self.writer.add_scalar('Validation accuracy', val_acc, epoch)
+        self.writer.add_figure("Validation conf. matrix", fig, global_step = epoch)
+                
         score_dict = get_MCM_score(label, pre)
         val_loss = np.mean(losses)
         return val_loss, score_dict
@@ -253,14 +268,14 @@ class CNN_Classifier():
         
         for epoch in range(self.epochs):
             print(f'Epoch {epoch + 1}/{self.epochs}')
-            train_loss, train_score = self.fit()
+            train_loss, train_score = self.fit(epoch)
             for key in ['M_fpr', 'M_fnr', 'M_f1', 'W_fpr', 'W_fnr', 'W_f1', 'ACC']:
                 if key not in train_score:
                     train_score[key] = ""
             train_table.add_row(["tra", str(epoch+1), format(train_loss, '.4f')] + [train_score[j] for j in train_score if j != "MCM"])
             print(train_table)
 
-            val_loss, val_score = self.eval()
+            val_loss, val_score = self.eval(epoch)
             for key in ['M_fpr', 'M_fnr', 'M_f1', 'W_fpr', 'W_fnr', 'W_f1', 'ACC']:
                 if key not in val_score:
                     val_score[key] = ""
@@ -276,3 +291,17 @@ class CNN_Classifier():
             torch.save(self.model.state_dict(), model_save_path)
             
             print("\n")
+        
+        self.writer.close()
+    
+    def plot_confusion_matrix(self, labels, predictions, normalize = False):
+        cm = confusion_matrix(labels, predictions)
+        if normalize:
+            cm = cm.sum(axis = 1)[:, np.newaxis]
+        
+        fig, ax = plt.subplots()
+        sns.heatmap(cm, annot = True, fmt = '.2f', cmap = 'Blues', ax = ax)
+        ax.set_xlabel('Predicted labels')
+        ax.set_ylabel('True labels')
+        
+        return fig
