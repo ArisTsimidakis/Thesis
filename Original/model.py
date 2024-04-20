@@ -17,7 +17,13 @@ from transformers import AdamW, get_linear_schedule_with_warmup
 from sklearn.metrics import precision_recall_fscore_support
 import matplotlib.pyplot as plt
 import seaborn as sns
+import gc
 
+def free_memory():
+    gc.collect()
+    
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
 def save_data(filename, data):
     print("Begin to save data：", filename)
@@ -132,14 +138,15 @@ class TextCNN(nn.Module):
         return out, hidden_state
 
 class CNN_Classifier():
-    def __init__(self, max_len=100, n_classes=2, epochs=100, batch_size = 32, learning_rate = 0.001, \
-                    result_save_path = "Dataset-sard/test", item_num = 0, hidden_size = 128):
+    def __init__(self, max_len=100, n_classes=2, epochs=100, batch_size = 32, learning_rate = 0.001, patience = 10, \
+                    use_tensorboard = False, result_save_path = "Dataset-sard/test", item_num = 0, hidden_size = 128):
         self.model = TextCNN(hidden_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.max_len = max_len
         self.epochs = epochs
         self.batch_size = batch_size
         self.learning_rate = learning_rate
+        self.patience = patience
         self.model.to(self.device)
         self.hidden_size = hidden_size
         result_save_path = result_save_path + "/" if result_save_path[-1]!="/" else result_save_path
@@ -147,7 +154,9 @@ class CNN_Classifier():
         self.result_save_path = result_save_path + str(item_num) + "_epo" + str(epochs) + "_bat" + str(batch_size) + ".result"
         self.model_save_path = os.path.join(result_save_path, "pytorch_files")
         if not os.path.exists(self.model_save_path): os.makedirs(self.model_save_path)
-        self.writer = SummaryWriter(log_dir = os.path.join(self.model_save_path, "tensorboard_logs"))
+        self.use_tensorboard = use_tensorboard
+        if self.use_tensorboard: 
+            self.writer = SummaryWriter(log_dir = os.path.join(self.model_save_path, "tensorboard_logs"))
 
     def preparation(self, X_train,  y_train, X_valid, y_valid):
         # create datasets
@@ -187,9 +196,10 @@ class CNN_Classifier():
             scaler.update()
             preds = torch.argmax(outputs, dim=1).flatten()       
             
-            self.writer.add_scalar('Training loss', loss.item(), epoch)
-            self.writer.add_scalar('Training accuracy', torch.sum(preds == targets)/len(targets), epoch)
-            
+            if self.use_tensorboard:
+                self.writer.add_scalar('Training loss', loss.item(), epoch)
+                self.writer.add_scalar('Training accuracy', torch.sum(preds == targets)/len(targets), epoch)
+                
             losses.append(loss.item())
             predictions += list(np.array(preds.cpu()))   
             labels += list(np.array(targets.cpu()))      
@@ -203,8 +213,9 @@ class CNN_Classifier():
         labels = np.array(labels)
         predictions = np.array(predictions)
         
-        fig = self.plot_confusion_matrix(labels, predictions, normalize = True)
-        self.writer.add_figure(f'Epoch training conf. matrix', fig, epoch)
+        if self.use_tensorboard:
+            fig = self.plot_confusion_matrix(labels, predictions, normalize = True)
+            self.writer.add_figure(f'Epoch training conf. matrix', fig, epoch)
         
         train_loss = np.mean(losses)
         score_dict = get_MCM_score(labels, predictions)
@@ -250,11 +261,12 @@ class CNN_Classifier():
         
         val_acc = correct_predictions.double() / len(self.valid_set)
         val_loss = np.mean(losses)
-        fig = self.plot_confusion_matrix(label, pre, normalize = True)
         
-        self.writer.add_scalar('Validation loss', val_loss, epoch)
-        self.writer.add_scalar('Validation accuracy', val_acc, epoch)
-        self.writer.add_figure("Validation conf. matrix", fig, global_step = epoch)
+        if self.use_tensorboard:
+            fig = self.plot_confusion_matrix(label, pre, normalize = True)
+            self.writer.add_scalar('Validation loss', val_loss, epoch)
+            self.writer.add_scalar('Validation accuracy', val_acc, epoch)
+            self.writer.add_figure("Validation conf. matrix", fig, global_step = epoch)
                 
         score_dict = get_MCM_score(label, pre)
         val_loss = np.mean(losses)
@@ -265,6 +277,9 @@ class CNN_Classifier():
         learning_record_dict = {}
         train_table = PrettyTable(['typ', 'epo', 'loss', 'M_fpr', 'M_fnr', 'M_f1', 'W_fpr', 'W_fnr', 'W_f1', 'ACC'])
         test_table = PrettyTable(['typ', 'epo', 'loss', 'M_fpr', 'M_fnr', 'M_f1', 'W_fpr', 'W_fnr', 'W_f1', 'ACC'])
+        
+        best_val_loss = np.inf
+        epochs_without_improvement = 0
         
         for epoch in range(self.epochs):
             print(f'Epoch {epoch + 1}/{self.epochs}')
@@ -287,12 +302,24 @@ class CNN_Classifier():
             learning_record_dict[epoch] = {'train_loss': train_loss, 'val_loss': val_loss, "train_score": train_score, "val_score": val_score}
             save_data(self.result_save_path, learning_record_dict)
             
+            if val_loss < best_val_loss:
+                best_val_loss = val_loss
+                epochs_without_improvement = 0
+            else:
+                epochs_without_improvement += 1
+            
+            if epochs_without_improvement > self.patience:
+                print(f"Early stopping after epoch {epoch + 1}")
+                break
+            
             model_save_path = os.path.join(self.model_save_path, f"epoch_{str(epoch + 1)}.pt")
             torch.save(self.model.state_dict(), model_save_path)
             
             print("\n")
         
-        self.writer.close()
+        free_memory()
+        if self.use_tensorboard:
+            self.writer.close()
     
     def plot_confusion_matrix(self, labels, predictions, normalize = False):
         cm = confusion_matrix(labels, predictions)

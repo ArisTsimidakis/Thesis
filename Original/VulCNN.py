@@ -4,7 +4,8 @@ import os
 
 def parse_options():
     parser = argparse.ArgumentParser(description='VulCNN training.')
-    parser.add_argument('-i', '--input', help='The dir path of train.pkl and test.pkl', type=str, required=True)
+    parser.add_argument('-i', '--input', help='The dir path of train.pkl and test.pkl', type = str, required = True)
+    parser.add_argument('-t', '--tensorboard', action = 'store_true', help = 'Log into tensorboard')
     args = parser.parse_args()
     return args
 
@@ -21,6 +22,7 @@ def main():
     hidden_size = 128
     
     data_path = args.input
+    use_tensorboard = args.tensorboard
     
     for item_num in range(5):
         train_df, eval_df = get_kfold_dataframe(pathname = data_path, item_num = item_num)
@@ -28,7 +30,7 @@ def main():
         if not os.path.exists(save_path):
             os.makedirs(save_path)
         
-        classifier = CNN_Classifier(result_save_path = save_path, item_num = item_num, epochs=100, hidden_size = hidden_size)
+        classifier = CNN_Classifier(result_save_path = save_path, item_num = item_num, epochs=100, hidden_size = hidden_size, use_tensorboard = use_tensorboard)
         classifier.preparation(
             X_train=train_df['data'],
             y_train=train_df['label'],
