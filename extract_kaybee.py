@@ -5,7 +5,7 @@ import subprocess
 import argparse
 
 def parse_options():
-    parser = argparse.ArgumentParser(description = "Extract and isolate all ststements in kaybee that contain the source code of the commit")
+    parser = argparse.ArgumentParser(description = "Extract and isolate all statements in kaybee that contain the source code of the commit")
     parser.add_argument("-i", "--input", type = str, help = "Path to the kaybee folder", required = True)
     parser.add_argument("-d", "--debug", action = 'store_true', help = "Print debug statements in console")
     return parser.parse_args()
