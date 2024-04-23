@@ -37,6 +37,7 @@ def find_prev_commit(commit, filenames, verbose):
 
 def clone_and_process_files(repo_url, commit_id, base_path, before_path, after_path, verbose):
     repo_path = os.path.join(base_path, 'repo')
+    
     filenames = []
     try:
         if not os.path.exists(repo_path):
@@ -86,7 +87,7 @@ def scrape_commits(base_dir, verbose):
         subdir_path = os.path.join(base_dir, subdir)
         if os.path.isdir(subdir_path):
             yaml_file = next((f for f in os.listdir(subdir_path) if f.endswith('.yaml')), None)
-            if yaml_file and not any(f for f in os.listdir(subdir_path) if f.endswith('.tar.gz') or f in ['before', 'after']):
+            if yaml_file and not any(f.endswith('tar.gz') for f in os.listdir(subdir_path)) and not any(len(folder) > 15 for folder in os.listdir(subdir_path) if os.path.isdir(os.path.join(subdir_path, folder))):
                 if verbose:
                     print(f"Processing YAML file {yaml_file} in {subdir_path}...")
                 try:
