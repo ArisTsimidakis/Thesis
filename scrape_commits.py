@@ -1,13 +1,11 @@
-# 1: Multiprocessing
-
-
-
 import os
 import yaml
 import shutil
 import argparse
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
+from multiprocessing import Pool, cpu_count
+from functools import partial
 
 def parse_options():
     parser = argparse.ArgumentParser(description='Scrape commits for each vulnerability.')
@@ -109,7 +107,14 @@ def scrape_commits(base_dir, verbose):
 
 def main():
     args = parse_options()
-    scrape_commits(args.input, args.verbose)
+    
+    input = [args.input]
+    verbose = args.verbose
+    
+    cores = cpu_count()
+    pool = Pool(cores)
+    
+    pool.map(partial(scrape_commits, verbose = verbose), input)
 
 if __name__ == '__main__':
     main()
