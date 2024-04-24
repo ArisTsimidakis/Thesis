@@ -37,7 +37,7 @@ def find_prev_commit(commit, filenames, verbose):
 
 def clone_and_process_files(repo_url, commit_id, base_path, before_path, after_path, verbose):
     repo_path = os.path.join(base_path, 'repo')
-    
+    repo = None
     filenames = []
     try:
         if not os.path.exists(repo_path):
@@ -77,10 +77,11 @@ def clone_and_process_files(repo_url, commit_id, base_path, before_path, after_p
     except (GitCommandError, InvalidGitRepositoryError) as e:
         raise Exception(f"Git operation failed: {e}")
     finally:
-        repo.git.checkout('HEAD')
-        shutil.rmtree(repo_path)
-        if verbose:
-            print(f"Cleaned up repository at {repo_path}.")
+        if repo is not None:
+            repo.git.checkout('HEAD')
+            shutil.rmtree(repo_path)
+            if verbose:
+                print(f"Cleaned up repository at {repo_path}.")
 
 def scrape_commits(base_dir, verbose):
     for subdir in os.listdir(base_dir):
