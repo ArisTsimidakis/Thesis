@@ -38,21 +38,17 @@ def pro_one_file(filepath):
     with open(filepath, "r") as file:
         code = file.read()
 
-    file.close()
     code = re.sub('(?<!:)\\/\\/.*|\\/\\*(\\s|.)*?\\*\\/', "", code)
     
     with open(filepath, "w") as file:
         file.write(code.strip())
-    file.close()
 
     with open(filepath, "r") as file:
         org_code = file.readlines()
         
         nor_code = clean_gadget(org_code)
-    file.close()
     with open(filepath, "w") as file:
         file.writelines(nor_code)
-    file.close()
 
 def main():
     args = parse_options()
