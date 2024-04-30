@@ -1,11 +1,16 @@
 import os
 import yaml
 import shutil
+import logging
 import argparse
-from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError
 from multiprocessing import Pool, cpu_count
 from functools import partial
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError
+
+def configure_logging(verbose):
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(level = level, format = '%(asctime)s - %(levelname)s - %(message)s')
 
 def parse_options():
     parser = argparse.ArgumentParser(description='Scrape commits for each vulnerability.')
@@ -13,97 +18,77 @@ def parse_options():
     parser.add_argument('-v', '--verbose', action='store_true', help='Print verbose output')
     return parser.parse_args()
 
-def extract_commits(yaml_file):
+def load_commits_from_yaml(yaml_file):
     try:
         with open(yaml_file, 'r') as f:
             data = yaml.safe_load(f)
             return [(fix['commits'][0]['repository'], fix['commits'][0]['id']) for fix in data['fixes']]
-    except yaml.YAMLError as e:
-        raise Exception(f"Error parsing YAML file {yaml_file}: {e}")
-    except KeyError as e:
-        raise Exception(f"Missing expected key in the YAML data {yaml_file}: {e}")
+    except (yaml.YAMLError, KeyError) as e:
+        logging.error(f"Error in {yaml_file}: {e}")
+        return []
 
-def find_prev_commit(commit, filenames, verbose):
+def clean_repository(repo, repo_path):
+    if repo:
+        repo.git.checkout('HEAD')
+        shutil.rmtree(repo_path)
+        logging.info(f"Cleaned up repository at {repo_path}.")
+
+def find_prev_commit(commit, filenames):
     for past_commit in commit.iter_parents():
-        for f in past_commit.stats.files:
-            if os.path.basename(f) in filenames:
-                if verbose:
-                    print(f"Found previous commit with id {commit}")
-                return past_commit
-    print("Could not find a previous commit that made changes to the same files...")
+        if any(os.path.basename(f) in filenames for f in past_commit.stats.files):
+            return past_commit
+    logging.info(f"No previous commits found for {commit}.")
     return None
 
-def clone_and_process_files(repo_url, commit_id, base_path, before_path, after_path, verbose):
-    repo_path = os.path.join(base_path, 'repo')
-    repo = None
-    filenames = []
+def copy_files(repo, commit_files, path, filenames = None):
+    for file in commit_files:
+        if filenames and os.path.basename(file) not in filenames: 
+            continue
+        
+        file_path = os.path.join(repo.working_dir, file)
+        shutil.copy(file_path, os.path.join(path, os.path.basename(file)))
+    
+
+def extract_files_from_commit(commit, repo, after_path, before_path):
+    filenames = [os.path.basename(f) for f in commit.stats.files]
+    repo.git.checkout(commit)
+    copy_files(repo, commit.stats.files, after_path)
+    
+    prev_commit = find_prev_commit(commit, filenames)
+    if prev_commit:
+        repo.git.checkout(prev_commit)
+        copy_files(repo, prev_commit.stats.files, before_path, filenames = filenames)
+
+def process_repository(repo_url, commit_id, subdir_path):
+    repo_path = os.path.join(subdir_path, 'repo')
+    before_path = os.path.join(subdir_path, 'before')
+    after_path = os.path.join(subdir_path, 'after')
+    
     try:
-        if not os.path.exists(repo_path):
-            if verbose:
-                print(f"Cloning repository from {repo_url} to {repo_path}...")
-            repo = Repo.clone_from(repo_url, repo_path)
-        else:
-            if verbose:
-                print(f"Using existing cloned repository at {repo_path}...")
-            repo = Repo(repo_path)
-        
+        repo = Repo.clone_from(repo_url, repo_path) if not os.path.exists(repo_path) else Repo(repo_path)
         commit = repo.commit(commit_id)
-        os.makedirs(before_path, exist_ok=True)
-        os.makedirs(after_path, exist_ok=True)
+        os.makedirs(before_path, exist_ok = True)
+        os.makedirs(after_path, exist_ok = True)
         
-        repo.git.checkout(commit_id)
-        if verbose:
-            print(f"Checked out commit {commit_id} in {repo_path}. Copying changed files to 'after' directory...")
-        for file in commit.stats.files:
-            file_path = os.path.join(repo.working_dir, file)
-            filenames.append(os.path.basename(file))
-            if os.path.exists(file_path):
-                shutil.copy(file_path, os.path.join(after_path, os.path.basename(file)))
-        
-        
-        if commit.parents:
-            prev_commit = find_prev_commit(commit, filenames, verbose)
-            repo.git.checkout(prev_commit)
-            if verbose:
-                print(f"Checked out parent commit of {commit_id}. Copying changed files to 'before' directory...")
-            for file in prev_commit.stats.files:
-                if os.path.basename(file) not in filenames: continue
-                file_path = os.path.join(repo.working_dir, file)
-                if os.path.exists(file_path):
-                    shutil.copy(file_path, os.path.join(before_path, os.path.basename(file)))
-                    
+        extract_files_from_commit(commit, repo, after_path, before_path)
     except (GitCommandError, InvalidGitRepositoryError) as e:
         raise Exception(f"Git operation failed: {e}")
     finally:
-        if repo is not None:
-            repo.git.checkout('HEAD')
-            shutil.rmtree(repo_path)
-            if verbose:
-                print(f"Cleaned up repository at {repo_path}.")
+        clean_repository(repo, repo_path)
 
-def scrape_commits(base_dir, verbose):
+def scrape_commits(base_dir):
     for subdir in os.listdir(base_dir):
         subdir_path = os.path.join(base_dir, subdir)
         if os.path.isdir(subdir_path):
             yaml_file = next((f for f in os.listdir(subdir_path) if f.endswith('.yaml')), None)
-            if yaml_file and not any(f.endswith('tar.gz') for f in os.listdir(subdir_path)) and not any(len(folder) > 15 for folder in os.listdir(subdir_path) if os.path.isdir(os.path.join(subdir_path, folder))):
-                if verbose:
-                    print(f"Processing YAML file {yaml_file} in {subdir_path}...")
-                try:
-                    commits = extract_commits(os.path.join(subdir_path, yaml_file))
-                    for repo_url, commit_id in commits:
-                        before_path = os.path.join(subdir_path, commit_id, 'before')
-                        after_path = os.path.join(subdir_path, commit_id, 'after')
-                        clone_and_process_files(repo_url, commit_id, subdir_path, before_path, after_path, verbose)
-                except Exception as e:
-                    print(f"Error processing {yaml_file}: {e}")
-            else:
-                if verbose:
-                    print(f"Skipping directory {subdir_path} as it lacks YAML or has existing 'before'/'after' folders or has existing tarball")
-        else:
-            if verbose:
-                print(f"Skipping {subdir} as it is not a directory.")
-        print("\n\n")
+            if (not yaml_file) or (any(f.endswith('tar.gz') for f in os.listdir(subdir_path)) or any(len(f) > 15 for f in os.listdir(subdir_path))):
+                continue
+            logging.info(f"Processing {yaml_file} in {subdir_path}.")
+            commits = load_commits_from_yaml(os.path.join(subdir_path, yaml_file))
+            for repo_url, commit_id in commits:
+                before_path = os.path.join(subdir_path, commit_id, 'before')
+                after_path = os.path.join(subdir_path, commit_id, 'after')
+                process_repository(repo_url, commit_id, subdir_path)
 
 def main():
     args = parse_options()
@@ -111,10 +96,12 @@ def main():
     input = [args.input]
     verbose = args.verbose
     
+    configure_logging(verbose)
+    
     cores = cpu_count()
     pool = Pool(cores)
     
-    pool.map(partial(scrape_commits, verbose = verbose), input)
+    pool.map(partial(scrape_commits), input)
 
 if __name__ == '__main__':
     main()
