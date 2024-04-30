@@ -7,7 +7,7 @@
 # This script was tested with v1.1.1125.                                              #
 #######################################################################################
 
-
+import sys
 import os
 import argparse
 from multiprocessing import Pool, cpu_count, Lock
@@ -20,9 +20,10 @@ lock = Lock()
 
 def parse_options():
     parser = argparse.ArgumentParser(description='Extracting Cpgs.')
-    parser.add_argument('-i', '--input', help='The dir path of input', type=str)
-    parser.add_argument('-o', '--output', help='The dir path of output', type=str)
-    parser.add_argument('-t', '--type', help='The type of procedures: parse or export', type=str, default='export')
+    parser.add_argument('-i', '--input', help='The dir path of input', type = str, required = True)
+    parser.add_argument('-o', '--output', help = 'The dir path of output', type = str, required = True)
+    parser.add_argument('-t', '--type', help='The type of procedures: parse or export', type = str, default='export', required = True)
+    parser.add_argument('-lang', '--language', help='The language of the code files (only java and c supported). Default: c', type = str, default = 'c')
     parser.add_argument('-r', '--repr', help='The type of representation: Currently only supports pgd', type = str, default = 'pdg')
     parser.add_argument('-l', '--log', metavar='LOG_FILE', help='Log file to redirect output to')
     parser.add_argument('-d', '--debug', action='store_true', help='Enable debug mode (print to console)')
@@ -43,7 +44,7 @@ def find_and_move_pdg(in_dir, out_dir):
     
  
 
-def parse(filepath, outdir):
+def parse(filepath, outdir, language = 'c'):
     record_txt =  os.path.join(outdir, "parse_res.txt")
     
     if (log and (not os.path.exists(log))):
@@ -72,7 +73,7 @@ def parse(filepath, outdir):
     if debug:
         print(f"Parsing file {filepath} to {out}")
         
-    cmd = f'joern-parse {filepath} --language c --output {out}'
+    cmd = f'joern-parse {filepath} --language {language} --output {out}'
     
     if log:
         with open(log, 'a+') as f:
@@ -132,10 +133,15 @@ def main():
     repr = args.repr
     input_path = args.input
     output_path = args.output
+    language = args.language
     global log
     global debug
     log = args.log
     debug = args.debug
+    
+    if not (language == 'c' or language == 'java'):
+        print(f"ERROR: Language {language} not supported. Available options: ['c', 'java']")
+        sys.exit(0)
     
     if input_path[-1] == '/':
         input_path = input_path
@@ -154,9 +160,9 @@ def main():
     
     if type == 'parse':
         print("Initiating parsing. Input dir path is: " + input_path)
-        files = glob.glob(input_path + '*.c')
+        files = glob.glob(input_path + '*.c') if language == 'c' else glob.glob(input_path + '*.java')
         with Pool(cores) as pool:
-            pool.map(partial(parse, outdir = output_path), files)
+            pool.map(partial(parse, outdir = output_path, language = language), files)
             
     elif type == 'export':
         print("Initiating exporting. Input dir path is: " + input_path)
