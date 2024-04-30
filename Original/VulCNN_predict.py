@@ -9,7 +9,8 @@ from model import CNN_Classifier
 
 def parse_options():
     parser = argparse.ArgumentParser(description = 'Classifies the provided C functions as vulnerable or not.')
-    parser.add_argument('-i', '--input', help = 'The path of a directory which consists of C files', required = True)
+    parser.add_argument('-i', '--input', help = 'The path of a directory which consists of source code files', required = True)
+    parser.add_argument('-l', '--language', help = 'The language of the files to be classified (either c or java). Default: c.', default = 'c')
     parser.add_argument('-d', '--debug', action = 'store_true', default = False, help = 'Enable debug mode (print to console)')
     parser.add_argument('-p', '--preprocessed', action = 'store_true', default = False, help = 'Indicate that the input is already preprocessed. In this case, the input directory should contain the images')
 
@@ -31,12 +32,12 @@ def load_model():
     return model
     
 
-def extract_function_graph(path):
+def extract_function_graph(path, language):
     print("Extracting function graphs...\n\n")
     bins_dir = os.path.join(path, 'bins')    
     dots_dir = os.path.join(path, 'dots')
     
-    parse_cmd = f"python3 graph_gen_new.py -i {path} -o {bins_dir} -t parse"
+    parse_cmd = f"python3 graph_gen_new.py -i {path} -o {bins_dir} -t parse -lang {language}"
     export_cmd = f"python3 graph_gen_new.py -i {bins_dir} -o {dots_dir} -t export -r pdg"
     
     if debug:
@@ -106,6 +107,7 @@ def main():
     path = args.input
     debug = args.debug
     is_preprocessed = args.preprocessed
+    language = args.language 
     
     try:
         classifier = load_model()
@@ -117,7 +119,7 @@ def main():
         if not is_preprocessed:
             normalize(path)
             
-            extract_function_graph(path)
+            extract_function_graph(path, language)
             
             generate_images(path)
         
