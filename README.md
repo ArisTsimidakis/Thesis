@@ -1,4 +1,4 @@
-#  "Transferring an Image-Inspired Deep  Learning Vulnerability Detection System  from C to Java: A Targeted Reproduction of VulCNN"
+#  Transferring an Image-Inspired Deep  Learning Vulnerability Detection System  from C to Java: A Targeted Reproduction of VulCNN
 
 ## Abstract 
 This study is a targeted replication of a Deep Learning-based source code vulnerability detection system VulCNN, originally designed for C, and extends its application to Java. there are three main objectives to this research: a) to evaluate the accuracy and scalability of VulCNN in detecting vulnerabilities in C functions, b) to assess the impact of different sentence embedding techniques on the classification of source code, and c) to train a new VulCNN model for Java and determine if it achieves comparable accuracy when applied to different programming languages and datasets. 
