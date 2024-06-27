@@ -1,0 +1,18 @@
+VAR1::FUN1(
+    VAR2* VAR3)
+    : FUN2(VAR3),
+      FUN3(false) {
+  VAR4 = VAR5::FUN4(this,
+      VAR3->FUN5(VAR2::VAR6));
+  VAR7 = VAR5::FUN4(this,
+      VAR3->FUN5(VAR2::VAR8));
+
+  
+  VAR9 = new VAR10::VAR11;
+  VAR9->FUN6(VAR3->FUN7());
+  VAR12& VAR13 = VAR12::FUN8();
+  VAR9->FUN9(VAR13.FUN10(VAR12::VAR14));
+  VAR9->FUN11(VAR10::VAR15::VAR16);
+  VAR9->FUN12(this);
+  VAR9->FUN13(FUN14()->FUN15());
+}

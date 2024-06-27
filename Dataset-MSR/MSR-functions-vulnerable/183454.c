@@ -1,0 +1,8 @@
+VAR1::VAR2 FUN1(VAR3* VAR4) {
+   gint VAR5, VAR6;
+   FUN2(FUN3(VAR4), &VAR5, &VAR6);
+
+  return VAR1::FUN4(0, 0, VAR5, VAR6);
+
+
+ }

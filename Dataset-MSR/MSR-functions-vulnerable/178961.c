@@ -1,0 +1,57 @@
+static void FUN1(struct VAR1 *VAR2, unsigned long VAR3,
+
+			       struct VAR4 *VAR5, int VAR6)
+
+
+ {
+ 	u64 VAR7 = VAR2->VAR8.VAR9;
+ 	s64 VAR10, VAR11, VAR12;
+	int VAR13 = 0;
+
+	if (VAR2->VAR8.VAR14 & VAR15) {
+		FUN2(VAR2->VAR8.VAR16, 0);
+		return;
+	}
+
+	
+	VAR10 = FUN3(&VAR2->VAR8.VAR17);
+	VAR11 = FUN4(VAR10, VAR3);
+	FUN5(VAR11, &VAR2->VAR18);
+
+	
+	VAR3 = 0;
+	VAR12 = FUN3(&VAR2->VAR8.VAR19) - VAR11;
+	if (VAR7) {
+		if (VAR12 <= 0) {
+			VAR12 += VAR7;
+			if (VAR12 <= 0)
+				VAR12 = VAR7;
+			VAR13 = 1;
+			VAR2->VAR8.VAR20 = VAR2->VAR8.VAR9;
+		}
+		if (VAR12 < 0x80000000LL)
+			VAR3 = 0x80000000LL - VAR12;
+	}
+
+	FUN2(VAR2->VAR8.VAR16, VAR3);
+	FUN6(&VAR2->VAR8.VAR17, VAR3);
+	FUN6(&VAR2->VAR8.VAR19, VAR12);
+	FUN7(VAR2);
+
+	
+	if (VAR13) {
+		struct perf_sample_data VAR21;
+
+		FUN8(&VAR21, ~0ULL);
+		VAR21.VAR7 = VAR2->VAR8.VAR20;
+
+ 		if (VAR2->VAR22.VAR23 & VAR24)
+ 			FUN9(VAR5, &VAR21.VAR25);
+ 
+
+		if (FUN10(VAR2, VAR6, &VAR21, VAR5))
+
+
+ 			FUN11(VAR2, 0);
+ 	}
+ }

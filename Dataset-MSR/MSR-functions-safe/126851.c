@@ -1,0 +1,6 @@
+void VAR1::FUN1(VAR2::VAR3* VAR4) {
+  if (VAR5)
+    FUN2(VAR5);
+  VAR5 = VAR4;
+  FUN3(VAR4);
+}

@@ -1,0 +1,98 @@
+static int FUN1(struct VAR1 *VAR2,
+			   const struct VAR3 *VAR4,
+			   struct VAR5 *VAR6,
+			   __be32 VAR7, __be32 VAR8, u32 VAR9)
+{
+	struct VAR10 *VAR11;
+	struct VAR12 *VAR13;
+	int VAR14;
+	struct VAR5 *VAR15;
+	unsigned int VAR16 = 0;
+	bool VAR17;
+	u32 VAR18 = 0;
+
+	
+	VAR15 = FUN2(FUN3(*VAR4));
+	if (VAR15 == NULL) {
+		FUN4("");
+		return -VAR19;
+	}
+
+	VAR14 = FUN5(VAR2, VAR8, VAR7, VAR9, FUN6(*VAR4),
+				  VAR6->VAR20, VAR6, &VAR18);
+	if (VAR14 < 0) {
+		FUN7(VAR6->VAR20, VAR6, VAR2, VAR7,
+					 VAR8);
+
+		goto VAR21;
+	}
+ 
+ 	VAR17 = VAR4->VAR22 && !VAR18;
+ 	if (VAR15 == VAR6 && VAR14 && FUN8(VAR15) &&
+
+
+ 	    (FUN9(VAR15) ||
+
+	     FUN10(VAR15, VAR8, FUN11(*VAR4)))) {
+
+		VAR16 |= VAR23;
+
+		VAR17 = false;
+
+	}
+
+
+
+
+ 
+ 	if (VAR2->VAR24 != FUN12(VAR25)) {
+ 		
+		if (VAR15 == VAR6 &&
+		    FUN13(VAR6) == 0) {
+			VAR14 = -VAR19;
+			goto VAR21;
+		}
+	}
+
+	VAR11 = FUN14(&FUN15(*VAR4), VAR7);
+	if (VAR17) {
+		if (VAR11 != NULL)
+			VAR13 = FUN16(VAR11->VAR26);
+		else
+			VAR13 = FUN16(FUN15(*VAR4).VAR27);
+
+		if (FUN17(VAR13)) {
+			FUN18(VAR2, &VAR13->VAR28);
+			goto VAR29;
+		}
+	}
+
+	VAR13 = FUN19(VAR15->VAR20,
+			   FUN20(VAR6, VAR30),
+			   FUN20(VAR15, VAR31), VAR17);
+	if (!VAR13) {
+		VAR14 = -VAR32;
+		goto VAR21;
+	}
+
+	VAR13->VAR33 = FUN21(FUN22(VAR13->VAR28.VAR20));
+	VAR13->VAR34 = VAR16;
+	VAR13->VAR35 = VAR4->VAR36;
+	VAR13->VAR37 = 1;
+	VAR13->VAR38 	= 0;
+	VAR13->VAR39	= 0;
+	VAR13->VAR40	= 0;
+	VAR13->VAR41 = 0;
+	FUN23(&VAR13->VAR42);
+	FUN24(VAR43);
+
+	VAR13->VAR28.VAR44 = VAR45;
+	VAR13->VAR28.VAR46 = VAR47;
+
+	FUN25(VAR13, VAR7, VAR4, VAR11, VAR4->VAR22, VAR4->VAR36, VAR18);
+	FUN26(VAR2, &VAR13->VAR28);
+VAR29:
+	VAR14 = 0;
+ VAR21:
+	return VAR14;
+}

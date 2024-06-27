@@ -1,0 +1,83 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"41" [label = <(METHOD_RETURN,void)<SUB>1</SUB>> ]
+"11" [label = <(&lt;operator&gt;.assignment,* VAR5 = VAR6)<SUB>6</SUB>> ]
+"14" [label = <(IDENTIFIER,VAR8,{
+
+  FUN2(VAR1::FUN3()-&gt;FUN4(VAR2::VAR3));
+
+
+  ...)<SUB>7</SUB>> ]
+"15" [label = <(IDENTIFIER,VAR8,{
+
+  FUN2(VAR1::FUN3()-&gt;FUN4(VAR2::VAR3));
+
+
+  ...)<SUB>8</SUB>> ]
+"17" [label = <(&lt;operator&gt;.assignment,VAR10 = VAR6)<SUB>10</SUB>> ]
+"20" [label = <(&lt;operator&gt;.shiftLeft,FUN2(VAR10) &lt;&lt; &quot;&quot;)<SUB>12</SUB>> ]
+"24" [label = <(IDENTIFIER,VAR6,{
+
+  FUN2(VAR1::FUN3()-&gt;FUN4(VAR2::VAR3));
+
+
+  ...)<SUB>16</SUB>> ]
+"25" [label = <(IDENTIFIER,VAR6,{
+
+  FUN2(VAR1::FUN3()-&gt;FUN4(VAR2::VAR3));
+
+
+  ...)<SUB>18</SUB>> ]
+"26" [label = <(FUN14,FUN14(VAR15))<SUB>19</SUB>> ]
+"28" [label = <(IDENTIFIER,VAR6,{
+
+  FUN2(VAR1::FUN3()-&gt;FUN4(VAR2::VAR3));
+
+
+  ...)<SUB>21</SUB>> ]
+"29" [label = <(FUN14,FUN14(VAR16))<SUB>23</SUB>> ]
+"31" [label = <(IDENTIFIER,VAR6,{
+
+  FUN2(VAR1::FUN3()-&gt;FUN4(VAR2::VAR3));
+
+
+  ...)<SUB>25</SUB>> ]
+"32" [label = <(FUN14,FUN14(VAR17))<SUB>26</SUB>> ]
+"34" [label = <(&lt;operator&gt;.assignment,VAR10 = VAR6)<SUB>30</SUB>> ]
+"37" [label = <(&lt;operator&gt;.shiftLeft,FUN2(VAR10) &lt;&lt; &quot;&quot;)<SUB>34</SUB>> ]
+"21" [label = <(FUN2,FUN2(VAR10))<SUB>12</SUB>> ]
+"38" [label = <(FUN2,FUN2(VAR10))<SUB>34</SUB>> ]
+  "11" -> "41"  [ label = "DDG: VAR5"] 
+  "11" -> "41"  [ label = "DDG: * VAR5 = VAR6"] 
+  "26" -> "41"  [ label = "DDG: FUN14(VAR15)"] 
+  "29" -> "41"  [ label = "DDG: FUN14(VAR16)"] 
+  "32" -> "41"  [ label = "DDG: FUN14(VAR17)"] 
+  "34" -> "41"  [ label = "DDG: VAR6"] 
+  "34" -> "41"  [ label = "DDG: VAR10 = VAR6"] 
+  "38" -> "41"  [ label = "DDG: VAR10"] 
+  "37" -> "41"  [ label = "DDG: FUN2(VAR10)"] 
+  "37" -> "41"  [ label = "DDG: FUN2(VAR10) &lt;&lt; &quot;&quot;"] 
+  "29" -> "41"  [ label = "DDG: VAR16"] 
+  "26" -> "41"  [ label = "DDG: VAR15"] 
+  "32" -> "41"  [ label = "DDG: VAR17"] 
+  "8" -> "11"  [ label = "DDG: "] 
+  "8" -> "14"  [ label = "DDG: "] 
+  "8" -> "15"  [ label = "DDG: "] 
+  "8" -> "17"  [ label = "DDG: "] 
+  "8" -> "24"  [ label = "DDG: "] 
+  "8" -> "25"  [ label = "DDG: "] 
+  "8" -> "28"  [ label = "DDG: "] 
+  "8" -> "31"  [ label = "DDG: "] 
+  "8" -> "34"  [ label = "DDG: "] 
+  "21" -> "20"  [ label = "DDG: VAR10"] 
+  "8" -> "20"  [ label = "DDG: "] 
+  "8" -> "26"  [ label = "DDG: "] 
+  "8" -> "29"  [ label = "DDG: "] 
+  "8" -> "32"  [ label = "DDG: "] 
+  "38" -> "37"  [ label = "DDG: VAR10"] 
+  "8" -> "37"  [ label = "DDG: "] 
+  "17" -> "21"  [ label = "DDG: VAR10"] 
+  "8" -> "21"  [ label = "DDG: "] 
+  "34" -> "38"  [ label = "DDG: VAR10"] 
+  "8" -> "38"  [ label = "DDG: "] 
+}

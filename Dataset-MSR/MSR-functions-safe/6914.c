@@ -1,0 +1,25 @@
+FUN1(const struct VAR1 *VAR2, struct VAR3 *VAR4, const char *VAR5, void *private)
+{
+	if (!VAR2 || VAR2->VAR6 != VAR7)
+		return 0;
+
+	FUN2();
+
+	if (!FUN3(VAR4->VAR8))
+		return 0;
+
+	
+	if (!FUN4(VAR2->VAR9.VAR10, VAR4->VAR8->VAR11->VAR12.VAR13,
+	                VAR4->VAR8->VAR11->VAR12.VAR14))
+		return 0;
+
+	
+	VAR4->VAR15.VAR16[0] = VAR2->VAR9.VAR10;
+
+	VAR4->VAR9.VAR6 = VAR17;
+	VAR4->VAR18 = VAR19;
+	VAR4->VAR9.VAR20.VAR21.VAR21 = VAR4->VAR8->VAR11->VAR12.VAR13;
+	VAR4->VAR9.VAR20.VAR21.VAR22 = strlen(VAR4->VAR8->VAR11->VAR12.VAR13);
+
+	return 1;
+}

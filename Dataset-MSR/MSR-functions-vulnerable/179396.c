@@ -1,0 +1,126 @@
+static void FUN1(struct VAR1 *VAR2, struct VAR1 *VAR3,
+			      struct VAR4 *VAR5,
+			      sctp_socket_type_t VAR6)
+{
+	struct VAR7 *VAR8 = FUN2(VAR2);
+	struct VAR7 *VAR9 = FUN2(VAR3);
+	struct VAR10 *VAR11; 
+	struct VAR12 *VAR13 = VAR9->VAR14;
+	struct VAR15 *VAR16, *VAR17;
+	struct VAR18 *VAR19;
+	int VAR20 = 0;
+
+	
+	VAR3->VAR21 = VAR2->VAR21;
+	VAR3->VAR22 = VAR2->VAR22;
+	
+	FUN3(VAR3, VAR2);
+
+	
+	VAR9->VAR14 = VAR13;
+	VAR9->VAR23 = NULL;
+
+	
+	VAR11 = FUN2(VAR2)->VAR24;
+	FUN4(VAR3, &VAR11->VAR25);
+	FUN2(VAR3)->VAR24 = VAR11;
+	FUN5(VAR3)->VAR26 = FUN5(VAR2)->VAR26;
+
+	
+	if (VAR27 == VAR5->VAR28.VAR29->VAR30)
+		VAR20 = VAR31;
+	if (VAR5->VAR32.VAR33)
+		VAR20 |= VAR34;
+	if (VAR5->VAR32.VAR35)
+		VAR20 |= VAR36;
+	FUN6(&VAR9->VAR14->VAR28.VAR37,
+			     &VAR8->VAR14->VAR28.VAR37,
+			     VAR38, VAR39, VAR20);
+
+	
+ 	FUN7(VAR16, &VAR2->VAR40, VAR17) {
+ 		VAR19 = FUN8(VAR16);
+ 		if (VAR19->VAR41 == VAR5) {
+
+			FUN9(VAR16);
+
+
+ 			FUN10(VAR16, &VAR2->VAR40);
+ 			FUN11(&VAR3->VAR40, VAR16);
+
+			FUN12(VAR16, VAR3);
+
+
+ 		}
+ 	}
+ 
+	
+	FUN13(&VAR9->VAR42);
+	FUN2(VAR3)->VAR43 = VAR5->VAR44.VAR43;
+
+	if (FUN2(VAR2)->VAR43) {
+		struct VAR45 *VAR46;
+
+		
+		if (VAR5->VAR44.VAR43) {
+			VAR46 = &VAR9->VAR42;
+		} else
+			VAR46 = &VAR3->VAR40;
+
+		
+ 		FUN7(VAR16, &VAR8->VAR42, VAR17) {
+ 			VAR19 = FUN8(VAR16);
+ 			if (VAR19->VAR41 == VAR5) {
+
+				FUN9(VAR16);
+
+
+ 				FUN10(VAR16, &VAR8->VAR42);
+ 				FUN11(VAR46, VAR16);
+
+				FUN12(VAR16, VAR3);
+
+
+ 			}
+ 		}
+ 
+		
+		if (VAR5->VAR44.VAR43)
+			FUN14(VAR2);
+ 
+ 	}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	
+	VAR9->VAR6 = VAR6;
+
+	
+	FUN15(VAR3);
+	FUN16(VAR5, VAR3);
+
+	
+	if (FUN17(VAR5, VAR47) && FUN18(VAR3, VAR48))
+		VAR3->VAR49 |= VAR50;
+
+	VAR3->VAR51 = VAR52;
+	FUN19(VAR3);
+}

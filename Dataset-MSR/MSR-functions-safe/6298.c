@@ -1,0 +1,18 @@
+FUN1(VAR1)
+{
+	if (FUN2(VAR2)) {
+		FUN3(FUN2(VAR2));
+	}
+	FUN2(VAR2) = NULL;
+	if(FUN2(VAR3)) {
+		FUN4(FUN2(VAR3));
+		FUN5(FUN2(VAR3));
+		FUN2(VAR3) = NULL;
+	}
+	if (FUN2(VAR4)) {
+		FUN6(FUN2(VAR4));
+		FUN2(VAR4) = NULL;
+	}
+
+	return VAR5;
+}

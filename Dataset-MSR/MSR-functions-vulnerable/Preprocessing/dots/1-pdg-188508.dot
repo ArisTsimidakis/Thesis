@@ -1,0 +1,15 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"16" [label = <(METHOD_RETURN,void)<SUB>1</SUB>> ]
+"10" [label = <(fprintf,fprintf(VAR1, &quot;&quot;,
+           VAR2))<SUB>4</SUB>> ]
+"14" [label = <(FUN2,FUN2(VAR3))<SUB>6</SUB>> ]
+  "10" -> "16"  [ label = "DDG: VAR1"] 
+  "10" -> "16"  [ label = "DDG: fprintf(VAR1, &quot;&quot;,
+           VAR2)"] 
+  "14" -> "16"  [ label = "DDG: FUN2(VAR3)"] 
+  "10" -> "16"  [ label = "DDG: VAR2"] 
+  "14" -> "16"  [ label = "DDG: VAR3"] 
+  "8" -> "10"  [ label = "DDG: "] 
+  "8" -> "14"  [ label = "DDG: "] 
+}

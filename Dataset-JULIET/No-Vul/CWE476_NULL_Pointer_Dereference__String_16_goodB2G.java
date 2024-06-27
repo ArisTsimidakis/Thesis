@@ -1,0 +1,27 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            String VAR2;
+    
+            while (true)
+            {
+                
+                VAR2 = null;
+                break;
+            }
+    
+            while (true)
+            {
+                
+                if (VAR2 != null)
+                {
+                    VAR3.writeLine("" + VAR2.length());
+                }
+                else
+                {
+                    VAR3.writeLine("");
+                }
+                break;
+            }
+        }
+};

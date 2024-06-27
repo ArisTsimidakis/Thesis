@@ -1,0 +1,12 @@
+digraph "FUN1" {  
+"9" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"23" [label = <(METHOD_RETURN,void)<SUB>1</SUB>> ]
+"10" [label = <(PARAM,const VAR1 *VAR2)<SUB>1</SUB>> ]
+"13" [label = <(&lt;operator&gt;.and,VAR2-&gt;VAR3.VAR4.VAR5 &amp; VAR6)<SUB>3</SUB>> ]
+  "10" -> "23"  [ label = "DDG: VAR2"] 
+  "13" -> "23"  [ label = "DDG: VAR2-&gt;VAR3.VAR4.VAR5"] 
+  "13" -> "23"  [ label = "DDG: VAR2-&gt;VAR3.VAR4.VAR5 &amp; VAR6"] 
+  "13" -> "23"  [ label = "DDG: VAR6"] 
+  "9" -> "10"  [ label = "DDG: "] 
+  "9" -> "13"  [ label = "DDG: "] 
+}

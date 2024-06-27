@@ -1,0 +1,660 @@
+FUN1(VAR1)
+				FUN2(VAR1)
+{
+	struct VAR2 *VAR3;
+	struct VAR4 *VAR5 = NULL;
+	struct VAR6 *VAR7;
+	ext4_fsblk_t VAR8;
+	ext4_fsblk_t VAR9 = FUN3(&VAR10);
+	ext4_fsblk_t VAR11;
+	unsigned long VAR12 = 0;
+	unsigned long VAR13 = 0;
+	unsigned long VAR14;
+	struct VAR15 *VAR16;
+	char *VAR17;
+	const char *VAR18;
+	int VAR19 = -VAR20;
+	int VAR21;
+	unsigned int VAR22;
+	unsigned int VAR23;
+	int VAR24, VAR25;
+	__u64 VAR26;
+	int VAR27;
+	unsigned int VAR28 = VAR29;
+
+	VAR7 = FUN4(sizeof(*VAR7), VAR30);
+	if (!VAR7)
+		return -VAR31;
+
+	VAR7->VAR32 =
+		FUN4(sizeof(struct VAR33), VAR30);
+	if (!VAR7->VAR32) {
+		FUN5(VAR7);
+		return -VAR31;
+	}
+	VAR34->VAR35 = VAR7;
+	VAR7->VAR36 = 0;
+	VAR7->VAR37 = VAR38;
+	VAR7->VAR39 = VAR40;
+	VAR7->VAR41 = VAR42;
+	VAR7->VAR43 = VAR9;
+	VAR7->VAR44 = FUN6(VAR34->VAR45->VAR46,
+						      VAR47[1]);
+
+	FUN7();
+
+	
+	for (VAR17 = VAR34->VAR48; (VAR17 = strchr(VAR17, ''));)
+		*VAR17 = '';
+
+	VAR21 = FUN8(VAR34, VAR49);
+	if (!VAR21) {
+		FUN9(VAR34, VAR50, "");
+		goto VAR51;
+	}
+
+	
+	if (VAR21 != VAR49) {
+		VAR11 = VAR9 * VAR49;
+		VAR12 = FUN10(VAR11, VAR21);
+	} else {
+		VAR11 = VAR9;
+	}
+
+	if (!(VAR3 = FUN11(VAR34, VAR11))) {
+		FUN9(VAR34, VAR50, "");
+		goto VAR51;
+	}
+	
+	VAR5 = (struct VAR4 *) (((char *)VAR3->VAR52) + VAR12);
+	VAR7->VAR53 = VAR5;
+	VAR34->VAR54 = FUN12(VAR5->VAR54);
+	if (VAR34->VAR54 != VAR55)
+		goto VAR56;
+	VAR7->VAR57 = FUN13(VAR5->VAR57);
+
+	
+	VAR14 = FUN14(VAR5->VAR58);
+	if (VAR14 & VAR59)
+		FUN15(VAR7->VAR36, VAR60);
+	if (VAR14 & VAR61) {
+		FUN9(VAR34, VAR62, VAR63, "",
+			"");
+		FUN15(VAR7->VAR36, VAR64);
+	}
+	if (VAR14 & VAR65)
+		FUN15(VAR7->VAR36, VAR66);
+#ifdef VAR67
+	if (VAR14 & VAR68)
+		FUN15(VAR7->VAR36, VAR69);
+#endif
+#ifdef VAR70
+	if (VAR14 & VAR71)
+		FUN15(VAR7->VAR36, VAR72);
+#endif
+	if ((VAR14 & VAR73) == VAR74)
+		FUN15(VAR7->VAR36, VAR75);
+	else if ((VAR14 & VAR73) == VAR76)
+		FUN15(VAR7->VAR36, VAR77);
+	else if ((VAR14 & VAR73) == VAR78)
+		FUN15(VAR7->VAR36, VAR79);
+
+	if (FUN12(VAR7->VAR53->VAR80) == VAR81)
+		FUN15(VAR7->VAR36, VAR82);
+	else if (FUN12(VAR7->VAR53->VAR80) == VAR83)
+		FUN15(VAR7->VAR36, VAR84);
+	else
+		FUN15(VAR7->VAR36, VAR85);
+
+	VAR7->VAR37 = FUN12(VAR5->VAR86);
+	VAR7->VAR39 = FUN12(VAR5->VAR87);
+	VAR7->VAR88 = VAR89 * VAR90;
+	VAR7->VAR91 = VAR92;
+	VAR7->VAR93 = VAR94;
+
+	FUN15(VAR7->VAR36, VAR95);
+
+	
+	FUN15(VAR7->VAR36, VAR96);
+
+	if (!FUN16((char *) VAR10, VAR34, &VAR13,
+			   &VAR28, NULL, 0))
+		goto VAR97;
+
+	VAR34->VAR98 = (VAR34->VAR98 & ~VAR99) |
+		(FUN17(VAR34, VAR72) ? VAR99 : 0);
+
+	if (FUN14(VAR5->VAR100) == VAR101 &&
+	    (FUN18(VAR34, ~0U) ||
+	     FUN19(VAR34, ~0U) ||
+	     FUN20(VAR34, ~0U)))
+		FUN9(VAR34, VAR62,
+		       ""
+		       "");
+
+	
+	if (!FUN21(VAR34, (VAR34->VAR98 & VAR102)))
+		goto VAR97;
+
+	VAR21 = VAR103 << FUN14(VAR5->VAR104);
+
+	if (VAR21 < VAR49 ||
+	    VAR21 > VAR105) {
+		FUN9(VAR34, VAR50,
+		       "", VAR21);
+		goto VAR97;
+	}
+
+	if (VAR34->VAR106 != VAR21) {
+		
+		if (!FUN22(VAR34, VAR21)) {
+			FUN9(VAR34, VAR50, "",
+					VAR21);
+			goto VAR97;
+		}
+
+		FUN23(VAR3);
+		VAR11 = VAR9 * VAR49;
+		VAR12 = FUN10(VAR11, VAR21);
+		VAR3 = FUN11(VAR34, VAR11);
+		if (!VAR3) {
+			FUN9(VAR34, VAR50,
+			       "");
+			goto VAR97;
+		}
+		VAR5 = (struct VAR4 *)(((char *)VAR3->VAR52) + VAR12);
+		VAR7->VAR53 = VAR5;
+		if (VAR5->VAR54 != FUN24(VAR55)) {
+			FUN9(VAR34, VAR50,
+			       "");
+			goto VAR97;
+		}
+	}
+
+	VAR25 = FUN19(VAR34,
+				VAR107);
+	VAR7->VAR108 = FUN25(VAR34->VAR109,
+						      VAR25);
+	VAR34->VAR110 = FUN26(VAR34->VAR109, VAR25);
+
+	if (FUN14(VAR5->VAR100) == VAR101) {
+		VAR7->VAR111 = VAR112;
+		VAR7->VAR113 = VAR114;
+	} else {
+		VAR7->VAR111 = FUN12(VAR5->VAR111);
+		VAR7->VAR113 = FUN14(VAR5->VAR113);
+		if ((VAR7->VAR111 < VAR112) ||
+		    (!FUN27(VAR7->VAR111)) ||
+		    (VAR7->VAR111 > VAR21)) {
+			FUN9(VAR34, VAR50,
+			       "",
+			       VAR7->VAR111);
+			goto VAR97;
+		}
+		if (VAR7->VAR111 > VAR112)
+			VAR34->VAR115 = 1 << (VAR116 - 2);
+	}
+
+	VAR7->VAR117 = FUN12(VAR5->VAR117);
+	if (FUN20(VAR34, VAR118)) {
+		if (VAR7->VAR117 < VAR119 ||
+		    VAR7->VAR117 > VAR120 ||
+		    !FUN27(VAR7->VAR117)) {
+			FUN9(VAR34, VAR50,
+			       "",
+			       VAR7->VAR117);
+			goto VAR97;
+		}
+	} else
+		VAR7->VAR117 = VAR121;
+
+	VAR7->VAR122 = FUN14(VAR5->VAR122);
+	VAR7->VAR123 = FUN14(VAR5->VAR123);
+	if (FUN28(VAR34) == 0 || FUN29(VAR34) == 0)
+		goto VAR56;
+
+	VAR7->VAR124 = VAR21 / FUN28(VAR34);
+	if (VAR7->VAR124 == 0)
+		goto VAR56;
+	VAR7->VAR125 = VAR7->VAR123 /
+					VAR7->VAR124;
+	VAR7->VAR126 = VAR21 / FUN30(VAR34);
+	VAR7->VAR127 = VAR3;
+	VAR7->VAR128 = FUN12(VAR5->VAR129);
+	VAR7->VAR130 = FUN31(FUN32(VAR34));
+	VAR7->VAR131 = FUN31(FUN33(VAR34));
+
+	for (VAR23 = 0; VAR23 < 4; VAR23++)
+		VAR7->VAR132[VAR23] = FUN14(VAR5->VAR132[VAR23]);
+	VAR7->VAR133 = VAR5->VAR133;
+	VAR23 = FUN14(VAR5->VAR98);
+	if (VAR23 & VAR134)
+		VAR7->VAR135 = 3;
+	else if ((VAR23 & VAR136) == 0) {
+#ifdef VAR137
+		VAR5->VAR98 |= FUN34(VAR134);
+		VAR7->VAR135 = 3;
+#else
+		VAR5->VAR98 |= FUN34(VAR136);
+#endif
+		VAR34->VAR138 = 1;
+	}
+
+	if (VAR7->VAR122 > VAR21 * 8) {
+		FUN9(VAR34, VAR50,
+		       "",
+		       VAR7->VAR122);
+		goto VAR97;
+	}
+	if (VAR7->VAR123 > VAR21 * 8) {
+		FUN9(VAR34, VAR50,
+		       "",
+		       VAR7->VAR123);
+		goto VAR97;
+	}
+
+	
+	if ((FUN35(VAR5) >
+	     (VAR139)(~0ULL) >> (VAR34->VAR109 - 9)) ||
+	    (FUN35(VAR5) >
+	     (VAR140)(~0ULL) >> (VAR141 - VAR34->VAR109))) {
+		FUN9(VAR34, VAR50, ""
+			 "");
+		if (sizeof(VAR139) < 8)
+			FUN9(VAR34, VAR62, "");
+		VAR19 = -VAR142;
+		goto VAR97;
+	}
+
+	if (FUN36(VAR34) == 0)
+		goto VAR56;
+
+	
+	VAR26 = VAR34->VAR45->VAR143->VAR144 >> VAR34->VAR109;
+	if (VAR26 && FUN35(VAR5) > VAR26) {
+		FUN9(VAR34, VAR62, ""
+		       "",
+		       FUN35(VAR5), VAR26);
+		goto VAR97;
+	}
+
+	
+	if (FUN14(VAR5->VAR145) >= FUN35(VAR5)) {
+                FUN9(VAR34, VAR62, ""
+			 "",
+			 FUN14(VAR5->VAR145),
+			 FUN35(VAR5));
+		goto VAR97;
+	}
+	VAR26 = (FUN35(VAR5) -
+			FUN14(VAR5->VAR145) +
+			FUN36(VAR34) - 1);
+	FUN10(VAR26, FUN36(VAR34));
+	if (VAR26 > ((VAR146)1<<32) - FUN33(VAR34)) {
+		FUN9(VAR34, VAR62, ""
+		       ""
+		       "", VAR7->VAR147,
+		       FUN35(VAR5),
+		       FUN14(VAR5->VAR145),
+		       FUN36(VAR34));
+		goto VAR97;
+	}
+	VAR7->VAR147 = VAR26;
+	VAR7->VAR148 = FUN37(VAR149, VAR7->VAR147,
+			(VAR150 / FUN36(VAR34)));
+	VAR22 = (VAR7->VAR147 + FUN33(VAR34) - 1) /
+		   FUN33(VAR34);
+	VAR7->VAR151 = FUN38(VAR22 * sizeof(struct VAR2 *),
+				    VAR30);
+	if (VAR7->VAR151 == NULL) {
+		FUN9(VAR34, VAR50, "");
+		goto VAR97;
+	}
+
+#ifdef VAR152
+	if (VAR153)
+		VAR7->VAR154 = FUN39(VAR34->VAR48, VAR153);
+#endif
+
+	FUN40(VAR7->VAR32);
+
+	for (VAR23 = 0; VAR23 < VAR22; VAR23++) {
+		VAR8 = FUN41(VAR34, VAR11, VAR23);
+		VAR7->VAR151[VAR23] = FUN11(VAR34, VAR8);
+		if (!VAR7->VAR151[VAR23]) {
+			FUN9(VAR34, VAR50,
+			       "", VAR23);
+			VAR22 = VAR23;
+			goto VAR155;
+		}
+	}
+	if (!FUN42(VAR34)) {
+		FUN9(VAR34, VAR50, "");
+		goto VAR155;
+	}
+	if (FUN20(VAR34, VAR156))
+		if (!FUN43(VAR34)) {
+			FUN9(VAR34, VAR50,
+			       ""
+			       "");
+			goto VAR155;
+		}
+
+	VAR7->VAR157 = VAR22;
+	FUN44(&VAR7->VAR158, sizeof(VAR159));
+	FUN45(&VAR7->VAR160);
+
+	VAR27 = FUN46(&VAR7->VAR161,
+			FUN47(VAR34));
+	if (!VAR27) {
+		VAR27 = FUN46(&VAR7->VAR162,
+				FUN48(VAR34));
+	}
+	if (!VAR27) {
+		VAR27 = FUN46(&VAR7->VAR163,
+				FUN49(VAR34));
+	}
+	if (!VAR27) {
+		VAR27 = FUN46(&VAR7->VAR164, 0);
+	}
+	if (VAR27) {
+		FUN9(VAR34, VAR50, "");
+		goto VAR165;
+	}
+
+	VAR7->VAR166 = FUN50(VAR7);
+	VAR7->VAR167 = 128;
+
+	
+	if (!FUN17(VAR34, VAR168) &&
+	    FUN18(VAR34, VAR169))
+		VAR34->VAR170 = &VAR171;
+	else
+		VAR34->VAR170 = &VAR172;
+	VAR34->VAR173 = &VAR174;
+	VAR34->VAR175 = VAR176;
+#ifdef VAR177
+	VAR34->VAR178 = &VAR179;
+	VAR34->VAR180 = &VAR181;
+#endif
+	FUN51(&VAR7->VAR182); 
+	FUN52(&VAR7->VAR183);
+	FUN52(&VAR7->VAR184);
+
+	VAR34->VAR185 = NULL;
+
+	VAR24 = (VAR5->VAR186 != 0 ||
+			  FUN20(VAR34,
+				    VAR187));
+
+	
+	if (!FUN17(VAR34, VAR168) &&
+	    FUN18(VAR34, VAR169)) {
+		if (FUN53(VAR34, VAR5, VAR13))
+			goto VAR165;
+	} else if (FUN17(VAR34, VAR168) && !(VAR34->VAR98 & VAR102) &&
+ 	      FUN20(VAR34, VAR187)) {
+ 		FUN9(VAR34, VAR50, ""
+ 		       "");
+
+		goto VAR188;
+
+
+ 	} else {
+ 		FUN54(VAR7->VAR36, VAR189);
+ 		FUN15(VAR7->VAR36, VAR79);
+		VAR7->VAR190 = NULL;
+		VAR24 = 0;
+		goto VAR191;
+	}
+
+	if (FUN35(VAR5) > 0xffffffffULL &&
+ 	    !FUN55(FUN56(VAR34)->VAR190, 0, 0,
+ 				       VAR192)) {
+ 		FUN9(VAR34, VAR50, "");
+
+		goto VAR188;
+
+
+ 	}
+ 
+ 	if (FUN17(VAR34, VAR193)) {
+		FUN55(VAR7->VAR190,
+				VAR194, 0,
+				VAR195);
+	} else if (FUN17(VAR34, VAR196)) {
+		FUN55(VAR7->VAR190,
+				VAR194, 0, 0);
+		FUN57(VAR7->VAR190, 0, 0,
+				VAR195);
+	} else {
+		FUN57(VAR7->VAR190,
+				VAR194, 0,
+				VAR195);
+	}
+
+	
+	switch (FUN17(VAR34, VAR189)) {
+	case 0:
+		
+		if (VAR197
+		    (VAR7->VAR190, 0, 0, VAR198))
+			FUN15(VAR7->VAR36, VAR77);
+		else
+			FUN15(VAR7->VAR36, VAR75);
+		break;
+
+	case VAR199:
+	case VAR200:
+		if (!VAR197
+ 		    (VAR7->VAR190, 0, 0, VAR198)) {
+ 			FUN9(VAR34, VAR50, ""
+ 			       "");
+
+			goto VAR188;
+
+
+ 		}
+ 	default:
+ 		break;
+ 	}
+ 	FUN58(VAR7->VAR190->VAR201, VAR28);
+ 
+ VAR191:
+
+
+ 	if (FUN17(VAR34, VAR202)) {
+ 		if (!(FUN17(VAR34, VAR189) == VAR200)) {
+ 			FUN9(VAR34, VAR62, ""
+ 				"");
+ 			FUN54(VAR7->VAR36, VAR202);
+ 		}
+
+
+
+
+
+
+
+
+
+
+ 	}
+ 	FUN56(VAR34)->VAR203 = FUN59("");
+ 	if (!FUN56(VAR34)->VAR203) {
+		FUN60(VAR50 "");
+		goto VAR204;
+	}
+
+	
+
+	VAR16 = FUN61(VAR34, VAR205);
+	if (FUN62(VAR16)) {
+		FUN9(VAR34, VAR50, "");
+		VAR19 = FUN63(VAR16);
+		goto VAR188;
+	}
+	if (!FUN64(VAR16->VAR206) || !VAR16->VAR207 || !VAR16->VAR144) {
+		FUN65(VAR16);
+		FUN9(VAR34, VAR50, "");
+		goto VAR188;
+	}
+	VAR34->VAR185 = FUN66(VAR16);
+	if (!VAR34->VAR185) {
+		FUN9(VAR34, VAR50, "");
+		FUN65(VAR16);
+		VAR19 = -VAR31;
+		goto VAR188;
+	}
+
+	FUN67(VAR34, VAR5, VAR34->VAR98 & VAR102);
+
+	
+	if (VAR7->VAR111 > VAR112) {
+		VAR7->VAR208 = sizeof(struct VAR209) -
+						     VAR112;
+		if (FUN19(VAR34,
+				       VAR210)) {
+			if (VAR7->VAR208 <
+			    FUN12(VAR5->VAR208))
+				VAR7->VAR208 =
+					FUN12(VAR5->VAR208);
+			if (VAR7->VAR208 <
+			    FUN12(VAR5->VAR211))
+				VAR7->VAR208 =
+					FUN12(VAR5->VAR211);
+		}
+	}
+	
+	if (VAR112 + VAR7->VAR208 >
+							VAR7->VAR111) {
+		VAR7->VAR208 = sizeof(struct VAR209) -
+						       VAR112;
+		FUN9(VAR34, VAR212, ""
+			 "");
+	}
+
+	if (FUN17(VAR34, VAR96) &&
+	    (FUN17(VAR34, VAR189) == VAR213)) {
+		FUN9(VAR34, VAR62, ""
+ 			 "");
+ 		FUN54(VAR7->VAR36, VAR96);
+ 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 	VAR27 = FUN68(VAR34);
+ 	if (VAR27) {
+		FUN9(VAR34, VAR50, ""
+			 "", VAR27);
+		goto VAR188;
+	}
+
+	FUN69(VAR34);
+	VAR27 = FUN70(VAR34, VAR24);
+	if (VAR27) {
+		FUN9(VAR34, VAR50, "",
+			 VAR27);
+		goto VAR188;
+	}
+
+	VAR7->VAR214.VAR215 = VAR216;
+	FUN71(&VAR7->VAR217);
+	VAR27 = FUN72(&VAR7->VAR214, &VAR218, NULL,
+				   "", VAR34->VAR48);
+	if (VAR27) {
+		FUN73(VAR34);
+		FUN74(VAR34);
+		goto VAR188;
+	};
+
+	FUN56(VAR34)->VAR128 |= VAR219;
+	FUN75(VAR34, VAR5);
+	FUN56(VAR34)->VAR128 &= ~VAR219;
+	if (VAR24) {
+		FUN9(VAR34, VAR212, "");
+		FUN76(VAR34, VAR5);
+	}
+	if (FUN56(VAR34)->VAR190) {
+		if (FUN17(VAR34, VAR189) == VAR213)
+			VAR18 = "";
+		else if (FUN17(VAR34, VAR189) == VAR199)
+			VAR18 = "";
+		else
+			VAR18 = "";
+	} else
+		VAR18 = "";
+
+	FUN9(VAR34, VAR212, "", VAR18);
+
+	FUN77();
+	return 0;
+
+VAR56:
+	if (!VAR220)
+		FUN9(VAR34, VAR50, "");
+	goto VAR97;
+
+VAR188:
+	FUN9(VAR34, VAR50, "");
+	FUN78(FUN56(VAR34)->VAR203);
+VAR204:
+	FUN79(VAR34);
+	if (VAR7->VAR190) {
+		FUN80(VAR7->VAR190);
+		VAR7->VAR190 = NULL;
+	}
+VAR165:
+	if (VAR7->VAR221) {
+		if (FUN81(VAR7->VAR221))
+			FUN82(VAR7->VAR221);
+		else
+			FUN5(VAR7->VAR221);
+	}
+	FUN83(&VAR7->VAR161);
+	FUN83(&VAR7->VAR162);
+	FUN83(&VAR7->VAR163);
+	FUN83(&VAR7->VAR164);
+VAR155:
+	for (VAR23 = 0; VAR23 < VAR22; VAR23++)
+		FUN23(VAR7->VAR151[VAR23]);
+	FUN5(VAR7->VAR151);
+VAR97:
+	if (VAR7->VAR154) {
+		FUN84(VAR34->VAR48, VAR153);
+	}
+#ifdef VAR177
+	for (VAR23 = 0; VAR23 < VAR222; VAR23++)
+		FUN5(VAR7->VAR223[VAR23]);
+#endif
+	FUN85(VAR7);
+	FUN23(VAR3);
+VAR51:
+	VAR34->VAR35 = NULL;
+	FUN5(VAR7->VAR32);
+	FUN5(VAR7);
+	FUN77();
+	return VAR19;
+}

@@ -1,0 +1,8 @@
+VAR1::VAR2<VAR3> VAR4::FUN1(
+    ExtensionFilter VAR5) const {
+  VAR1::VAR2<VAR3> VAR6;
+  FUN2(VAR7, VAR5, &VAR6);
+  FUN2(VAR8, VAR5, &VAR6);
+  FUN2(VAR9, VAR5, &VAR6);
+  return VAR6;
+}

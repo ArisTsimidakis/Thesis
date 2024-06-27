@@ -1,0 +1,128 @@
+class VAR1{
+    public void FUN1() throws Throwable
+        {
+            short VAR2;
+    
+            VAR2 = VAR3.VAR4; 
+    
+            
+            {
+                Socket VAR5 = null;
+                BufferedReader VAR6 = null;
+                InputStreamReader VAR7 = null;
+    
+                try
+                {
+                    
+                    VAR5 = new Socket("", 39544);
+    
+                    
+    
+                    VAR7 = new InputStreamReader(VAR5.getInputStream(), "");
+                    VAR6 = new BufferedReader(VAR7);
+    
+                    
+                    String VAR8 = VAR6.readLine();
+                    if (VAR8 != null) 
+                    {
+                        try
+                        {
+                            VAR2 = VAR3.FUN2(VAR8.trim());
+                        }
+                        catch(NumberFormatException VAR9)
+                        {
+                            VAR10.VAR11.log(VAR12.VAR13, "", VAR9);
+                        }
+                    }
+                }
+                catch (IOException VAR14)
+                {
+                    VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+                }
+                finally
+                {
+                    
+                    try
+                    {
+                        if (VAR6 != null)
+                        {
+                            VAR6.close();
+                        }
+                    }
+                    catch (IOException VAR14)
+                    {
+                        VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+                    }
+    
+                    try
+                    {
+                        if (VAR7 != null)
+                        {
+                            VAR7.close();
+                        }
+                    }
+                    catch (IOException VAR14)
+                    {
+                        VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+                    }
+    
+                    
+                    try
+                    {
+                        if (VAR5 != null)
+                        {
+                            VAR5.close();
+                        }
+                    }
+                    catch (IOException VAR14)
+                    {
+                        VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+                    }
+                }
+            }
+    
+            
+            ByteArrayOutputStream VAR15 = null;
+            ObjectOutput VAR16 = null;
+    
+            try
+            {
+                VAR15 = new FUN3() ;
+                VAR16 = new FUN4(VAR15) ;
+                VAR16.FUN5(VAR2);
+                byte[] VAR17 = VAR15.FUN6();
+                (new FUN7()).FUN8(VAR17  );
+            }
+            catch (IOException VAR14)
+            {
+                VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+            }
+            finally
+            {
+                
+                try
+                {
+                    if (VAR16 != null)
+                    {
+                        VAR16.close();
+                    }
+                }
+                catch (IOException VAR14)
+                {
+                    VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+                }
+    
+                try
+                {
+                    if (VAR15 != null)
+                    {
+                        VAR15.close();
+                    }
+                }
+                catch (IOException VAR14)
+                {
+                    VAR10.VAR11.log(VAR12.VAR13, "", VAR14);
+                }
+            }
+        }
+};

@@ -1,0 +1,29 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"24" [label = <(METHOD_RETURN,int)<SUB>1</SUB>> ]
+"11" [label = <(&lt;operator&gt;.assignment,VAR1 = VAR2.FUN2())<SUB>2</SUB>> ]
+"22" [label = <(RETURN,return VAR1;,return VAR1;)<SUB>12</SUB>> ]
+"23" [label = <(IDENTIFIER,VAR1,return VAR1;)<SUB>12</SUB>> ]
+"13" [label = <(FUN2,VAR2.FUN2())<SUB>2</SUB>> ]
+"20" [label = <(&lt;operator&gt;.postDecrement,VAR1--)<SUB>9</SUB>> ]
+"18" [label = <(UNKNOWN,VAR2.FUN3(VAR3::VAR4) !=
+
+        VAR2.FUN4(),VAR2.FUN3(VAR3::VAR4) !=
+
+        VAR2.FUN4())<SUB>4</SUB>> ]
+  "22" -> "24"  [ label = "DDG: &lt;RET&gt;"] 
+  "11" -> "24"  [ label = "DDG: VAR1"] 
+  "13" -> "24"  [ label = "DDG: VAR2.FUN2"] 
+  "11" -> "24"  [ label = "DDG: VAR2.FUN2()"] 
+  "11" -> "24"  [ label = "DDG: VAR1 = VAR2.FUN2()"] 
+  "20" -> "24"  [ label = "DDG: VAR1"] 
+  "20" -> "24"  [ label = "DDG: VAR1--"] 
+  "13" -> "11"  [ label = "DDG: VAR2.FUN2"] 
+  "23" -> "22"  [ label = "DDG: VAR1"] 
+  "11" -> "23"  [ label = "DDG: VAR1"] 
+  "20" -> "23"  [ label = "DDG: VAR1"] 
+  "8" -> "23"  [ label = "DDG: "] 
+  "11" -> "20"  [ label = "DDG: VAR1"] 
+  "8" -> "20"  [ label = "DDG: "] 
+  "18" -> "20"  [ label = "CDG: "] 
+}

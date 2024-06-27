@@ -1,0 +1,18 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"22" [label = <(METHOD_RETURN,ANY)<SUB>1</SUB>> ]
+"9" [label = <(PARAM,struct VAR1 *VAR2)<SUB>1</SUB>> ]
+"10" [label = <(PARAM,struct VAR3 *VAR4)<SUB>1</SUB>> ]
+"12" [label = <(FUN2,FUN2(&amp;VAR4-&gt;VAR5))<SUB>3</SUB>> ]
+"17" [label = <(FUN3,FUN3(&amp;VAR2-&gt;VAR6))<SUB>5</SUB>> ]
+  "9" -> "22"  [ label = "DDG: VAR2"] 
+  "10" -> "22"  [ label = "DDG: VAR4"] 
+  "12" -> "22"  [ label = "DDG: &amp;VAR4-&gt;VAR5"] 
+  "12" -> "22"  [ label = "DDG: FUN2(&amp;VAR4-&gt;VAR5)"] 
+  "17" -> "22"  [ label = "DDG: &amp;VAR2-&gt;VAR6"] 
+  "17" -> "22"  [ label = "DDG: FUN3(&amp;VAR2-&gt;VAR6)"] 
+  "8" -> "9"  [ label = "DDG: "] 
+  "8" -> "10"  [ label = "DDG: "] 
+  "10" -> "12"  [ label = "DDG: VAR4"] 
+  "9" -> "17"  [ label = "DDG: VAR2"] 
+}

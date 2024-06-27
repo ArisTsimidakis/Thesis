@@ -1,0 +1,19 @@
+class VAR1{
+    public void FUN1() throws Throwable
+        {
+            int VAR2;
+    
+            
+    
+            
+    
+            VAR2 = 5;
+    
+            for (int VAR3 = 0; VAR3 < 1; VAR3++)
+            {
+                
+                VAR2 = 10;
+                VAR4.writeLine("" + VAR2);
+            }
+        }
+};

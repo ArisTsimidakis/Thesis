@@ -1,0 +1,26 @@
+static void FUN1 (VAR1 *VAR2, VAR3 *VAR4, VAR5 *VAR6, EAS_I32 VAR7)
+{
+    VAR8 *VAR9;
+ const VAR10 *VAR11;
+
+#ifdef VAR12
+ if (VAR6->VAR13 & VAR14)
+ {
+        FUN2(VAR2, VAR4, VAR6, VAR7);
+ return;
+ }
+#endif
+
+    VAR9 = &VAR2->VAR15[VAR7];
+    VAR11 = &VAR4->VAR16->VAR17[VAR9->VAR18];
+
+ 
+    VAR9->VAR19 = VAR20;
+    VAR9->VAR21 = VAR11->VAR22.VAR23;
+
+ 
+
+ 
+    VAR9->VAR24 = VAR20;
+    VAR9->VAR25 = VAR11->VAR26.VAR23;
+}

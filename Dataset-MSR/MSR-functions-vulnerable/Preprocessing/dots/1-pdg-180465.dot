@@ -1,0 +1,14 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"16" [label = <(METHOD_RETURN,char*)<SUB>1</SUB>> ]
+"9" [label = <(PARAM,VAR1 *VAR2)<SUB>1</SUB>> ]
+"11" [label = <(RETURN,return FUN2( VAR2, 0, 1 );,return FUN2( VAR2, 0, 1 );)<SUB>5</SUB>> ]
+"12" [label = <(FUN2,FUN2( VAR2, 0, 1 ))<SUB>5</SUB>> ]
+  "11" -> "16"  [ label = "DDG: &lt;RET&gt;"] 
+  "12" -> "16"  [ label = "DDG: VAR2"] 
+  "12" -> "16"  [ label = "DDG: FUN2( VAR2, 0, 1 )"] 
+  "8" -> "9"  [ label = "DDG: "] 
+  "12" -> "11"  [ label = "DDG: FUN2( VAR2, 0, 1 )"] 
+  "9" -> "12"  [ label = "DDG: VAR2"] 
+  "8" -> "12"  [ label = "DDG: "] 
+}

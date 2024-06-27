@@ -1,0 +1,30 @@
+void VAR1::FUN1(bool VAR2, int32_t VAR3) {
+    OMX_U32 VAR4 = VAR5 ? VAR6 : VAR7;
+
+    OMX_AUDIO_PARAM_AMRTYPE VAR8;
+ FUN2(&VAR8);
+    VAR8.VAR9 = VAR4;
+
+ status_t VAR10 =
+        VAR11->FUN3(VAR12, VAR13, &VAR8, sizeof(VAR8));
+
+    FUN4(VAR10, (VAR14)VAR15);
+
+    VAR8.VAR16 = VAR17;
+
+    VAR8.VAR18 = FUN5(VAR2, VAR3);
+    VAR10 = VAR11->FUN6(VAR12, VAR13, &VAR8, sizeof(VAR8));
+    FUN4(VAR10, (VAR14)VAR15);
+
+ 
+
+ if (VAR5) {
+        VAR19<VAR20> VAR21 = VAR22->FUN7();
+ int32_t VAR23;
+ int32_t VAR24;
+        FUN8(VAR21->FUN9(VAR25, &VAR23));
+        FUN8(VAR21->FUN9(VAR26, &VAR24));
+
+        FUN10(VAR7, VAR23, VAR24);
+ }
+}

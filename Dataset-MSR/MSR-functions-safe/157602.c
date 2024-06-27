@@ -1,0 +1,1 @@
+FUN1() : FUN2(false) {}

@@ -1,5 +1,12 @@
 /.vscode
-/kaybee
-/no_kfold
-/java_test
-/Original/MSR-functions-vulnerable
+/best_models
+/Dataset-JULIET/Preprocessing
+/Dataset-MSR/MSR-functions-safe/Preprocessing
+/Dataset-MSR/MSR-functions-safe/java-emb-images
+/Dataset-SARD/Preprocessing
+/Dataset-SARD/java-emb-images
+/embedding-models
+/Helpers
+/Implementations
+/Misc
+notes.md

@@ -1,0 +1,37 @@
+static void FUN1(struct VAR1 *VAR2,
+		struct VAR3 *VAR4,
+		struct VAR5 *VAR6, unsigned int VAR7)
+{
+	__u32 VAR8 = VAR9 | VAR7;
+
+	struct VAR10 *VAR11;
+	struct VAR12 *VAR13 = &VAR4->VAR14.VAR15;
+	struct VAR16 *VAR17 = &VAR6->VAR17;
+
+	if (VAR6->VAR18.VAR19.VAR20)
+		VAR8 |= VAR21;
+
+	VAR11 = (struct VAR10 *)VAR2->VAR22;
+	VAR11->VAR23 = 0;
+
+	
+	if (FUN2(VAR4)) {
+		VAR13->VAR24.VAR25 = VAR11->VAR26;
+		VAR13->VAR24.VAR27	= VAR11->VAR28;
+	} else {
+		
+		struct timespec VAR29;
+		FUN3(&VAR29);
+		VAR13->VAR24.VAR25 = VAR29.VAR30;
+		VAR13->VAR24.VAR27	= VAR29.VAR31;
+	}
+
+	FUN4();
+
+	
+	FUN5(VAR2, VAR4, VAR8);
+
+	VAR17->FUN6(VAR17);
+
+	VAR2->VAR32 = FUN7(VAR2);
+}

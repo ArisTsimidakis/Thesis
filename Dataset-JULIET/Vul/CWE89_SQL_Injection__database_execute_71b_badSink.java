@@ -1,0 +1,58 @@
+class VAR1{
+    public void FUN1(Object VAR2 ) throws Throwable
+        {
+            String VAR3 = (String)VAR2;
+    
+            Connection VAR4 = null;
+            Statement VAR5 = null;
+    
+            try
+            {
+                VAR4 = VAR6.FUN2();
+                VAR5 = VAR4.createStatement();
+    
+                
+                Boolean VAR7 = VAR5.execute(""+VAR3+"");
+    
+                if(VAR7)
+                {
+                    VAR6.writeLine("" + VAR3 + "");
+                }
+                else
+                {
+                    VAR6.writeLine("" + VAR3);
+                }
+            }
+            catch (SQLException VAR8)
+            {
+                VAR6.VAR9.log(VAR10.VAR11, "", VAR8);
+            }
+            finally
+            {
+                try
+                {
+                    if (VAR5 != null)
+                    {
+                        VAR5.close();
+                    }
+                }
+                catch (SQLException VAR8)
+                {
+                    VAR6.VAR9.log(VAR10.VAR11, "", VAR8);
+                }
+    
+                try
+                {
+                    if (VAR4 != null)
+                    {
+                        VAR4.close();
+                    }
+                }
+                catch (SQLException VAR8)
+                {
+                    VAR6.VAR9.log(VAR10.VAR11, "", VAR8);
+                }
+            }
+    
+        }
+};

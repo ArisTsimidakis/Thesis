@@ -1,0 +1,12 @@
+class VAR1{
+    public void FUN1() throws Throwable
+        {
+            Integer VAR2 = null;
+    
+            
+            VAR2 = null;
+    
+            VAR3 = true;
+            (new FUN2()).FUN3(VAR2 );
+        }
+};

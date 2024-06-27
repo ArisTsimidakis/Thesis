@@ -1,0 +1,43 @@
+void FUN1(VAR1* VAR2, const VAR3::VAR4& VAR5) {
+  VAR6::string16 VAR7;
+  VAR5.FUN2(&VAR7);
+  if (!VAR7.FUN3())
+    VAR2->VAR8 = VAR6::FUN4(VAR7, false);
+ 
+   GURL VAR9;
+   VAR6::string16 VAR10;
+
+  VAR5.FUN5(&VAR9, &VAR10);
+
+
+
+
+   if (VAR9.FUN6()) {
+     VAR2->VAR9 = VAR9;
+     VAR2->VAR10 = VAR10;
+  }
+
+  VAR6::string16 VAR11;
+  GURL VAR12;
+  VAR5.FUN7(&VAR11, &VAR12);
+  if (!VAR11.FUN3())
+    VAR2->VAR11 = VAR6::FUN4(VAR11, false);
+  if (VAR12.FUN6())
+    VAR2->VAR12 = VAR12;
+
+  VAR13::VAR14<VAR3::VAR4::VAR15> VAR16;
+  if (VAR5.FUN8(&VAR16) && !VAR16.FUN3()) {
+    for (VAR13::VAR14<VAR3::VAR4::VAR15>::VAR17
+             VAR18 = VAR16.FUN9(); VAR18 != VAR16.FUN10(); ++VAR18) {
+      VAR2->VAR19.FUN11(
+          VAR1::FUN12(
+              VAR6::FUN13(VAR18->VAR20.FUN14()),
+              VAR6::FUN13(VAR18->VAR21.FUN14())));
+    }
+  }
+
+  Pickle VAR22;
+  if (VAR5.FUN15(VAR3::VAR23::FUN16(), &VAR22))
+    VAR3::FUN17(
+        VAR22.FUN18(), VAR22.FUN19(), &VAR2->VAR24);
+}

@@ -1,0 +1,206 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"124" [label = <(METHOD_RETURN,void)<SUB>1</SUB>> ]
+"9" [label = <(PARAM,char *VAR1)<SUB>1</SUB>> ]
+"16" [label = <(&lt;operator&gt;.assignment,VAR2 = strchr(VAR1, ''))<SUB>4</SUB>> ]
+"30" [label = <(BLOCK,{
+ 		const size_t VAR8 = VAR2 - VAR1;
+
+
+
+
+
+
+
+
+
+...,{
+ 		const size_t VAR8 = VAR2 - VAR1;
+
+
+
+
+
+
+
+
+
+...)<SUB>9</SUB>> ]
+"46" [label = <(&lt;operator&gt;.postIncrement,VAR2 ++)<SUB>24</SUB>> ]
+"48" [label = <(&lt;operator&gt;.assignment,VAR3 = strchr(VAR2, ''))<SUB>25</SUB>> ]
+"62" [label = <(BLOCK,{
+ 		const size_t VAR8 = VAR3 - VAR2;
+
+
+
+
+
+
+
+
+ ...,{
+ 		const size_t VAR8 = VAR3 - VAR2;
+
+
+
+
+
+
+
+
+ ...)<SUB>30</SUB>> ]
+"114" [label = <(FUN4,FUN4(VAR9, VAR4, VAR5, VAR6[0] ? VAR6 : NULL))<SUB>65</SUB>> ]
+"22" [label = <(&lt;operator&gt;.logicalNot,!VAR2)<SUB>5</SUB>> ]
+"32" [label = <(&lt;operator&gt;.assignment,VAR8 = VAR2 - VAR1)<SUB>10</SUB>> ]
+"37" [label = <(strncpy,strncpy(VAR4, VAR1, VAR8))<SUB>21</SUB>> ]
+"41" [label = <(&lt;operator&gt;.assignment,VAR4[VAR8] = 0)<SUB>22</SUB>> ]
+"54" [label = <(&lt;operator&gt;.logicalNot,!VAR3)<SUB>26</SUB>> ]
+"64" [label = <(&lt;operator&gt;.assignment,VAR8 = VAR3 - VAR2)<SUB>31</SUB>> ]
+"69" [label = <(strncpy,strncpy(VAR5, VAR2, VAR8))<SUB>40</SUB>> ]
+"73" [label = <(&lt;operator&gt;.assignment,VAR5[VAR8] = 0)<SUB>41</SUB>> ]
+"78" [label = <(strcpy,strcpy(VAR6, VAR3+1))<SUB>50</SUB>> ]
+"84" [label = <(&lt;operator&gt;.logicalNot,!FUN2(VAR5, &quot;&quot;))<SUB>53</SUB>> ]
+"104" [label = <(&lt;operator&gt;.logicalNot,!FUN2(VAR6, &quot;&quot;))<SUB>62</SUB>> ]
+"18" [label = <(strchr,strchr(VAR1, ''))<SUB>4</SUB>> ]
+"25" [label = <(fprintf,fprintf(VAR7, &quot;&quot;, VAR1))<SUB>6</SUB>> ]
+"29" [label = <(RETURN,return;,return;)<SUB>7</SUB>> ]
+"50" [label = <(strchr,strchr(VAR2, ''))<SUB>25</SUB>> ]
+"57" [label = <(fprintf,fprintf(VAR7, &quot;&quot;, VAR1))<SUB>27</SUB>> ]
+"61" [label = <(RETURN,return;,return;)<SUB>28</SUB>> ]
+"99" [label = <(FUN3,FUN3(VAR9, VAR4))<SUB>58</SUB>> ]
+"102" [label = <(RETURN,return;,return;)<SUB>59</SUB>> ]
+"109" [label = <(&lt;operator&gt;.assignment,VAR6[0]=0)<SUB>63</SUB>> ]
+"118" [label = <(&lt;operator&gt;.conditional,VAR6[0] ? VAR6 : NULL)<SUB>65</SUB>> ]
+"34" [label = <(&lt;operator&gt;.subtraction,VAR2 - VAR1)<SUB>10</SUB>> ]
+"66" [label = <(&lt;operator&gt;.subtraction,VAR3 - VAR2)<SUB>31</SUB>> ]
+"80" [label = <(&lt;operator&gt;.addition,VAR3+1)<SUB>50</SUB>> ]
+"85" [label = <(FUN2,FUN2(VAR5, &quot;&quot;))<SUB>53</SUB>> ]
+"90" [label = <(FUN2,FUN2(VAR6, &quot;&quot;))<SUB>54</SUB>> ]
+"105" [label = <(FUN2,FUN2(VAR6, &quot;&quot;))<SUB>62</SUB>> ]
+"94" [label = <(fprintf,fprintf(VAR7, &quot;&quot;, VAR1))<SUB>55</SUB>> ]
+"98" [label = <(RETURN,return;,return;)<SUB>56</SUB>> ]
+"42" [label = <(&lt;operator&gt;.indirectIndexAccess,VAR4[VAR8])<SUB>22</SUB>> ]
+"74" [label = <(&lt;operator&gt;.indirectIndexAccess,VAR5[VAR8])<SUB>41</SUB>> ]
+"119" [label = <(&lt;operator&gt;.indirectIndexAccess,VAR6[0])<SUB>65</SUB>> ]
+"110" [label = <(&lt;operator&gt;.indirectIndexAccess,VAR6[0])<SUB>63</SUB>> ]
+  "102" -> "124"  [ label = "DDG: &lt;RET&gt;"] 
+  "29" -> "124"  [ label = "DDG: &lt;RET&gt;"] 
+  "98" -> "124"  [ label = "DDG: &lt;RET&gt;"] 
+  "61" -> "124"  [ label = "DDG: &lt;RET&gt;"] 
+  "16" -> "124"  [ label = "DDG: strchr(VAR1, '')"] 
+  "16" -> "124"  [ label = "DDG: VAR2 = strchr(VAR1, '')"] 
+  "22" -> "124"  [ label = "DDG: VAR2"] 
+  "22" -> "124"  [ label = "DDG: !VAR2"] 
+  "25" -> "124"  [ label = "DDG: VAR7"] 
+  "25" -> "124"  [ label = "DDG: VAR1"] 
+  "25" -> "124"  [ label = "DDG: fprintf(VAR7, &quot;&quot;, VAR1)"] 
+  "118" -> "124"  [ label = "DDG: NULL"] 
+  "8" -> "9"  [ label = "DDG: "] 
+  "18" -> "16"  [ label = "DDG: VAR1"] 
+  "18" -> "16"  [ label = "DDG: ''"] 
+  "8" -> "30"  [ label = "DDG: "] 
+  "50" -> "48"  [ label = "DDG: VAR2"] 
+  "50" -> "48"  [ label = "DDG: ''"] 
+  "8" -> "62"  [ label = "DDG: "] 
+  "34" -> "32"  [ label = "DDG: VAR2"] 
+  "34" -> "32"  [ label = "DDG: VAR1"] 
+  "8" -> "41"  [ label = "DDG: "] 
+  "34" -> "46"  [ label = "DDG: VAR2"] 
+  "8" -> "46"  [ label = "DDG: "] 
+  "66" -> "64"  [ label = "DDG: VAR3"] 
+  "66" -> "64"  [ label = "DDG: VAR2"] 
+  "8" -> "73"  [ label = "DDG: "] 
+  "8" -> "114"  [ label = "DDG: "] 
+  "37" -> "114"  [ label = "DDG: VAR4"] 
+  "41" -> "114"  [ label = "DDG: VAR4[VAR8]"] 
+  "73" -> "114"  [ label = "DDG: VAR5[VAR8]"] 
+  "85" -> "114"  [ label = "DDG: VAR5"] 
+  "105" -> "114"  [ label = "DDG: VAR6"] 
+  "109" -> "114"  [ label = "DDG: VAR6[0]"] 
+  "9" -> "18"  [ label = "DDG: VAR1"] 
+  "8" -> "18"  [ label = "DDG: "] 
+  "16" -> "22"  [ label = "DDG: VAR2"] 
+  "8" -> "22"  [ label = "DDG: "] 
+  "8" -> "29"  [ label = "DDG: "] 
+  "8" -> "37"  [ label = "DDG: "] 
+  "34" -> "37"  [ label = "DDG: VAR1"] 
+  "32" -> "37"  [ label = "DDG: VAR8"] 
+  "46" -> "50"  [ label = "DDG: VAR2"] 
+  "8" -> "50"  [ label = "DDG: "] 
+  "48" -> "54"  [ label = "DDG: VAR3"] 
+  "8" -> "54"  [ label = "DDG: "] 
+  "8" -> "61"  [ label = "DDG: "] 
+  "8" -> "69"  [ label = "DDG: "] 
+  "66" -> "69"  [ label = "DDG: VAR2"] 
+  "64" -> "69"  [ label = "DDG: VAR8"] 
+  "8" -> "78"  [ label = "DDG: "] 
+  "66" -> "78"  [ label = "DDG: VAR3"] 
+  "85" -> "84"  [ label = "DDG: VAR5"] 
+  "85" -> "84"  [ label = "DDG: &quot;&quot;"] 
+  "8" -> "102"  [ label = "DDG: "] 
+  "105" -> "104"  [ label = "DDG: VAR6"] 
+  "105" -> "104"  [ label = "DDG: &quot;&quot;"] 
+  "8" -> "109"  [ label = "DDG: "] 
+  "105" -> "118"  [ label = "DDG: VAR6"] 
+  "109" -> "118"  [ label = "DDG: VAR6[0]"] 
+  "8" -> "118"  [ label = "DDG: "] 
+  "8" -> "25"  [ label = "DDG: "] 
+  "18" -> "25"  [ label = "DDG: VAR1"] 
+  "22" -> "34"  [ label = "DDG: VAR2"] 
+  "8" -> "34"  [ label = "DDG: "] 
+  "18" -> "34"  [ label = "DDG: VAR1"] 
+  "8" -> "57"  [ label = "DDG: "] 
+  "37" -> "57"  [ label = "DDG: VAR1"] 
+  "54" -> "66"  [ label = "DDG: VAR3"] 
+  "8" -> "66"  [ label = "DDG: "] 
+  "50" -> "66"  [ label = "DDG: VAR2"] 
+  "66" -> "80"  [ label = "DDG: VAR3"] 
+  "8" -> "80"  [ label = "DDG: "] 
+  "69" -> "85"  [ label = "DDG: VAR5"] 
+  "73" -> "85"  [ label = "DDG: VAR5[VAR8]"] 
+  "8" -> "85"  [ label = "DDG: "] 
+  "8" -> "99"  [ label = "DDG: "] 
+  "37" -> "99"  [ label = "DDG: VAR4"] 
+  "41" -> "99"  [ label = "DDG: VAR4[VAR8]"] 
+  "78" -> "105"  [ label = "DDG: VAR6"] 
+  "8" -> "105"  [ label = "DDG: "] 
+  "78" -> "90"  [ label = "DDG: VAR6"] 
+  "8" -> "90"  [ label = "DDG: "] 
+  "8" -> "98"  [ label = "DDG: "] 
+  "8" -> "94"  [ label = "DDG: "] 
+  "37" -> "94"  [ label = "DDG: VAR1"] 
+  "22" -> "34"  [ label = "CDG: "] 
+  "22" -> "48"  [ label = "CDG: "] 
+  "22" -> "32"  [ label = "CDG: "] 
+  "22" -> "42"  [ label = "CDG: "] 
+  "22" -> "37"  [ label = "CDG: "] 
+  "22" -> "46"  [ label = "CDG: "] 
+  "22" -> "25"  [ label = "CDG: "] 
+  "22" -> "29"  [ label = "CDG: "] 
+  "22" -> "50"  [ label = "CDG: "] 
+  "22" -> "54"  [ label = "CDG: "] 
+  "22" -> "41"  [ label = "CDG: "] 
+  "54" -> "73"  [ label = "CDG: "] 
+  "54" -> "64"  [ label = "CDG: "] 
+  "54" -> "57"  [ label = "CDG: "] 
+  "54" -> "66"  [ label = "CDG: "] 
+  "54" -> "84"  [ label = "CDG: "] 
+  "54" -> "85"  [ label = "CDG: "] 
+  "54" -> "69"  [ label = "CDG: "] 
+  "54" -> "74"  [ label = "CDG: "] 
+  "54" -> "80"  [ label = "CDG: "] 
+  "54" -> "61"  [ label = "CDG: "] 
+  "54" -> "78"  [ label = "CDG: "] 
+  "84" -> "114"  [ label = "CDG: "] 
+  "84" -> "104"  [ label = "CDG: "] 
+  "84" -> "119"  [ label = "CDG: "] 
+  "84" -> "90"  [ label = "CDG: "] 
+  "84" -> "105"  [ label = "CDG: "] 
+  "84" -> "118"  [ label = "CDG: "] 
+  "104" -> "110"  [ label = "CDG: "] 
+  "104" -> "109"  [ label = "CDG: "] 
+  "90" -> "94"  [ label = "CDG: "] 
+  "90" -> "98"  [ label = "CDG: "] 
+  "90" -> "99"  [ label = "CDG: "] 
+  "90" -> "102"  [ label = "CDG: "] 
+}

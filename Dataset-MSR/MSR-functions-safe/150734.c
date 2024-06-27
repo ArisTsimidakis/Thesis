@@ -1,0 +1,1 @@
+explicit FUN1(bool VAR1) : FUN2(VAR1) {}

@@ -1,0 +1,31 @@
+digraph "FUN1" {  
+"9" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"14" [label = <(METHOD_RETURN,const char*)<SUB>1</SUB>> ]
+"10" [label = <(PARAM,void)<SUB>1</SUB>> ]
+"12" [label = <(RETURN,return &quot;&quot;
+
+#if FUN2(VAR1) || FUN2(VAR2)
+
+  &quot;&quot;
+
+...,return &quot;&quot;
+
+#if FUN2(VAR1) || FUN2(VAR2)
+
+  &quot;&quot;
+
+...)<SUB>3</SUB>> ]
+"13" [label = <(LITERAL,&quot;&quot;,return &quot;&quot;
+
+#if FUN2(VAR1) || FUN2(VAR2)
+
+  &quot;&quot;
+
+...)<SUB>3</SUB>> ]
+  "12" -> "14"  [ label = "DDG: &lt;RET&gt;"] 
+  "10" -> "14"  [ label = "DDG: "] 
+  "9" -> "10"  [ label = "DDG: "] 
+  "13" -> "12"  [ label = "DDG: &quot;&quot;"] 
+  "9" -> "12"  [ label = "DDG: "] 
+  "9" -> "13"  [ label = "DDG: "] 
+}

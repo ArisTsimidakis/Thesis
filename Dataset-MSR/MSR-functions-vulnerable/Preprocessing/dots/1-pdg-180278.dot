@@ -1,0 +1,16 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"31" [label = <(METHOD_RETURN,ANY)<SUB>1</SUB>> ]
+"9" [label = <(PARAM,VAR1)<SUB>1</SUB>> ]
+"16" [label = <(&lt;operator&gt;.assignment,*VAR7 = NULL)<SUB>4</SUB>> ]
+"23" [label = <(&lt;operator&gt;.assignment,VAR11 = 0)<SUB>5</SUB>> ]
+  "9" -> "31"  [ label = "DDG: VAR1"] 
+  "16" -> "31"  [ label = "DDG: VAR7"] 
+  "16" -> "31"  [ label = "DDG: *VAR7 = NULL"] 
+  "23" -> "31"  [ label = "DDG: VAR11"] 
+  "23" -> "31"  [ label = "DDG: VAR11 = 0"] 
+  "16" -> "31"  [ label = "DDG: NULL"] 
+  "8" -> "9"  [ label = "DDG: "] 
+  "8" -> "16"  [ label = "DDG: "] 
+  "8" -> "23"  [ label = "DDG: "] 
+}

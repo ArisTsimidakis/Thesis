@@ -1,0 +1,8 @@
+FUN1(VAR1 *VAR2)
+{
+    if (VAR2 == NULL)
+	return;
+
+    FUN2(VAR2);
+    free(VAR2);
+}

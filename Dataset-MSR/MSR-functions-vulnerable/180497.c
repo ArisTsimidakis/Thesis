@@ -1,0 +1,152 @@
+static struct VAR1 *FUN1(const struct VAR1 *VAR2,
+					      struct VAR3 *VAR4,
+					      struct VAR5 *VAR6,
+					      struct VAR7 *VAR8,
+					      struct VAR5 *VAR9,
+					      bool *VAR10)
+{
+ 	struct VAR11 *VAR12 = FUN2(VAR6);
+ 	struct VAR13 *VAR14;
+ 	const struct VAR13 *VAR15 = FUN3(VAR2);
+
+
+ 	struct VAR16 *VAR17;
+ 	struct VAR18 *VAR19;
+ 	struct VAR1 *VAR20;
+
+	if (VAR4->VAR21 == FUN4(VAR22)) {
+		
+		VAR20 = FUN5(VAR2, VAR4, VAR6, VAR8,
+						  VAR9, VAR10);
+		if (VAR20 == NULL)
+			return NULL;
+
+		VAR19 = (struct VAR18 *)VAR20;
+		VAR17 = FUN6(VAR20);
+		VAR17->VAR23 = &VAR19->VAR24;
+		VAR14 = FUN3(VAR20);
+
+		memcpy(VAR14, VAR15, sizeof(struct VAR13));
+
+		VAR14->VAR25 = VAR20->VAR26;
+
+		FUN7(VAR20)->VAR27 = &VAR28;
+		VAR20->VAR29 = VAR30;
+		VAR14->VAR31  = NULL;
+		VAR14->VAR32	   = NULL;
+		VAR14->VAR33   = FUN8(VAR4);
+		VAR14->VAR34  = FUN9(VAR4)->VAR35;
+
+		
+
+		
+		FUN10(VAR20, FUN7(VAR20)->VAR36);
+
+		return VAR20;
+	}
+
+
+	if (FUN11(VAR2))
+		goto VAR37;
+
+	if (!VAR8) {
+		struct flowi6 VAR38;
+
+		VAR8 = FUN12(VAR2, &VAR38, VAR6, VAR39);
+		if (!VAR8)
+			goto VAR40;
+	}
+
+	VAR20 = FUN13(VAR2, VAR6, VAR4);
+	if (VAR20 == NULL)
+		goto VAR41;
+
+	
+
+	FUN14(VAR20, VAR8, NULL, NULL);
+	VAR20->VAR42 = VAR8->VAR43->VAR44 & ~(VAR45 |
+						      VAR46);
+	VAR19 = (struct VAR18 *)VAR20;
+	VAR17 = FUN6(VAR20);
+	VAR17->VAR23 = &VAR19->VAR24;
+	VAR14 = FUN3(VAR20);
+
+	memcpy(VAR14, VAR15, sizeof(struct VAR13));
+
+	VAR20->VAR47	= VAR12->VAR48;
+	VAR14->VAR25		= VAR12->VAR49;
+	VAR20->VAR26	= VAR12->VAR49;
+	VAR20->VAR50	= VAR12->VAR51;
+
+	
+	VAR17->VAR52 = NULL;
+
+	
+	VAR14->VAR53.VAR54 = VAR15->VAR53.VAR54;
+
+	VAR14->VAR31 = NULL;
+	VAR14->VAR32	  = NULL;
+	VAR14->VAR33  = FUN8(VAR4);
+	VAR14->VAR34 = FUN9(VAR4)->VAR35;
+
+	
+
+	if (VAR15->VAR32 != NULL)
+
+		VAR14->VAR32 = FUN15(VAR20, VAR15->VAR32);
+
+
+
+
+
+
+
+
+
+
+
+
+ 	FUN7(VAR20)->VAR55 = 0;
+
+	if (VAR14->VAR32 != NULL)
+
+		FUN7(VAR20)->VAR55 = (VAR14->VAR32->VAR56 +
+
+						     VAR14->VAR32->VAR57);
+
+
+
+
+
+
+ 
+ 	FUN10(VAR20, FUN16(VAR8));
+ 
+	VAR17->VAR58 = VAR17->VAR59 = VAR60;
+	VAR17->VAR61 = VAR60;
+
+	if (FUN17(VAR2, VAR20) < 0) {
+		FUN18(VAR20);
+		FUN19(VAR20);
+		goto VAR40;
+	}
+	*VAR10 = FUN20(VAR20, FUN21(VAR9));
+	
+	if (*VAR10 && VAR12->VAR62) {
+		VAR14->VAR31 = FUN22(VAR12->VAR62, VAR63);
+		FUN23(VAR12->VAR62);
+		VAR12->VAR62 = NULL;
+		if (VAR14->VAR31)
+			FUN24(VAR14->VAR31, VAR20);
+	}
+
+	return VAR20;
+
+VAR37:
+	FUN25(FUN26(VAR2), VAR64);
+VAR41:
+	FUN27(VAR8);
+VAR40:
+	FUN25(FUN26(VAR2), VAR65);
+	return NULL;
+}

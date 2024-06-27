@@ -1,0 +1,23 @@
+class VAR1{
+    public void FUN1() throws Throwable
+        {
+            String VAR2;
+            if (true)
+            {
+                
+                VAR2 = System.FUN2("");
+            }
+            else
+            {
+                
+                VAR2 = null;
+            }
+    
+            if (true)
+            {
+                
+                String VAR3 = VAR2.trim();
+                VAR4.writeLine(VAR3);
+            }
+        }
+};

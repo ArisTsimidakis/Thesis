@@ -1,0 +1,60 @@
+VAR1::FUN1(
+    VAR2* VAR3,
+    const VAR4::VAR5<VAR6*>& VAR7)
+    : FUN2(VAR3), FUN3(nullptr) {
+  FUN4(!VAR7.FUN5());
+
+  FUN6(false);
+  FUN7(VAR8);
+
+#if FUN8(VAR9)
+  
+  
+  
+  if (VAR10::VAR11::FUN9(VAR12::VAR13))
+    FUN10(true);
+#endif
+
+  VAR14* VAR15 = VAR14::FUN11();
+  FUN12(new VAR16::FUN13(
+      VAR16::VAR17::VAR18, VAR19::FUN14(),
+      VAR15->FUN15(VAR16::VAR20)));
+
+  VAR21 = VAR22::FUN16(
+      VAR7[0]->FUN17(),
+      VAR22::VAR23::VAR24);
+
+  bool VAR25 = true;
+  for (size_t VAR26 = 0; VAR26 < VAR7.FUN18(); VAR26++) {
+    VAR16::VAR27* VAR28 = new VAR16::FUN19();
+    int VAR29 =
+        VAR15->FUN15(VAR30);
+    VAR28->FUN12(new VAR16::FUN13(
+        VAR16::VAR17::VAR31, VAR19::FUN14(0, VAR29),
+        VAR15->FUN15(VAR16::VAR32)));
+    VAR16::VAR33* VAR34 = new VAR16::FUN20();
+    const VAR19::VAR35& VAR36 = VAR7[VAR26]->FUN21();
+    VAR34->FUN22(
+        VAR19::FUN23(VAR36, VAR37, VAR19::VAR38));
+    VAR34->FUN24(VAR10::FUN25());  
+    VAR28->FUN26(VAR34);
+    VAR16::VAR39* VAR40 =
+        new VAR16::FUN27(VAR7.FUN28(VAR26)->FUN29());
+    VAR40->FUN30(VAR19::VAR41);
+    VAR28->FUN26(VAR40);
+    FUN26(VAR28);
+
+    
+    VAR25 = VAR25 &&
+                              VAR7[VAR26]->FUN31();
+  }
+
+  if (VAR25) {
+    VAR42 = new VAR16::FUN32(
+        VAR43::FUN33(VAR44));
+    VAR42->FUN30(VAR19::VAR41);
+    VAR42->FUN34(true);
+    FUN26(VAR42);
+  }
+  VAR45::FUN35(VAR45::VAR46::VAR47);
+}

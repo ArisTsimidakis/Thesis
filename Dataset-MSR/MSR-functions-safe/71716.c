@@ -1,0 +1,63 @@
+ModuleExport VAR1 FUN1(void)
+{
+  char
+    VAR2[VAR3];
+
+  VAR4
+    *VAR5;
+
+  *VAR2='';
+#if FUN2(VAR6)
+  (void) FUN3(VAR2,"" VAR6,VAR3);
+#endif
+#if FUN2(VAR7)
+#if !FUN4(2,35,0)
+  FUN5();
+#endif
+  (void) FUN6(VAR2,VAR3,"",
+    VAR8,VAR9,VAR10);
+#endif
+#if FUN2(VAR11)
+  FUN7();
+#endif
+  VAR5=FUN8("");
+#if FUN2(VAR11)
+  VAR5->VAR12=(VAR13 *) VAR14;
+#endif
+  VAR5->VAR15=(VAR16 *) VAR17;
+  VAR5->VAR18=VAR19;
+  VAR5->VAR20=VAR19;
+  VAR5->VAR21=FUN9("");
+  VAR5->VAR22=FUN9("");
+  if (*VAR2 != '')
+    VAR5->VAR2=FUN9(VAR2);
+  VAR5->VAR23=(VAR24 *) VAR25;
+  VAR5->VAR26=FUN9("");
+  (void) FUN10(VAR5);
+  VAR5=FUN8("");
+#if FUN2(VAR11)
+  VAR5->VAR12=(VAR13 *) VAR14;
+#endif
+  VAR5->VAR15=(VAR16 *) VAR17;
+  VAR5->VAR18=VAR19;
+  VAR5->VAR20=VAR19;
+  VAR5->VAR21=FUN9("");
+  VAR5->VAR22=FUN9("");
+  if (*VAR2 != '')
+    VAR5->VAR2=FUN9(VAR2);
+  VAR5->VAR23=(VAR24 *) VAR25;
+  VAR5->VAR26=FUN9("");
+  (void) FUN10(VAR5);
+  VAR5=FUN8("");
+#if FUN2(VAR11)
+  VAR5->VAR12=(VAR13 *) VAR14;
+#endif
+  VAR5->VAR15=(VAR16 *) VAR17;
+  VAR5->VAR18=VAR19;
+  VAR5->VAR20=VAR19;
+  VAR5->VAR21=FUN9("");
+  VAR5->VAR23=(VAR24 *) VAR25;
+  VAR5->VAR26=FUN9("");
+  (void) FUN10(VAR5);
+  return(VAR27);
+}

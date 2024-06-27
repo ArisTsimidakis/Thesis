@@ -1,0 +1,19 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            if (FUN2())
+            {
+                
+                VAR2.writeLine("");
+            }
+            else
+            {
+    
+                
+                SecureRandom VAR3 = new FUN3();
+    
+                VAR2.writeLine("" + VAR3.nextDouble());
+    
+            }
+        }
+};

@@ -1,0 +1,6 @@
+FUN1(VAR1)
+{
+	FUN2(VAR2) = NULL;
+	FUN2(VAR3) = FUN2(VAR4);
+	return VAR5;
+}

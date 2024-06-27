@@ -1,0 +1,68 @@
+static struct VAR1 *FUN1(struct VAR1 *VAR2, u32 VAR3)
+{
+	struct VAR1 *VAR4 = FUN2(-VAR5);
+	unsigned int VAR6;
+	unsigned int VAR7, VAR8;
+	struct VAR9 *VAR10;
+	VAR11 *VAR12, *VAR13;
+	u8 VAR14;
+	u8 VAR15 = sizeof(struct VAR9);
+	int VAR16;
+	__wsum VAR17;
+
+	VAR6 = FUN3(VAR2)->VAR18;
+	if (FUN4(VAR2->VAR19 <= VAR6))
+		goto VAR20;
+
+	if (FUN5(VAR2, VAR3 | VAR21)) {
+		
+		int VAR22 = FUN3(VAR2)->VAR23;
+
+		if (FUN4(VAR22 & ~(VAR24 | VAR25) ||
+			     !(VAR22 & (VAR24))))
+			goto VAR20;
+
+		FUN3(VAR2)->VAR26 = FUN6(VAR2->VAR19, VAR6);
+
+		VAR4 = NULL;
+		goto VAR20;
+	}
+
+	
+	VAR16 = VAR2->VAR27 - FUN7(VAR2);
+	VAR17 = FUN8(VAR2, VAR16, VAR2->VAR19- VAR16, 0);
+	VAR16 += VAR2->VAR28;
+	*(VAR29 *)(VAR2->VAR30 + VAR16) = FUN9(VAR17);
+ 	VAR2->VAR31 = VAR32;
+ 
+ 	
+
+	if ((FUN7(VAR2) < VAR15) &&
+
+
+ 	    FUN10(VAR2, VAR15, 0, VAR33))
+ 		goto VAR20;
+ 
+	
+	VAR7 = FUN11(VAR2, &VAR13);
+	VAR14 = *VAR13;
+	*VAR13 = VAR34;
+	VAR8 = FUN12(VAR2) - FUN13(VAR2) +
+		     VAR7;
+	VAR12 = FUN13(VAR2);
+	memmove(VAR12-VAR15, VAR12, VAR8);
+
+	VAR2->VAR35 -= VAR15;
+	VAR2->VAR36 -= VAR15;
+
+	VAR10 = (struct VAR9 *)(FUN12(VAR2) + VAR7);
+	VAR10->VAR14 = VAR14;
+	VAR10->VAR37 = 0;
+	FUN14(VAR10);
+
+	
+	VAR4 = FUN15(VAR2, VAR3);
+
+VAR20:
+	return VAR4;
+}

@@ -1,0 +1,61 @@
+FUN1(VAR1 * VAR2, VAR3 * VAR4,
+		unsigned char *VAR5, int VAR6, int VAR7)
+{
+	int VAR8, VAR9;
+	VAR10 *VAR11 = VAR2->VAR12;
+	VAR13 *VAR14 = &VAR4->VAR15;
+
+	VAR4->VAR16.VAR17 = VAR5[0];	
+	VAR14->VAR18 = 0;
+	VAR14->VAR19 = 0;
+	VAR14->VAR20 = 0;
+	VAR14->VAR21 = 0;
+	VAR14->VAR22 = 0;
+	VAR14->VAR23 = 0;
+	VAR14->VAR24 = 0;
+	FUN2(4, FUN3(VAR25, VAR2->VAR12,
+			"",
+			(int) VAR5[0], (int) VAR14->VAR26));
+
+	VAR8 = FUN4(VAR4, VAR5);
+	if (VAR8) {
+		FUN2(1, FUN3(VAR25, VAR2->VAR12,
+			"", VAR8));
+		FUN5(VAR4);
+ 		return VAR8;	
+ 	}
+ 	if (FUN6(&VAR11->VAR27)) {
+
+		if (VAR4->VAR28)
+
+
+
+
+
+
+
+
+ 			FUN7(VAR4->VAR29, -VAR30);
+
+
+
+
+
+
+ 		FUN5(VAR4);
+ 		return -VAR31;
+ 	}
+
+	VAR14->VAR32 = FUN8(VAR33);
+	if (VAR14->VAR34 != '' &&	
+	    (VAR35 & VAR14->VAR36))
+		VAR9 = 0;
+	else
+		VAR9 = 1;
+
+	VAR4->VAR29->VAR6 = VAR6;
+	FUN9(&VAR2->VAR37); 
+	FUN10(VAR11->VAR38->VAR39, VAR11->VAR40,
+			      VAR4->VAR29, VAR9, VAR41);
+	return 0;
+}

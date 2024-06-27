@@ -1,0 +1,97 @@
+int FUN1(struct VAR1 *VAR2, u32 VAR3, u32 VAR4,
+			    struct VAR5 *VAR6, u16 VAR7,
+			    u32 VAR8, u32 VAR9, int VAR10,
+			    u32 VAR11,
+			    int (*VAR12)(struct VAR1 *VAR2,
+					     struct VAR5 *VAR6,
+					     u32 VAR11))
+{
+	struct VAR13 *VAR14;
+	struct VAR15 *VAR16;
+	struct VAR17 *VAR18;
+	struct VAR17 *VAR19;
+	u8 VAR20 = FUN2(VAR6) ? VAR6->VAR20 : VAR21;
+	struct VAR5 *VAR22 = FUN3(VAR6);
+	int VAR23 = 0;
+
+	VAR14 = FUN4(VAR2, VAR3, VAR4, VAR24, sizeof(*VAR16), VAR10);
+	if (VAR14 == NULL)
+		return -VAR25;
+
+	VAR16 = FUN5(VAR14);
+	VAR16->VAR26 = VAR27;
+	VAR16->VAR28 = 0;
+	VAR16->VAR29 = VAR6->VAR30;
+	VAR16->VAR31 = VAR6->VAR32;
+	VAR16->VAR33 = FUN6(VAR6);
+	VAR16->VAR34 = 0;
+
+
+	if (FUN7(VAR2, VAR35, VAR6->VAR36) ||
+	    FUN8(VAR2, VAR37, VAR6->VAR38) ||
+	    FUN9(VAR2, VAR39, VAR20) ||
+	    (VAR22 &&
+	     FUN8(VAR2, VAR40, VAR22->VAR32)) ||
+	    (VAR6->VAR41 &&
+	     FUN10(VAR2, VAR42, VAR6->VAR41, VAR6->VAR43)) ||
+	    (VAR6->VAR32 != FUN11(VAR6) &&
+	     FUN8(VAR2, VAR44, FUN11(VAR6))))
+		goto VAR45;
+
+	VAR18 = FUN12(VAR2, VAR46);
+	if (!VAR18)
+		goto VAR45;
+
+	if (FUN13(VAR2, VAR47, VAR48)) {
+		FUN14(VAR2, VAR18);
+		goto VAR45;
+	}
+
+	if (VAR7 != VAR49) {
+		if (FUN13(VAR2, VAR50, VAR7)) {
+			FUN14(VAR2, VAR18);
+			goto VAR45;
+		}
+	}
+	if (VAR12) {
+		VAR23 = FUN15(VAR2, VAR6, VAR11);
+		if (VAR23) {
+			FUN14(VAR2, VAR18);
+			goto VAR45;
+		}
+	}
+	FUN16(VAR2, VAR18);
+
+	VAR19 = FUN12(VAR2, VAR51 | VAR52);
+	if (!VAR19)
+		goto VAR45;
+
+	if (FUN17(VAR2, VAR8, VAR9,
+				VAR53, VAR54) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR55, VAR56) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR57,
+				VAR58) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR59, VAR60) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR61, VAR62) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR63, VAR64) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR65, VAR66) ||
+	    FUN17(VAR2, VAR8, VAR9,
+				VAR67, VAR68)) {
+		FUN14(VAR2, VAR19);
+		goto VAR45;
+	}
+
+	FUN16(VAR2, VAR19);
+
+	FUN18(VAR2, VAR14);
+	return 0;
+VAR45:
+	FUN19(VAR2, VAR14);
+	return VAR23 ? VAR23 : -VAR25;
+}

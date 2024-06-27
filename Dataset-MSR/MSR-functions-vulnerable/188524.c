@@ -1,0 +1,7 @@
+virtual void FUN1(const VAR1 *VAR2) {
+
+    if (VAR2->VAR3.VAR4.VAR5 & VAR6) {
+
+    }
+
+  }

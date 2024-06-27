@@ -1,0 +1,23 @@
+class VAR1{
+    public void FUN1() throws Throwable
+        {
+            long VAR2;
+            if (true)
+            {
+                
+                VAR2 = (new VAR3.VAR4.FUN2()).FUN3();
+            }
+            else
+            {
+                
+                VAR2 = 0L;
+            }
+    
+            if (true)
+            {
+                
+                long VAR5 = (long)(VAR2 + 1);
+                VAR6.writeLine("" + VAR5);
+            }
+        }
+};

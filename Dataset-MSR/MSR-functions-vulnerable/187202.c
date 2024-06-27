@@ -1,0 +1,17 @@
+VAR1::FUN1(VAR2::VAR3* VAR4)
+     : FUN2(0),
+
+      FUN3(VAR5::VAR6::FUN4(15)) {
+
+
+
+
+   VAR7 = VAR8::VAR9<VAR10>(VAR4);
+   FUN5(!VAR11);
+   VAR11 = this;
+  VAR5::VAR12::VAR13::FUN6()->FUN7(
+      VAR14::VAR15);
+
+  VAR16 = VAR8::VAR9<VAR17>(
+      VAR5::VAR12::VAR18::FUN6(), nullptr);
+}

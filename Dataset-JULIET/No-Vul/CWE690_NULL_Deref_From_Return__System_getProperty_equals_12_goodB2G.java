@@ -1,0 +1,37 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            String VAR2;
+            if(VAR3.FUN2())
+            {
+                
+                VAR2 = System.FUN3("");
+            }
+            else
+            {
+    
+                
+                VAR2 = System.FUN3("");
+    
+            }
+    
+            if(VAR3.FUN2())
+            {
+                
+                if("".equals(VAR2))
+                {
+                    VAR3.writeLine("");
+                }
+            }
+            else
+            {
+    
+                
+                if("".equals(VAR2))
+                {
+                    VAR3.writeLine("");
+                }
+    
+            }
+        }
+};

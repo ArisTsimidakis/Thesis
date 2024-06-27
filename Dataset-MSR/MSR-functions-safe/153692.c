@@ -1,0 +1,3 @@
+bool VAR1::FUN1(GLenum VAR2, VAR3* VAR4) {
+  return FUN2(VAR2, VAR4);
+}

@@ -1,0 +1,21 @@
+VAR1* VAR2::FUN1(
+    VAR3* VAR4,
+    VAR5* VAR6,
+    int VAR7,
+    VAR8<VAR9::VAR10> VAR11) {
+  VAR2* VAR12 = new FUN2(VAR4, NULL);
+
+  
+  
+  VAR1::FUN3(
+      VAR7, VAR6, VAR12, VAR11.FUN4());
+
+  VAR13::VAR14 FUN5(VAR4, VAR6);
+  VAR12->FUN6(VAR15);
+
+  
+  
+  VAR12->VAR16 = true;
+
+  return VAR12->VAR17.FUN7();
+}

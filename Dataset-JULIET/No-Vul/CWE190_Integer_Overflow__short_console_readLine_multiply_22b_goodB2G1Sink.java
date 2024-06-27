@@ -1,0 +1,28 @@
+class VAR1{
+    public void FUN1(short VAR2 ) throws Throwable
+        {
+            if (VAR3.VAR4)
+            {
+                
+                VAR2 = 0;
+            }
+            else
+            {
+    
+                if(VAR2 > 0) 
+                {
+                    
+                    if (VAR2 < (VAR5.VAR6/2))
+                    {
+                        short VAR7 = (VAR8)(VAR2 * 2);
+                        VAR9.writeLine("" + VAR7);
+                    }
+                    else
+                    {
+                        VAR9.writeLine("");
+                    }
+                }
+    
+            }
+        }
+};

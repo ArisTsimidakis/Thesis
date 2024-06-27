@@ -1,0 +1,57 @@
+void FUN1 (void)
+{
+	int		VAR1, VAR2, VAR3, VAR4, VAR5, VAR6, VAR7;
+	short	VAR8[VAR9];
+
+	VAR3 = (VAR10 / VAR11) - 2;
+
+	if (VAR3 == VAR12.VAR13)
+		return;
+
+	if (VAR3 < 1)			
+	{
+		VAR3 = VAR14;
+		VAR12.VAR13 = VAR3;
+		VAR12.VAR15 = VAR9 / VAR12.VAR13;
+		for(VAR1=0; VAR1<VAR9; VAR1++)
+
+			VAR12.VAR16[VAR1] = (FUN2(VAR17)<<8) | '';
+	}
+	else
+	{
+		VAR4 = VAR12.VAR13;
+		VAR12.VAR13 = VAR3;
+		VAR5 = VAR12.VAR15;
+		VAR12.VAR15 = VAR9 / VAR12.VAR13;
+		VAR6 = VAR5;
+
+		if (VAR12.VAR15 < VAR6)
+			VAR6 = VAR12.VAR15;
+
+		VAR7 = VAR4;
+	
+		if (VAR12.VAR13 < VAR7)
+			VAR7 = VAR12.VAR13;
+
+		FUN3 (VAR8, VAR12.VAR16, VAR9 * sizeof(short));
+		for(VAR1=0; VAR1<VAR9; VAR1++)
+
+			VAR12.VAR16[VAR1] = (FUN2(VAR17)<<8) | '';
+
+
+		for (VAR1=0 ; VAR1<VAR6 ; VAR1++)
+		{
+			for (VAR2=0 ; VAR2<VAR7 ; VAR2++)
+			{
+				VAR12.VAR16[(VAR12.VAR15 - 1 - VAR1) * VAR12.VAR13 + VAR2] =
+						VAR8[((VAR12.VAR18 - VAR1 + VAR5) %
+							  VAR5) * VAR4 + VAR2];
+			}
+		}
+
+		FUN4 ();
+	}
+
+	VAR12.VAR18 = VAR12.VAR15 - 1;
+	VAR12.VAR19 = VAR12.VAR18;
+}

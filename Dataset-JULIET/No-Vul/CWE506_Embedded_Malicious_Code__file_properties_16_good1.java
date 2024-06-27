@@ -1,0 +1,36 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            while(true)
+            {
+                FileOutputStream VAR2 = null;
+                try
+                {
+                    String VAR3 = "";
+                    File VAR4 = new File(VAR3);
+                    VAR2 = new FileOutputStream(VAR4);
+                    VAR2.write("".getBytes(""));
+                    
+                }
+                catch (IOException VAR5)
+                {
+                    VAR6.VAR7.log(VAR8.VAR9, "", VAR5);
+                }
+                finally
+                {
+                    try
+                    {
+                        if (VAR2 != null)
+                        {
+                            VAR2.close();
+                        }
+                    }
+                    catch (IOException VAR5)
+                    {
+                        VAR6.VAR7.log(VAR8.VAR9, "", VAR5);
+                    }
+                }
+                break;
+            }
+        }
+};

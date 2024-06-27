@@ -1,0 +1,14 @@
+FUN1(ClientPtr VAR1, int VAR2, void *VAR3)
+{
+    VAR1->VAR4 = VAR2;
+    FUN2(&VAR1->VAR5);
+    FUN2(&VAR1->VAR6);
+    VAR1->VAR7 = ((VAR8) VAR2) << VAR9;
+    VAR1->VAR10 = VAR2 ? VAR11 : VAR12;
+    VAR1->VAR13 = VAR14;
+    VAR1->VAR15 = VAR3;
+    FUN3(&VAR1->VAR16, &VAR1->VAR17);
+    VAR1->VAR18 = VAR19;
+    VAR1->VAR20 = VAR19;
+    VAR1->VAR21 = NULL;
+}

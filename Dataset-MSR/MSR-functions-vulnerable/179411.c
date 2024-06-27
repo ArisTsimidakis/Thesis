@@ -1,0 +1,69 @@
+void VAR1 FUN1(void)
+{
+	int VAR2;
+
+#ifdef VAR3
+	void VAR4 *VAR5 = FUN2(0x0FFFD9, 4);
+
+	if (FUN3(VAR5) == '' + (''<<8) + (''<<16) + (''<<24))
+		VAR6 = 1;
+	FUN4(VAR5, 4);
+#endif
+
+	FUN5(VAR7, VAR8);
+	FUN6(VAR9, &VAR10, VAR11);
+	
+	FUN7(VAR12, &VAR13);
+	FUN5(VAR14, VAR15);
+	FUN5(VAR16, VAR17);
+	FUN5(VAR18, VAR19);
+#ifdef VAR20
+	FUN8(VAR21, VAR22);
+#else
+	FUN6(VAR21, &VAR23, VAR24);
+#endif
+ 	FUN5(VAR25, VAR26);
+ 	FUN5(VAR27, VAR28);
+ 	FUN5(VAR29, VAR30);
+
+	FUN6(VAR31, &VAR32, VAR33);
+
+
+ 	FUN5(VAR34, VAR35);
+ 	FUN5(VAR36, VAR37);
+ 	FUN5(VAR38, VAR39);
+	FUN5(VAR40, VAR41);
+#ifdef VAR42
+	FUN6(VAR43, &VAR44, VAR45);
+#endif
+	FUN5(VAR46, VAR47);
+
+	
+	for (VAR2 = 0; VAR2 < VAR48; VAR2++)
+		FUN9(VAR2, VAR49);
+
+#ifdef VAR50
+	FUN7(VAR51, VAR52);
+	FUN9(VAR51, VAR49);
+#endif
+
+#ifdef VAR20
+	FUN10(VAR53, &VAR54);
+	FUN9(VAR53, VAR49);
+#endif
+
+	
+	FUN11(VAR55, FUN12(VAR56), VAR57);
+	VAR58.VAR59 = FUN13(VAR55);
+
+	
+	FUN14();
+
+	VAR60.VAR61.FUN1();
+
+#ifdef VAR62
+	memcpy(&VAR63, &VAR56, VAR64 * 16);
+	FUN15(VAR65, &VAR66);
+	FUN15(VAR67, &VAR68);
+#endif
+}

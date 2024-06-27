@@ -1,0 +1,11 @@
+class VAR1{
+    private void FUN1(long VAR2 ) throws Throwable
+        {
+            if (VAR3)
+            {
+                
+                long VAR4 = (long)(VAR2 * VAR2);
+                VAR5.writeLine("" + VAR4);
+            }
+        }
+};

@@ -1,0 +1,60 @@
+FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)
+{
+	struct VAR5 *VAR5 = FUN2(VAR2->VAR6);
+	struct VAR7 *VAR8;
+	struct VAR9 *VAR10[VAR11+1];
+	struct VAR12 *VAR13, *VAR14;
+	struct VAR15 *VAR16;
+	struct VAR17 *VAR18;
+	u32 VAR19 = VAR20, VAR21 = VAR20;
+	u32 VAR22;
+	int VAR23;
+
+	VAR23 = FUN3(VAR4, sizeof(*VAR8), VAR10, VAR11, VAR24);
+	if (VAR23 < 0)
+		return VAR23;
+
+	VAR8 = FUN4(VAR4);
+	VAR13 = FUN5(VAR10[VAR25], VAR10[VAR26], &VAR14);
+	if (VAR13 == NULL)
+		return -VAR27;
+
+	if (VAR10[VAR28]) {
+		struct VAR29 *VAR30;
+
+		VAR30 = FUN6(VAR10[VAR28]);
+		VAR19 = VAR30->VAR31;
+		VAR21 = VAR30->VAR32;
+	} else {
+		VAR21 = VAR20;
+		VAR19 = VAR20;
+	}
+
+	VAR18 =  FUN7(VAR5, VAR8->VAR33);
+	if (VAR18 == NULL)
+		return -VAR34;
+
+	VAR22 = VAR10[VAR35] ? FUN8(VAR10[VAR35]) : VAR8->VAR22;
+
+	
+	VAR22 &= VAR36 | VAR37 | VAR38 |
+		     VAR39;
+
+	VAR16 = FUN9(VAR5, VAR13, VAR18, 1);
+	if (VAR16 == NULL) {
+		
+		return FUN10(VAR5, VAR8->VAR33, VAR13, VAR14,
+				      VAR8->VAR40, VAR22,
+				      VAR21, VAR19);
+	}
+
+	if (VAR4->VAR41 & VAR42 ||
+	    !(VAR4->VAR41 & VAR43))
+		VAR23 = -VAR44;
+	else
+		VAR23 = FUN11(VAR16, VAR22, VAR21, VAR19);
+
+	FUN12(VAR16);
+
+	return VAR23;
+}

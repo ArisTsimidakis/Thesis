@@ -1,0 +1,102 @@
+static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)
+{
+	key_t VAR5 = VAR4->VAR5;
+	int VAR6 = VAR4->VAR7;
+	size_t VAR8 = VAR4->VAR9.VAR8;
+	int VAR10;
+	struct VAR11 *VAR12;
+	size_t VAR13 = (VAR8 + VAR14 - 1) >> VAR15;
+	struct VAR16 *VAR16;
+	char VAR17[13];
+	int VAR18;
+	vm_flags_t VAR19 = 0;
+
+	if (VAR8 < VAR20 || VAR8 > VAR2->VAR21)
+		return -VAR22;
+
+	if (VAR13 << VAR15 < VAR8)
+		return -VAR23;
+
+	if (VAR2->VAR24 + VAR13 < VAR2->VAR24 ||
+			VAR2->VAR24 + VAR13 > VAR2->VAR25)
+		return -VAR23;
+
+	VAR12 = FUN2(sizeof(*VAR12));
+	if (!VAR12)
+		return -VAR26;
+
+	VAR12->VAR27.VAR5 = VAR5;
+	VAR12->VAR27.VAR28 = (VAR6 & VAR29);
+	VAR12->VAR30 = NULL;
+
+	VAR12->VAR27.VAR31 = NULL;
+	VAR10 = FUN3(VAR12);
+	if (VAR10) {
+		FUN4(VAR12, VAR32);
+		return VAR10;
+	}
+
+	sprintf(VAR17, "", VAR5);
+	if (VAR6 & VAR33) {
+		struct VAR34 *VAR35;
+		size_t VAR36;
+
+		VAR35 = FUN5((VAR6 >> VAR37) & VAR38);
+		if (!VAR35) {
+			VAR10 = -VAR22;
+			goto VAR39;
+		}
+		VAR36 = FUN6(VAR8, FUN7(VAR35));
+
+		
+		if (VAR6 & VAR40)
+			VAR19 = VAR41;
+		VAR16 = FUN8(VAR17, VAR36, VAR19,
+				  &VAR12->VAR30, VAR42,
+				(VAR6 >> VAR37) & VAR38);
+	} else {
+		
+		if  ((VAR6 & VAR40) &&
+				VAR43 != VAR44)
+			VAR19 = VAR41;
+		VAR16 = FUN9(VAR17, VAR8, VAR19);
+	}
+	VAR10 = FUN10(VAR16);
+	if (FUN11(VAR16))
+		goto VAR39;
+
+	VAR12->VAR45 = FUN12(VAR46);
+	VAR12->VAR47 = 0;
+	VAR12->VAR48 = VAR12->VAR49 = 0;
+	VAR12->VAR50 = FUN13();
+	VAR12->VAR51 = VAR8;
+	VAR12->VAR52 = 0;
+	VAR12->VAR53 = VAR16;
+	VAR12->VAR54 = VAR46;
+
+	VAR18 = FUN14(&FUN15(VAR2), &VAR12->VAR27, VAR2->VAR55);
+	if (VAR18 < 0) {
+		VAR10 = VAR18;
+		goto VAR56;
+	}
+
+	FUN16(&VAR12->VAR57, &VAR46->VAR58.VAR57);
+
+	
+	FUN17(VAR16)->VAR59 = VAR12->VAR27.VAR18;
+
+	VAR2->VAR24 += VAR13;
+	VAR10 = VAR12->VAR27.VAR18;
+
+	FUN18(&VAR12->VAR27);
+	FUN19();
+	return VAR10;
+
+VAR56:
+	if (FUN20(VAR16) && VAR12->VAR30)
+		FUN21(VAR8, VAR12->VAR30);
+	FUN22(VAR16);
+VAR39:
+	FUN4(VAR12, VAR60);
+	return VAR10;
+}

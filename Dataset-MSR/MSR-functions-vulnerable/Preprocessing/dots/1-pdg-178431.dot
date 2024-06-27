@@ -1,0 +1,10 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"12" [label = <(METHOD_RETURN,ANY)<SUB>1</SUB>> ]
+"9" [label = <(PARAM,VAR1)<SUB>1</SUB>> ]
+"10" [label = <(PARAM,VAR2)<SUB>1</SUB>> ]
+  "9" -> "12"  [ label = "DDG: VAR1"] 
+  "10" -> "12"  [ label = "DDG: VAR2"] 
+  "8" -> "9"  [ label = "DDG: "] 
+  "8" -> "10"  [ label = "DDG: "] 
+}

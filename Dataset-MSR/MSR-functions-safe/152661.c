@@ -1,0 +1,10 @@
+void VAR1::FUN1(VAR2* VAR3) {
+  FUN2(VAR3);
+  FUN3();
+  VAR4 = false;
+  VAR5 = VAR6;
+  VAR7 = VAR8;
+  FUN4();
+  VAR9::FUN1(VAR3);
+  VAR10::FUN1(VAR3);
+}

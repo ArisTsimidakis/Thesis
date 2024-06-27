@@ -1,0 +1,18 @@
+class VAR1{
+    public void FUN1(String VAR2 ) throws Throwable
+        {
+            if (VAR3.VAR4)
+            {
+                
+                if("".equals(VAR2))
+                {
+                    VAR5.writeLine("");
+                }
+            }
+            else
+            {
+                
+                VAR2 = null;
+            }
+        }
+};

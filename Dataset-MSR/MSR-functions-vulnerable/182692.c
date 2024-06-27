@@ -1,0 +1,47 @@
+static void FUN1(void)
+{
+	struct VAR1 *VAR2;
+	int VAR3;
+
+	VAR4 = 0;
+	for (VAR3 = 0, VAR2 = VAR5; VAR3 < VAR6; VAR3++, VAR2++) {
+		struct VAR7 *VAR8 = FUN2(1);
+
+		if (!VAR8)
+			continue;
+
+ 		VAR8->VAR9 = FUN3(&VAR2->VAR10, &VAR11,
+ 						   1, VAR12);
+ 		if (FUN4(VAR8->VAR9)) {
+
+
+ 			VAR8->VAR9 = NULL;
+ 			continue;
+ 		}
+
+		FUN5(&VAR2->VAR13);
+		VAR8->VAR9->VAR14 = VAR2;
+		FUN6(VAR8->VAR9, VAR15);
+		VAR2->VAR8 = VAR8;
+		VAR2->VAR16 = &VAR2->VAR17;
+		VAR2->VAR18 = 0;
+		VAR2->VAR19 = 0;
+		VAR2->VAR20 = 1;
+		VAR2->VAR21 = (*VAR22[VAR3])[VAR23];
+		if ((*VAR22[VAR3])[VAR24])
+			VAR4++;
+
+		VAR2->VAR25 = &VAR2->VAR26.VAR25[0];
+		snprintf(VAR2->VAR25, sizeof(VAR2->VAR26.VAR25), "", VAR25, VAR3);
+		VAR2->VAR26.VAR27 = &VAR28;
+		VAR2->VAR26.VAR29 = VAR2;
+		VAR2->VAR26.VAR30 = 0;
+		VAR2->VAR26.VAR31 = 1;
+		VAR2->VAR26.VAR32 = 0;
+		VAR8->VAR33 = VAR33;
+		VAR8->VAR34 = VAR3;
+		strcpy(VAR8->VAR35, VAR2->VAR25);	
+		VAR8->VAR36 = &VAR37;
+		VAR8->VAR38 = VAR39;
+	}
+}

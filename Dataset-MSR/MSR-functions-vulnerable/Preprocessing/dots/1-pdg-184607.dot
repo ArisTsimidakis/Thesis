@@ -1,0 +1,147 @@
+digraph "FUN1" {  
+"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
+"59" [label = <(METHOD_RETURN,void)<SUB>1</SUB>> ]
+"9" [label = <(PARAM,VAR1* VAR2)<SUB>1</SUB>> ]
+"12" [label = <(&lt;operator&gt;.assignment,VAR3 = {
+        VAR4,
+        VAR2, 
+        V...)<SUB>3</SUB>> ]
+"49" [label = <(&lt;operator&gt;.assignment,VAR18 = FUN2(FUN3(FUN4(VAR2))))<SUB>42</SUB>> ]
+"55" [label = <(FUN5,FUN5(VAR18, &amp;VAR3))<SUB>43</SUB>> ]
+"14" [label = <(&lt;operator&gt;.arrayInitializer,{
+        VAR4,
+        VAR2, 
+        VAR5,
+  ...)<SUB>3</SUB>> ]
+"51" [label = <(FUN2,FUN2(FUN3(FUN4(VAR2))))<SUB>42</SUB>> ]
+"52" [label = <(FUN3,FUN3(FUN4(VAR2)))<SUB>42</SUB>> ]
+"53" [label = <(FUN4,FUN4(VAR2))<SUB>42</SUB>> ]
+  "12" -> "59"  [ label = "DDG: VAR3"] 
+  "14" -> "59"  [ label = "DDG: VAR4"] 
+  "14" -> "59"  [ label = "DDG: VAR5"] 
+  "14" -> "59"  [ label = "DDG: VAR6"] 
+  "14" -> "59"  [ label = "DDG: VAR7"] 
+  "14" -> "59"  [ label = "DDG: VAR8"] 
+  "14" -> "59"  [ label = "DDG: VAR9"] 
+  "14" -> "59"  [ label = "DDG: VAR10"] 
+  "14" -> "59"  [ label = "DDG: VAR11"] 
+  "14" -> "59"  [ label = "DDG: VAR12"] 
+  "14" -> "59"  [ label = "DDG: VAR13"] 
+  "14" -> "59"  [ label = "DDG: VAR15"] 
+  "14" -> "59"  [ label = "DDG: VAR16"] 
+  "14" -> "59"  [ label = "DDG: VAR17"] 
+  "12" -> "59"  [ label = "DDG: {
+        VAR4,
+        VAR2, 
+        VAR5,
+        VAR6,
+        VAR7,
+        VAR8,
+        0, 
+        VAR9,
+        VAR10,
+        VAR11,
+        VAR12,
+        0, 
+        0, 
+        0, 
+        VAR13,
+        VAR14,
+        0, 
+        VAR15,
+        VAR16, 
+        VAR16,
+        VAR16, 
+        0, 
+        0, 
+        0, 
+        VAR17,
+        0, 
+        0, 
+        0, 
+        0, 
+         0, 
+         0, 
+         0, 
+
+
+
+
+         0, 
+     }"] 
+  "12" -> "59"  [ label = "DDG: VAR3 = {
+        VAR4,
+        VAR2, 
+        VAR5,
+        VAR6,
+        VAR7,
+        VAR8,
+        0, 
+        VAR9,
+        VAR10,
+        VAR11,
+        VAR12,
+        0, 
+        0, 
+        0, 
+        VAR13,
+        VAR14,
+        0, 
+        VAR15,
+        VAR16, 
+        VAR16,
+        VAR16, 
+        0, 
+        0, 
+        0, 
+        VAR17,
+        0, 
+        0, 
+        0, 
+        0, 
+         0, 
+         0, 
+         0, 
+
+
+
+
+         0, 
+     }"] 
+  "53" -> "59"  [ label = "DDG: VAR2"] 
+  "52" -> "59"  [ label = "DDG: FUN4(VAR2)"] 
+  "51" -> "59"  [ label = "DDG: FUN3(FUN4(VAR2))"] 
+  "49" -> "59"  [ label = "DDG: FUN2(FUN3(FUN4(VAR2)))"] 
+  "49" -> "59"  [ label = "DDG: VAR18 = FUN2(FUN3(FUN4(VAR2)))"] 
+  "55" -> "59"  [ label = "DDG: VAR18"] 
+  "55" -> "59"  [ label = "DDG: &amp;VAR3"] 
+  "55" -> "59"  [ label = "DDG: FUN5(VAR18, &amp;VAR3)"] 
+  "14" -> "59"  [ label = "DDG: VAR14"] 
+  "8" -> "9"  [ label = "DDG: "] 
+  "14" -> "12"  [ label = "DDG: VAR5"] 
+  "14" -> "12"  [ label = "DDG: VAR8"] 
+  "14" -> "12"  [ label = "DDG: 0"] 
+  "14" -> "12"  [ label = "DDG: VAR17"] 
+  "14" -> "12"  [ label = "DDG: VAR4"] 
+  "14" -> "12"  [ label = "DDG: VAR6"] 
+  "14" -> "12"  [ label = "DDG: VAR10"] 
+  "14" -> "12"  [ label = "DDG: VAR16"] 
+  "14" -> "12"  [ label = "DDG: VAR14"] 
+  "14" -> "12"  [ label = "DDG: VAR9"] 
+  "14" -> "12"  [ label = "DDG: VAR2"] 
+  "14" -> "12"  [ label = "DDG: VAR7"] 
+  "14" -> "12"  [ label = "DDG: VAR11"] 
+  "14" -> "12"  [ label = "DDG: VAR15"] 
+  "14" -> "12"  [ label = "DDG: VAR12"] 
+  "14" -> "12"  [ label = "DDG: VAR13"] 
+  "51" -> "49"  [ label = "DDG: FUN3(FUN4(VAR2))"] 
+  "49" -> "55"  [ label = "DDG: VAR18"] 
+  "8" -> "55"  [ label = "DDG: "] 
+  "12" -> "55"  [ label = "DDG: VAR3"] 
+  "8" -> "14"  [ label = "DDG: "] 
+  "9" -> "14"  [ label = "DDG: VAR2"] 
+  "52" -> "51"  [ label = "DDG: FUN4(VAR2)"] 
+  "53" -> "52"  [ label = "DDG: VAR2"] 
+  "14" -> "53"  [ label = "DDG: VAR2"] 
+  "8" -> "53"  [ label = "DDG: "] 
+}

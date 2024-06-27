@@ -1,0 +1,10 @@
+void FUN1(
+    VAR1::VAR2* VAR3,
+    const VAR4& VAR5,
+    VAR6::VAR7<VAR8::VAR9> VAR10) {
+  FUN2(VAR11::VAR12);
+  VAR3->FUN3(
+      VAR5, VAR13::VAR14::VAR15::VAR16,
+      VAR17::FUN4(&VAR18,
+                 VAR17::FUN5(VAR6::move(VAR10))));
+}

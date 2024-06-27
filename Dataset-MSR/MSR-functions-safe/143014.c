@@ -1,0 +1,7 @@
+void VAR1::FUN1(VAR2* VAR3) {
+  FUN2(FUN3());
+  VAR4 FUN4(this);
+
+  VAR5.FUN5(VAR3);
+  VAR3->FUN6().FUN7();
+}

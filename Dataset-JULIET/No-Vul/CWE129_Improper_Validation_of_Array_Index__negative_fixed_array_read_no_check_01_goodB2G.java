@@ -1,0 +1,23 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            int VAR2;
+    
+            
+            VAR2 = -1;
+    
+            
+            int VAR3[] = { 0, 1, 2, 3, 4 };
+    
+            
+            if (VAR2 >= 0 && VAR2 < VAR3.length)
+            {
+                VAR4.writeLine(VAR3[VAR2]);
+            }
+            else
+            {
+                VAR4.writeLine("");
+            }
+    
+        }
+};

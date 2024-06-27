@@ -1,0 +1,22 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            short VAR2;
+            if (5 == 5)
+            {
+                
+                VAR2 = 2;
+            }
+            else
+            {
+                
+                VAR2 = 0;
+            }
+    
+            {
+                
+                VAR3.writeLine((byte)VAR2);
+            }
+    
+        }
+};

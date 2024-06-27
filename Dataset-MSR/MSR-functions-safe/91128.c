@@ -1,0 +1,196 @@
+static int FUN1(struct VAR1 *VAR2, __be32 VAR3, __be32 VAR4,
+			       u8 VAR5, struct VAR6 *VAR7,
+			       struct VAR8 *VAR9)
+{
+	struct VAR10 *VAR11 = FUN2(VAR7);
+	struct VAR12 *VAR13 = NULL, VAR14;
+	struct VAR15    *VAR15 = FUN3(VAR7);
+	struct VAR16 *VAR17;
+	int		VAR18 = -VAR19;
+	unsigned int	VAR20 = 0;
+	u32		VAR21 = 0;
+	struct VAR22	*VAR23;
+	struct flowi4	VAR24;
+	bool VAR25;
+
+	
+
+	if (!VAR11)
+		goto VAR26;
+
+	
+
+	VAR17 = FUN4(VAR2);
+	if (VAR17 && !(VAR17->VAR27 & VAR28))
+		VAR24.VAR29.VAR30 = VAR17->VAR31.VAR30;
+	else
+		VAR24.VAR29.VAR30 = 0;
+	FUN5(VAR2);
+
+	if (FUN6(VAR4) || FUN7(VAR4))
+		goto VAR32;
+
+	VAR9->VAR33 = NULL;
+	VAR9->VAR34 = NULL;
+	if (FUN7(VAR3) || (VAR4 == 0 && VAR3 == 0))
+		goto VAR35;
+
+	
+	if (FUN8(VAR4))
+		goto VAR32;
+
+	if (FUN8(VAR3))
+		goto VAR36;
+
+	
+	if (FUN9(VAR3)) {
+		if (!FUN10(VAR11, VAR15))
+			goto VAR36;
+	} else if (FUN9(VAR4)) {
+		if (!FUN10(VAR11, VAR15))
+			goto VAR32;
+	}
+
+	
+	VAR24.VAR37 = 0;
+	VAR24.VAR38 = VAR7->VAR39;
+	VAR24.VAR40 = VAR2->VAR41;
+	VAR24.VAR42 = VAR5;
+	VAR24.VAR43 = VAR44;
+	VAR24.VAR45 = 0;
+	VAR24.VAR3 = VAR3;
+	VAR24.VAR4 = VAR4;
+	VAR24.VAR46 = FUN11(VAR15, NULL);
+
+	if (FUN12(VAR15, VAR2, &VAR24, &VAR14)) {
+		VAR13 = &VAR14;
+	} else {
+		VAR24.VAR47 = 0;
+		VAR24.VAR48 = 0;
+		VAR24.VAR49 = 0;
+	}
+
+	VAR18 = FUN13(VAR15, &VAR24, VAR9, 0);
+	if (VAR18 != 0) {
+		if (!FUN14(VAR11))
+			VAR18 = -VAR50;
+		goto VAR51;
+	}
+
+	if (VAR9->VAR52 == VAR53) {
+		if (FUN15(VAR11))
+			goto VAR54;
+		goto VAR35;
+	}
+
+	if (VAR9->VAR52 == VAR55) {
+		VAR18 = FUN16(VAR2, VAR4, VAR3, VAR5,
+					  0, VAR7, VAR11, &VAR21);
+		if (VAR18 < 0)
+			goto VAR32;
+		goto VAR56;
+	}
+
+	if (!FUN14(VAR11)) {
+		VAR18 = -VAR50;
+		goto VAR51;
+	}
+	if (VAR9->VAR52 != VAR57)
+		goto VAR36;
+
+VAR54:
+	VAR18 = FUN17(VAR2, VAR9, VAR11, VAR3, VAR4, VAR5, VAR13);
+VAR26:	return VAR18;
+
+VAR35:
+	if (VAR2->VAR58 != FUN18(VAR59))
+		goto VAR60;
+
+	if (!FUN8(VAR4)) {
+		VAR18 = FUN16(VAR2, VAR4, 0, VAR5, 0, VAR7,
+					  VAR11, &VAR21);
+		if (VAR18 < 0)
+			goto VAR32;
+	}
+	VAR20 |= VAR61;
+	VAR9->VAR52 = VAR53;
+	FUN19(VAR62);
+
+VAR56:
+	VAR25 = false;
+	if (VAR9->VAR33) {
+		if (!VAR21) {
+			VAR23 = FUN20(FUN21(*VAR9).VAR63);
+			if (FUN22(VAR23)) {
+				FUN23(VAR2, &VAR23->VAR64);
+				VAR18 = 0;
+				goto VAR26;
+			}
+			VAR25 = true;
+		}
+	}
+
+	VAR23 = FUN24(FUN25(VAR7) ? : VAR15->VAR65,
+			   VAR20 | VAR66, VAR9->VAR52,
+			   FUN26(VAR11, VAR67), false, VAR25);
+	if (!VAR23)
+		goto VAR68;
+
+	VAR23->VAR64.VAR69= VAR70;
+#ifdef VAR71
+	VAR23->VAR64.VAR72 = VAR21;
+#endif
+	VAR23->VAR73 = 1;
+
+	FUN19(VAR74);
+	if (VAR9->VAR52 == VAR75) {
+		VAR23->VAR64.VAR76= VAR77;
+		VAR23->VAR64.VAR78= -VAR18;
+		VAR23->VAR79 	&= ~VAR66;
+	}
+
+	if (VAR25) {
+		struct VAR80 *VAR81 = &FUN21(*VAR9);
+
+		VAR23->VAR64.VAR82 = FUN27(VAR81->VAR83);
+		if (FUN28(VAR23->VAR64.VAR82)) {
+			FUN29(VAR23->VAR64.VAR76 == VAR84);
+			VAR23->VAR64.VAR82->VAR85 = VAR23->VAR64.VAR76;
+			VAR23->VAR64.VAR76 = VAR84;
+		}
+
+		if (FUN30(!FUN31(VAR81, VAR23)))
+			FUN32(VAR23);
+	}
+	FUN33(VAR2, &VAR23->VAR64);
+	VAR18 = 0;
+	goto VAR26;
+
+VAR51:
+	FUN19(VAR86);
+	VAR9->VAR52 = VAR75;
+	VAR9->VAR33 = NULL;
+	VAR9->VAR34 = NULL;
+	goto VAR56;
+
+	
+VAR36:
+	FUN19(VAR87);
+#ifdef VAR88
+	if (FUN34(VAR11))
+		FUN35("",
+				     &VAR3, &VAR4, VAR7->VAR89);
+#endif
+
+VAR60:
+	VAR18 = -VAR19;
+	goto VAR26;
+
+VAR68:
+	VAR18 = -VAR90;
+	goto VAR26;
+
+VAR32:
+	FUN36(VAR7, VAR11, VAR2, VAR3, VAR4);
+	goto VAR26;
+}

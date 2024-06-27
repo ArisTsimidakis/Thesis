@@ -1,0 +1,146 @@
+FUN1 (ScreenPtr VAR1, PictFormatPtr VAR2, int VAR3)
+{
+
+ 	VAR4 = VAR5;
+     if (VAR6)
+ 	VAR7 = VAR5;
+
+    
+
+    if (!FUN2 (&VAR8, VAR9, VAR10, VAR11, VAR12, VAR13,
+
+				   VAR14, VAR15, VAR16, VAR17, VAR18, VAR19))
+
+        return;
+ 
+
+    VAR20 = FUN3 (&VAR8);
+
+    VAR21 = FUN4 (&VAR8);
+
+    while (VAR20--)
+
+    {
+
+	VAR22 = VAR21->VAR23 - VAR21->VAR24;
+
+	VAR25 = VAR21->VAR24 - VAR17 + VAR13;
+
+	VAR26 = VAR21->VAR24 - VAR17 + VAR15;
+
+	VAR27 = VAR21->VAR24;
+
+	while (VAR22)
+
+	{
+
+	    VAR28 = VAR22;
+
+	    VAR29 = VAR21->VAR30 - VAR21->VAR31;
+
+	    VAR32 = VAR21->VAR31 - VAR16 + VAR12;
+
+	    VAR33 = VAR21->VAR31 - VAR16 + VAR14;
+
+	    VAR34 = VAR21->VAR31;
+
+	    if (VAR7)
+
+	    {
+
+		VAR26 = FUN5 (VAR26 - VAR10->VAR35->VAR36, VAR10->VAR35->VAR19);
+
+		if (VAR28 > VAR10->VAR35->VAR19 - VAR26)
+
+		    VAR28 = VAR10->VAR35->VAR19 - VAR26;
+
+		VAR26 += VAR10->VAR35->VAR36;
+
+	    }
+
+	    if (VAR4)
+
+	    {
+
+		VAR25 = FUN5 (VAR25 - VAR9->VAR35->VAR36, VAR9->VAR35->VAR19);
+
+		if (VAR28 > VAR9->VAR35->VAR19 - VAR25)
+
+		    VAR28 = VAR9->VAR35->VAR19 - VAR25;
+
+		VAR25 += VAR9->VAR35->VAR36;
+
+	    }
+
+	    while (VAR29)
+
+	    {
+
+		VAR37 = VAR29;
+
+		if (VAR7)
+
+		{
+
+		    VAR33 = FUN5 (VAR33 - VAR10->VAR35->VAR38, VAR10->VAR35->VAR18);
+
+		    if (VAR37 > VAR10->VAR35->VAR18 - VAR33)
+
+			VAR37 = VAR10->VAR35->VAR18 - VAR33;
+
+		    VAR33 += VAR10->VAR35->VAR38;
+
+		}
+
+		if (VAR4)
+
+		{
+
+		    VAR32 = FUN5 (VAR32 - VAR9->VAR35->VAR38, VAR9->VAR35->VAR18);
+
+		    if (VAR37 > VAR9->VAR35->VAR18 - VAR32)
+
+			VAR37 = VAR9->VAR35->VAR18 - VAR32;
+
+		    VAR32 += VAR9->VAR35->VAR38;
+
+		}
+
+		(*VAR39) (VAR40, VAR9, VAR10, VAR11,
+
+			 VAR32, VAR25, VAR33, VAR26, VAR34, VAR27,
+
+			 VAR37, VAR28);
+
+		VAR29 -= VAR37;
+
+		VAR32 += VAR37;
+
+		VAR33 += VAR37;
+
+		VAR34 += VAR37;
+
+	    }
+
+	    VAR22 -= VAR28;
+
+	    VAR25 += VAR28;
+
+	    VAR26 += VAR28;
+
+	    VAR27 += VAR28;
+
+	}
+
+	VAR21++;
+
+    }
+
+    FUN6 (VAR11->VAR35->VAR1, &VAR8);
+
+
+
+
+
+
+ }

@@ -1,0 +1,122 @@
+MagickExport VAR1 *FUN1(const VAR1 *VAR2,const size_t VAR3,
+  const size_t VAR4,const MagickBooleanType VAR5,VAR6 *VAR7)
+{
+  VAR1
+    *VAR8;
+
+  double
+    VAR9;
+
+  VAR10
+    VAR11;
+
+  
+  assert(VAR2 != (const VAR1 *) NULL);
+  assert(VAR2->VAR12 == VAR13);
+  if (VAR2->VAR14 != VAR15)
+    (void) FUN2(VAR16,FUN3(),"",VAR2->VAR17);
+  assert(VAR7 != (VAR6 *) NULL);
+  assert(VAR7->VAR12 == VAR13);
+  if ((VAR2->VAR3 == 0) || (VAR2->VAR4 == 0))
+    {
+      (void) FUN4(VAR7,FUN3(),VAR18,
+        "","",VAR2->VAR17);
+      return((VAR1 *) NULL);
+    }
+  VAR8=(VAR1 *) FUN5(sizeof(*VAR8));
+  if (VAR8 == (VAR1 *) NULL)
+    FUN6(VAR19,"");
+  (void) FUN7(VAR8,0,sizeof(*VAR8));
+  VAR8->VAR12=VAR13;
+  VAR8->VAR20=VAR2->VAR20;
+  VAR8->VAR21=VAR2->VAR21;
+  VAR8->VAR22=VAR2->VAR22;
+  VAR8->VAR23=VAR2->VAR23;
+  VAR8->VAR24=VAR2->VAR24;
+  VAR8->VAR25=VAR2->VAR25;
+  VAR8->VAR26=VAR2->VAR26;
+  VAR8->VAR27=VAR2->VAR27;
+  VAR8->VAR3=VAR2->VAR3;
+  VAR8->VAR4=VAR2->VAR4;
+  VAR8->VAR28=VAR2->VAR28;
+  if (VAR2->VAR29 != (VAR30 *) NULL)
+    {
+      
+      VAR8->VAR31=VAR2->VAR31;
+      VAR11=(VAR10) VAR2->VAR31;
+       VAR8->VAR29=(VAR30 *) FUN8(VAR11,
+         sizeof(*VAR8->VAR29));
+       if (VAR8->VAR29 == (VAR30 *) NULL)
+
+        FUN6(VAR19,"");
+
+
+
+
+
+
+
+
+       (void) FUN9(VAR8->VAR29,VAR2->VAR29,VAR11*
+         sizeof(*VAR8->VAR29));
+     }
+  VAR8->VAR32=FUN10(VAR2->VAR32);
+  (void) FUN11(VAR8,VAR2);
+  (void) FUN12(VAR8,VAR2);
+  (void) FUN13(VAR8,VAR2);
+  FUN14(&VAR8->VAR33);
+  if (VAR2->VAR34 != (void *) NULL)
+    FUN15(VAR8);
+  VAR8->VAR35=VAR2->VAR35;
+  VAR8->VAR36=VAR2->VAR36;
+  VAR8->VAR37=VAR2->VAR37;
+  VAR8->VAR38=VAR2->VAR38;
+  VAR8->VAR39=FUN16(VAR2->VAR39);
+  (void) FUN17(VAR8->VAR40,VAR2->VAR40,
+    VAR41);
+  (void) FUN17(VAR8->VAR42,VAR2->VAR42,VAR41);
+  (void) FUN17(VAR8->VAR17,VAR2->VAR17,
+    VAR41);
+  VAR8->VAR43=VAR2->VAR43;
+  VAR8->VAR44=VAR2->VAR44;
+  VAR8->VAR45=1;
+  VAR8->VAR46=VAR2->VAR46;
+  VAR8->VAR47=VAR2->VAR47;
+  VAR8->VAR48=FUN18();
+  if (VAR5 == VAR15)
+    VAR8->VAR49=FUN19(VAR2->VAR49);
+  else
+    {
+      VAR8->VAR46=FUN18();
+      VAR8->VAR47=FUN18();
+      VAR8->VAR49=FUN20((VAR50 *) NULL);
+    }
+  VAR8->VAR51=VAR2->VAR51;
+  VAR8->VAR14=FUN21();
+  VAR8->VAR52=FUN22();
+  if ((VAR3 == 0) || (VAR4 == 0))
+    {
+      if (VAR2->VAR53 != (char *) NULL)
+        (void) FUN23(&VAR8->VAR53,VAR2->VAR53);
+      if (VAR2->VAR54 != (char *) NULL)
+        (void) FUN23(&VAR8->VAR54,VAR2->VAR54);
+      VAR8->VAR55=FUN24(VAR2->VAR55);
+      return(VAR8);
+    }
+  VAR9=1.0;
+  if (VAR2->VAR3 != 0)
+    VAR9=(double) VAR3/(double) VAR2->VAR3;
+  VAR8->VAR56.VAR57=(VAR10) FUN25(VAR9*VAR2->VAR56.VAR57+0.5);
+  VAR8->VAR56.VAR58=(VAR59) FUN26(VAR9*VAR2->VAR56.VAR58-0.5);
+  VAR8->VAR60.VAR58=(VAR59) FUN26(VAR9*VAR2->VAR60.VAR58-0.5);
+  VAR9=1.0;
+  if (VAR2->VAR4 != 0)
+    VAR9=(double) VAR4/(double) VAR2->VAR4;
+  VAR8->VAR56.VAR61=(VAR10) FUN25(VAR9*VAR2->VAR56.VAR61+0.5);
+  VAR8->VAR56.VAR62=(VAR59) FUN26(VAR9*VAR2->VAR56.VAR62-0.5);
+  VAR8->VAR60.VAR62=(VAR59) FUN26(VAR9*VAR2->VAR60.VAR62-0.5);
+  VAR8->VAR3=VAR3;
+  VAR8->VAR4=VAR4;
+  VAR8->VAR55=FUN27(VAR2->VAR55);
+  return(VAR8);
+}

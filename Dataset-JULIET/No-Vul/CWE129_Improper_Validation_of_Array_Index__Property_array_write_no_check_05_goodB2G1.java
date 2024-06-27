@@ -1,0 +1,52 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            int VAR2;
+    
+            if (VAR3)
+            {
+                VAR2 = VAR4.VAR5; 
+                
+                
+                {
+                    String VAR6 = System.FUN2("");
+                    try
+                    {
+                        VAR2 = VAR4.parseInt(VAR6.trim());
+                    }
+                    catch(NumberFormatException VAR7)
+                    {
+                        VAR8.VAR9.log(VAR10.VAR11, "", VAR7);
+                    }
+                }
+            }
+            else
+            {
+                
+                VAR2 = 0;
+            }
+    
+            if (VAR12)
+            {
+                
+                VAR8.writeLine("");
+            }
+            else
+            {
+    
+                
+                int VAR13[] = { 0, 1, 2, 3, 4 };
+    
+                
+                if (VAR2 >= 0 && VAR2 < VAR13.length)
+                {
+                    VAR13[VAR2] = 42;
+                }
+                else
+                {
+                    VAR8.writeLine("");
+                }
+    
+            }
+        }
+};

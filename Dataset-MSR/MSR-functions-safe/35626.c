@@ -1,0 +1,18 @@
+static void FUN1(struct VAR1 *VAR2, int VAR3,
+			   const struct VAR4 *VAR5)
+
+{
+	memset(VAR2, 0, sizeof(*VAR2));
+	VAR2->VAR6 = VAR3;
+	VAR2->VAR7 = FUN2(VAR5);
+	VAR2->VAR8 = FUN3(VAR5);
+	VAR2->VAR9 = VAR5->VAR10;
+	VAR2->VAR11 = VAR5->VAR12 >> 2;
+	VAR2->VAR13 = !(VAR5->VAR12 & 2);
+	VAR2->VAR14 = VAR5->VAR15;
+	VAR2->VAR16 = !VAR5->VAR17;
+	VAR2->VAR18 = VAR5->VAR19;
+#ifdef VAR20
+	VAR2->VAR21 = VAR5->VAR22;
+#endif
+}

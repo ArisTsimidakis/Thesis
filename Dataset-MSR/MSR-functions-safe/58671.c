@@ -1,0 +1,23 @@
+static void FUN1(const VAR1* VAR2, const VAR1* VAR3, int VAR4,
+		const VAR1* VAR5, const VAR1* VAR6, VAR1* VAR7)
+{
+	CryptoMd5 VAR8;
+	CryptoSha1 VAR9;
+	BYTE VAR10[VAR11];
+
+	
+
+	
+	VAR9 = FUN2();
+	FUN3(VAR9, VAR3, VAR4); 
+	FUN3(VAR9, VAR2, 48); 
+	FUN3(VAR9, VAR5, 32); 
+	FUN3(VAR9, VAR6, 32); 
+	FUN4(VAR9, VAR10);
+
+	
+	VAR8 = FUN5();
+	FUN6(VAR8, VAR2, 48); 
+	FUN6(VAR8, VAR10, sizeof(VAR10)); 
+	FUN7(VAR8, VAR7);
+}

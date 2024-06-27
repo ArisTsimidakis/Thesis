@@ -1,0 +1,33 @@
+int FUN1(struct VAR1 *VAR2, void *VAR3,
+			struct VAR4 *VAR5)
+{
+	struct VAR6 *VAR7 = VAR3;
+	struct VAR8 *VAR9;
+	struct VAR10 *VAR11;
+	int VAR12 = 0;
+
+	if (!FUN2(VAR2, VAR13))
+		return -VAR14;
+
+	FUN3(&VAR2->VAR15.mutex);
+	VAR9 = FUN4(VAR2, VAR7->VAR16,
+				   VAR17);
+	if (!VAR9) {
+		VAR12 = -VAR14;
+		goto VAR18;
+	}
+	VAR11 = FUN5(VAR9);
+
+	if (VAR11->VAR19)
+		VAR7->VAR20 = VAR11->VAR19->VAR21.VAR22;
+	else
+		VAR7->VAR20 = 0;
+	VAR7->VAR23 = VAR11->VAR23;
+	VAR7->VAR16 = VAR11->VAR21.VAR22;
+	VAR7->VAR24 = VAR11->VAR24;
+	VAR7->VAR25 = VAR11->VAR25;
+
+VAR18:
+	FUN6(&VAR2->VAR15.mutex);
+	return VAR12;
+}

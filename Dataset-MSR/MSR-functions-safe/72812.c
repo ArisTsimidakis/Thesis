@@ -1,0 +1,4 @@
+double FUN1(VAR1 *VAR2)
+{
+	return 0.0;
+}

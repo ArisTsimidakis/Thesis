@@ -1,0 +1,237 @@
+bool VAR1::VAR2::FUN1(
+
+    const VAR3<VAR4>& VAR5,
+
+    const VAR6::VAR7& VAR8,
+
+    const VAR6::VAR9& VAR10,
+
+    const VAR11::VAR12<VAR3<VAR4>>& VAR13) {
+
+  VADecPictureParameterBufferVP9 VAR14;
+
+  memset(&VAR14, 0, sizeof(VAR14));
+
+
+
+  const VAR6::VAR15* VAR16 = VAR5->VAR16.FUN2();
+
+  FUN3(VAR16);
+
+
+
+  if (VAR16->VAR17 != 0) {
+
+    FUN4(1) << "" << VAR16->VAR17;
+
+    return false;
+
+  }
+
+
+
+  VAR14.VAR18 = VAR19::VAR20<VAR21>(VAR16->VAR22);
+
+  VAR14.VAR23 = VAR19::VAR20<VAR21>(VAR16->VAR24);
+
+
+
+  FUN5(VAR13.FUN6(), FUN7(VAR14.VAR25));
+
+  for (size_t VAR26 = 0; VAR26 < FUN7(VAR14.VAR25); ++VAR26) {
+
+    VASurfaceID VAR27;
+
+    if (VAR13[VAR26]) {
+
+      VAR3<VAR28> VAR29 =
+
+          FUN8(VAR13[VAR26]);
+
+      VAR27 = VAR29->FUN9()->FUN10();
+
+    } else {
+
+      VAR27 = VAR30;
+
+    }
+
+
+
+    VAR14.VAR25[VAR26] = VAR27;
+
+  }
+
+
+
+#VAR31 FUN11(VAR32) VAR14.VAR33.VAR34.VAR32 = VAR16->VAR32
+
+#VAR31 FUN12(VAR32, VAR35) VAR14.VAR33.VAR34.VAR32 = VAR35
+
+  FUN12(VAR36, VAR16->VAR36 == 1);
+
+  FUN12(VAR37, VAR16->VAR37 == 1);
+
+  FUN12(VAR38, VAR16->FUN13() ? 0 : 1);
+
+  FUN11(VAR39);
+
+  FUN11(VAR40);
+
+  FUN11(VAR41);
+
+  FUN11(VAR42);
+
+  FUN12(VAR43, VAR16->VAR44);
+
+  FUN11(VAR45);
+
+  FUN12(VAR46, VAR16->VAR47);
+
+  FUN11(VAR48);
+
+  FUN11(VAR49);
+
+  FUN12(VAR50, VAR8.VAR51);
+
+  FUN12(VAR52, VAR8.VAR53);
+
+  FUN12(VAR54, VAR8.VAR55);
+
+  FUN12(VAR56, VAR16->VAR57[0]);
+
+  FUN12(VAR58, VAR16->VAR59[0]);
+
+  FUN12(VAR60, VAR16->VAR57[1]);
+
+  FUN12(VAR61, VAR16->VAR59[1]);
+
+  FUN12(VAR62, VAR16->VAR57[2]);
+
+  FUN12(VAR63, VAR16->VAR59[2]);
+
+  FUN12(VAR64, VAR16->VAR65.FUN14());
+
+#undef VAR66
+
+#undef VAR67
+
+
+
+  VAR14.VAR68 = VAR10.VAR68;
+
+  VAR14.VAR69 = VAR10.VAR69;
+
+  VAR14.VAR70 = VAR16->VAR70;
+
+  VAR14.VAR71 = VAR16->VAR72;
+
+  VAR14.VAR73 = VAR16->VAR74;
+
+  VAR14.VAR75 = VAR16->VAR75;
+
+
+
+  FUN15(VAR14.VAR76, VAR8.VAR77);
+
+  FUN15(VAR14.VAR78, VAR8.VAR79);
+
+
+
+  VAR14.VAR17 = VAR16->VAR17;
+
+
+
+  if (!VAR80->FUN16(VAR81,
+
+                                    sizeof(VAR14), &VAR14))
+
+    return false;
+
+
+
+  VASliceParameterBufferVP9 VAR82;
+
+  memset(&VAR82, 0, sizeof(VAR82));
+
+  VAR82.VAR83 = VAR16->VAR84;
+
+  VAR82.VAR85 = 0;
+
+  VAR82.VAR86 = VAR87;
+
+
+
+  static_assert(FUN7(VAR6::VAR7::VAR88) ==
+
+                    FUN7(VAR82.VAR89),
+
+                "");
+
+  for (size_t VAR26 = 0; VAR26 < FUN7(VAR82.VAR89); ++VAR26) {
+
+    VAR90& VAR89 = VAR82.VAR89[VAR26];
+
+#VAR31 FUN17(VAR32, VAR35) VAR89.VAR91.VAR92.VAR32 = VAR35
+
+    FUN17(
+
+        VAR93,
+
+        VAR8.FUN18(VAR26, VAR6::VAR7::VAR94));
+
+    FUN17(VAR95,
+
+                 VAR8.FUN19(VAR26, VAR6::VAR7::VAR94));
+
+    FUN17(VAR96,
+
+                 VAR8.FUN18(VAR26, VAR6::VAR7::VAR97));
+
+#undef VAR98
+
+
+
+    FUN15(VAR89.VAR68, VAR10.VAR99[VAR26]);
+
+
+
+    VAR89.VAR100 = VAR8.VAR101[VAR26][0];
+
+    VAR89.VAR102 = VAR8.VAR101[VAR26][1];
+
+    VAR89.VAR103 = VAR8.VAR104[VAR26][0];
+
+    VAR89.VAR105 = VAR8.VAR104[VAR26][1];
+
+  }
+
+
+
+  if (!VAR80->FUN16(VAR106,
+
+                                    sizeof(VAR82), &VAR82))
+
+    return false;
+
+
+
+  void* VAR107 = const_cast<VAR108*>(VAR16->VAR109);
+
+  if (!VAR80->FUN16(VAR110,
+
+                                    VAR16->VAR84, VAR107))
+
+    return false;
+
+
+
+  VAR3<VAR28> VAR111 =
+
+      FUN8(VAR5);
+
+
+
+  return VAR112->FUN20(VAR111);
+
+}

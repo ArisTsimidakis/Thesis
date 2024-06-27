@@ -1,0 +1,61 @@
+bool FUN1(const VAR1& VAR2,
+                                       VAR3::VAR4* VAR5) {
+  FUN2(VAR5);
+
+  VAR6<VAR7::VAR8> FUN3(
+      new VAR7::FUN4());
+
+  const VAR9& VAR10 = VAR2.VAR10;
+
+  VAR11->FUN5(VAR12::FUN6(VAR10.VAR13));
+
+  switch (VAR10.VAR14) {
+    case VAR9::VAR15:
+      VAR11->FUN7(
+          VAR7::VAR8::VAR16);
+      break;
+    case VAR9::VAR17:
+      VAR11->FUN7(
+          VAR7::VAR8::VAR18);
+      break;
+    case VAR9::VAR19:
+      VAR11->FUN7(
+          VAR7::VAR8::VAR20);
+      break;
+  }
+
+  VAR11->FUN8(VAR10.VAR21);
+  VAR11->FUN9(VAR12::FUN6(VAR10.VAR22));
+  VAR11->FUN10(VAR10.VAR23);
+  VAR11->FUN11(VAR10.VAR24.FUN12());
+
+  for (size_t VAR25 = 0; VAR25 < VAR10.VAR26.FUN13(); ++VAR25)
+    VAR11->FUN14(VAR10.VAR26[VAR25]);
+
+  VAR11->FUN15(VAR10.VAR27.FUN16());
+  VAR11->FUN17(VAR10.VAR28);
+  VAR11->FUN18(VAR10.VAR29);
+
+  if (VAR10.VAR30.FUN13()) {
+    VAR11->FUN19(&VAR10.VAR30.FUN20(),
+                      VAR10.VAR30.FUN13());
+  }
+
+  for (const VAR31& VAR32 : VAR10.VAR33) {
+    VAR7::VAR34* VAR35 =
+         VAR11->FUN21();
+     VAR35->FUN22(VAR32.VAR32);
+     VAR35->FUN5(VAR12::FUN6(VAR32.VAR13));
+
+
+   }
+ 
+   NotificationDatabaseDataProto VAR36;
+  VAR36.FUN23(VAR2.VAR37);
+  VAR36.FUN24(VAR2.VAR38.FUN12());
+  VAR36.FUN25(
+      VAR2.VAR39);
+  VAR36.FUN26(VAR11.FUN27());
+
+  return VAR36.FUN28(VAR5);
+}

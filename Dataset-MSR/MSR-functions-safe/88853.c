@@ -1,0 +1,109 @@
+MagickExport VAR1 *FUN1(const VAR1 *VAR2,VAR3 *VAR4)
+{
+  VAR1
+    *VAR5,
+    *VAR6,
+    *VAR7;
+
+  register VAR1
+    *VAR8;
+
+  VAR9
+    VAR10;
+
+  
+  assert(VAR2 != (VAR1 *) NULL);
+  assert(VAR2->VAR11 == VAR12);
+  if (VAR2->VAR13 != VAR14)
+    (void) FUN2(VAR15,FUN3(),"",VAR2->VAR16);
+  assert(VAR4 != (VAR3 *) NULL);
+  assert(VAR4->VAR11 == VAR12);
+
+  
+  VAR8=FUN4(VAR2);
+  VAR10=VAR8->VAR17;
+  if (VAR10.VAR18 == 0)
+    {
+      VAR10.VAR18=VAR8->VAR19;
+      if (VAR10.VAR20 > 0)
+        VAR10.VAR18+=VAR10.VAR20;
+    }
+  if (VAR10.VAR21 == 0)
+    {
+      VAR10.VAR21=VAR8->VAR22;
+      if (VAR10.VAR23 > 0)
+        VAR10.VAR21+=VAR10.VAR23;
+    }
+  VAR10.VAR20=0;
+  VAR10.VAR23=0;
+  VAR5=FUN5(VAR8,VAR10.VAR18,VAR10.VAR21,VAR24,
+    VAR4);
+  if (VAR5 == (VAR1 *) NULL)
+    return((VAR1 *) NULL);
+  VAR5->VAR25.VAR26=(VAR27) VAR28;
+  (void) FUN6(VAR5);
+  VAR5->VAR29=VAR8->VAR29;
+  VAR5->VAR17=VAR10;
+  VAR5->VAR30=VAR31;
+  
+  VAR6=FUN5(VAR5,0,0,VAR24,VAR4);
+  (void) FUN7(VAR5,VAR32,VAR8,VAR8->VAR17.VAR20,
+    VAR8->VAR17.VAR23);
+  VAR8=FUN8(VAR8);
+  for ( ; VAR8 != (VAR1 *) NULL; VAR8=FUN8(VAR8))
+  {
+    
+    VAR7=FUN9(VAR8);
+    VAR10=VAR7->VAR17;
+    VAR10.VAR18=VAR7->VAR19;
+    VAR10.VAR21=VAR7->VAR22;
+    if (VAR10.VAR20 < 0)
+      {
+        VAR10.VAR18+=VAR10.VAR20;
+        VAR10.VAR20=0;
+      }
+    if ((VAR33) (VAR10.VAR20+VAR10.VAR18) > (VAR33) VAR5->VAR19)
+      VAR10.VAR18=VAR5->VAR19-VAR10.VAR20;
+    if (VAR10.VAR23 < 0)
+      {
+        VAR10.VAR21+=VAR10.VAR23;
+        VAR10.VAR23=0;
+      }
+    if ((VAR33) (VAR10.VAR23+VAR10.VAR21) > (VAR33) VAR5->VAR22)
+      VAR10.VAR21=VAR5->VAR22-VAR10.VAR23;
+    
+    if (FUN9(VAR8)->VAR30 != VAR34)
+      {
+        VAR6=FUN10(VAR6);
+        VAR6=FUN5(VAR5,0,0,VAR24,VAR4);
+        if (VAR6 == (VAR1 *) NULL)
+          {
+            VAR5=FUN11(VAR5);
+            return((VAR1 *) NULL);
+          }
+      }
+    
+    if (VAR8->VAR7->VAR30 == VAR35)
+      FUN12(VAR6,&VAR10);
+    
+    VAR5->VAR8=FUN5(VAR6,0,0,VAR24,VAR4);
+    if (VAR5->VAR8 != NULL)
+      VAR5->VAR8->VAR7=VAR5;
+    VAR7=VAR5;
+    VAR5=FUN8(VAR5);
+    (void) FUN7(VAR5,VAR8->VAR29 != VAR14 ?
+      VAR36 : VAR32,VAR8,VAR8->VAR17.VAR20,VAR8->VAR17.VAR23);
+    (void) FUN13(VAR5,VAR8);
+    (void) FUN14(VAR5,VAR8);
+    (void) FUN15(VAR5,VAR8);
+    VAR5->VAR17=VAR7->VAR17;
+    
+    if (FUN16(VAR7,VAR5,&VAR10,VAR4) != VAR14)
+      VAR5->VAR30=VAR35;
+    else
+      VAR5->VAR30=VAR31;
+    VAR7->VAR30=VAR5->VAR30;
+  }
+  VAR6=FUN10(VAR6);
+  return(FUN4(VAR5));
+}

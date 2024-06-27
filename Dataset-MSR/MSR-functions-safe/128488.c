@@ -1,0 +1,6 @@
+void VAR1::FUN1(VAR2::VAR3* VAR4) const {
+  FUN2(FUN3());
+  VAR5->FUN4(VAR4);
+  VAR2::Point VAR6 = VAR5->FUN5()->FUN6().FUN7();
+  VAR4->FUN8(FUN9(VAR6.FUN10()), FUN9(VAR6.FUN11()));
+}

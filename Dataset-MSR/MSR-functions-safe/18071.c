@@ -1,0 +1,10 @@
+FUN1(VAR1 *VAR2, const VAR3 *VAR4)
+{
+    
+    VAR2->VAR5 = FUN2(VAR4);
+    VAR2->VAR6 = FUN2(VAR4 + 4);
+    VAR2->VAR7 = FUN2(VAR4 + 8);
+    VAR2->VAR8 = FUN2(VAR4 + 12);
+    VAR2->VAR9 = VAR4[16];
+    VAR2->VAR10 = (VAR11)(VAR2->VAR9 & 0x7);
+}

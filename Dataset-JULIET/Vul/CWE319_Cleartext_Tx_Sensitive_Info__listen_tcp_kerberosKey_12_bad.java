@@ -1,0 +1,121 @@
+class VAR1{
+    public void FUN1() throws Throwable
+        {
+            String VAR2;
+            if(VAR3.FUN2())
+            {
+                VAR2 = ""; 
+                
+                {
+                    ServerSocket VAR4 = null;
+                    Socket VAR5 = null;
+                    BufferedReader VAR6 = null;
+                    InputStreamReader VAR7 = null;
+                    try
+                    {
+                        
+                        VAR4 = new FUN3(39543);
+                        VAR5 = VAR4.accept();
+                        VAR7 = new InputStreamReader(VAR5.getInputStream(), "");
+                        VAR6 = new BufferedReader(VAR7);
+                        
+                        VAR2 = VAR6.readLine();
+                    }
+                    catch (IOException VAR8)
+                    {
+                        VAR3.VAR9.log(VAR10.VAR11, "", VAR8);
+                    }
+                    finally
+                    {
+                        
+                        try
+                        {
+                            if (VAR6 != null)
+                            {
+                                VAR6.close();
+                            }
+                        }
+                        catch (IOException VAR8)
+                        {
+                            VAR3.VAR9.log(VAR10.VAR11, "", VAR8);
+                        }
+    
+                        try
+                        {
+                            if (VAR7 != null)
+                            {
+                                VAR7.close();
+                            }
+                        }
+                        catch (IOException VAR8)
+                        {
+                            VAR3.VAR9.log(VAR10.VAR11, "", VAR8);
+                        }
+    
+                        
+                        try
+                        {
+                            if (VAR5 != null)
+                            {
+                                VAR5.close();
+                            }
+                        }
+                        catch (IOException VAR8)
+                        {
+                            VAR3.VAR9.log(VAR10.VAR11, "", VAR8);
+                        }
+    
+                        try
+                        {
+                            if (VAR4 != null)
+                            {
+                                VAR4.close();
+                            }
+                        }
+                        catch (IOException VAR8)
+                        {
+                            VAR3.VAR9.log(VAR10.VAR11, "", VAR8);
+                        }
+                    }
+                }
+            }
+            else
+            {
+    
+                
+                
+                VAR2 = "";
+    
+            }
+    
+            if(VAR3.FUN2())
+            {
+                if (VAR2 != null)
+                {
+                    KerberosPrincipal VAR12 = new FUN4("");
+                    
+                    KerberosKey VAR13 = new FUN5(VAR12, VAR2.FUN6(), null);
+                    VAR3.writeLine(VAR13.FUN7());
+                }
+            }
+            else
+            {
+    
+                if (VAR2 != null)
+                {
+                    KerberosPrincipal VAR12 = new FUN4("");
+                    
+                    {
+                        Cipher VAR14 = VAR15.FUN8("");
+                        
+                        SecretKeySpec VAR16 = new FUN9("".getBytes(""), "");
+                        VAR14.FUN10(VAR15.VAR17, VAR16);
+                        VAR2 = new String(VAR14.FUN11(VAR2.getBytes("")), "");
+                    }
+                    KerberosKey VAR13 = new FUN5(VAR12, VAR2.FUN6(), null);
+                    VAR3.writeLine(VAR13.FUN7());
+                }
+    
+            }
+        }
+};

@@ -1,0 +1,24 @@
+class VAR1{
+    private void FUN1() throws Throwable
+        {
+            if (VAR2 != 5)
+            {
+                
+                VAR3.writeLine("");
+            }
+            else
+            {
+    
+                int[] VAR4 = new int[10];
+                int VAR5 = 0;
+    
+                
+                while (VAR5 < VAR4.length)
+                {
+                    VAR3.writeLine("" + VAR5 + "" + (VAR4[VAR5] = VAR5));
+                    VAR5++;
+                }
+    
+            }
+        }
+};

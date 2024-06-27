@@ -1,0 +1,21 @@
+FUN1(VAR1, VAR2)
+{
+	VAR3 *VAR4 = (VAR3*)FUN2(FUN3() VAR5);
+ 	char *VAR6;
+ 	int VAR7;
+ 	char VAR8 = FUN4(VAR4->VAR9, VAR10) ? '' : VAR11;
+
+	
+
+
+ 	if (FUN5() == VAR12) {
+ 		return;
+ 	}
+
+	if (VAR4->VAR13.VAR14.VAR15) {
+		VAR7 = FUN6(&VAR6, 0, "", VAR4->VAR13.VAR14.VAR15, VAR8, VAR4->VAR13.VAR14.VAR16.VAR17);
+		FUN7(VAR6, VAR7, 0);
+	} else {
+		FUN8(VAR4->VAR13.VAR14.VAR16.VAR17, 1);
+	}
+}

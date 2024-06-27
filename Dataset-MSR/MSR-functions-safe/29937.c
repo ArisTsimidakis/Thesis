@@ -1,0 +1,20 @@
+static void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,
+		int VAR5, int *VAR6)
+{
+	struct VAR7 *VAR8 = FUN2(VAR2);
+	__be32 VAR9 = VAR8->VAR10;
+	__be32 VAR11  = VAR8->VAR12;
+	__u16 VAR13	  = FUN3(VAR8->VAR14);
+	__u16 VAR15	  = FUN3(VAR8->VAR16);
+
+	FUN4(VAR4, ""
+		"",
+		VAR5, VAR11, VAR15, VAR9, VAR13, VAR2->VAR17,
+		FUN5(VAR2),
+		FUN6(VAR2),
+		0, 0L, 0,
+		FUN7(FUN8(VAR4), FUN9(VAR2)),
+		0, FUN10(VAR2),
+		FUN11(&VAR2->VAR18), VAR2,
+		FUN11(&VAR2->VAR19), VAR6);
+}

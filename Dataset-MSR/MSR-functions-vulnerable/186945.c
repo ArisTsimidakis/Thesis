@@ -1,0 +1,7 @@
+void VAR1::FUN1(const VAR2& VAR3, const VAR4& VAR5) {
+   FUN2(VAR6.FUN3(VAR3) == VAR6.FUN4());
+   VAR6.FUN5(VAR7::FUN6(VAR3, VAR5));
+   VAR8 += VAR5.FUN7();
+
+
+ }

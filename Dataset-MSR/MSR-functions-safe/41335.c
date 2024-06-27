@@ -1,0 +1,27 @@
+static int FUN1(int VAR1, unsigned short VAR2,
+			      const void *VAR3, unsigned int VAR4,
+			      struct VAR5 *VAR6)
+{
+	FUN2(1, VAR2, VAR1, 1);
+
+	VAR6->VAR7.VAR8.VAR2 = VAR2;
+	VAR6->VAR7.VAR8.VAR9 = 0;
+	VAR6->VAR7.VAR8.VAR4 = VAR4;
+	VAR6->VAR7.VAR8.VAR1 = VAR1;
+
+	memcpy(VAR6->VAR7.VAR10, VAR3, VAR1 * VAR4);
+
+	if (!FUN3(VAR6, VAR6->VAR7.VAR10)) {
+		VAR6->VAR7.VAR8.VAR4 = 0;
+		return 1;
+	}
+
+	VAR6->VAR11->VAR12 = VAR13;
+	VAR6->VAR11->VAR14.VAR15 = VAR16;
+	VAR6->VAR11->VAR14.VAR1 = VAR1;
+	VAR6->VAR11->VAR14.VAR17 = VAR18 * VAR19;
+	VAR6->VAR11->VAR14.VAR4 = VAR4;
+	VAR6->VAR11->VAR14.VAR2 = VAR2;
+
+	return 0;
+}

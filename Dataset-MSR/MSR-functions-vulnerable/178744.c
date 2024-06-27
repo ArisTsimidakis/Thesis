@@ -1,0 +1,91 @@
+struct VAR1 *FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,
+				  struct VAR5 *VAR6,
+				  struct VAR7 *VAR8)
+{
+	struct VAR9 *VAR10;
+	struct VAR11 *VAR12;
+	struct VAR13 *VAR14;
+	struct VAR1 *VAR15;
+ #ifdef VAR16
+ 	struct VAR17 *VAR18;
+ #endif
+
+
+ 
+ 	if (FUN2(VAR2))
+ 		goto VAR19;
+
+	if (!VAR8 && (VAR8 = FUN3(VAR2, VAR6)) == NULL)
+		goto VAR20;
+
+	VAR15 = FUN4(VAR2, VAR6, VAR4);
+	if (!VAR15)
+		goto VAR21;
+
+	VAR15->VAR22 = VAR23;
+	FUN5(VAR15, VAR8);
+
+	VAR14		      = FUN6(VAR15);
+	VAR12		      = FUN7(VAR15);
+	VAR10		      = FUN8(VAR6);
+ 	VAR12->VAR24   = VAR10->VAR25;
+ 	VAR12->VAR26 = VAR10->VAR27;
+ 	VAR12->VAR28	      = VAR10->VAR27;
+
+	VAR12->VAR29	      = VAR10->VAR29;
+
+
+
+
+ 	VAR10->VAR29	      = NULL;
+ 	VAR12->VAR30     = FUN9(VAR4);
+ 	VAR12->VAR31	      = FUN10(VAR4)->VAR32;
+ 	FUN11(VAR15)->VAR33 = 0;
+
+	if (VAR12->VAR29)
+
+		FUN11(VAR15)->VAR33 = VAR12->VAR29->VAR34;
+
+
+
+
+ 	VAR12->VAR35 = VAR14->VAR36 ^ VAR37;
+ 
+ 	FUN12(VAR15);
+	FUN13(VAR15, FUN14(VAR8));
+	VAR14->VAR38 = FUN15(VAR8);
+	if (FUN6(VAR2)->VAR39.VAR40 &&
+	    FUN6(VAR2)->VAR39.VAR40 < VAR14->VAR38)
+		VAR14->VAR38 = FUN6(VAR2)->VAR39.VAR40;
+
+	FUN16(VAR15);
+
+#ifdef VAR16
+	
+	VAR18 = FUN17(VAR2, VAR12->VAR24);
+	if (VAR18 != NULL) {
+		
+		char *VAR41 = FUN18(VAR18->VAR18, VAR18->VAR42, VAR43);
+		if (VAR41 != NULL)
+			FUN19(VAR15, VAR12->VAR24,
+					  VAR41, VAR18->VAR42);
+		FUN20(VAR15, VAR44);
+	}
+#endif
+
+	if (FUN21(VAR2, VAR15) < 0) {
+		FUN22(VAR15);
+		goto VAR20;
+	}
+	FUN23(VAR15, NULL);
+
+	return VAR15;
+
+VAR19:
+	FUN24(FUN25(VAR2), VAR45);
+VAR21:
+	FUN26(VAR8);
+VAR20:
+	FUN24(FUN25(VAR2), VAR46);
+	return NULL;
+}

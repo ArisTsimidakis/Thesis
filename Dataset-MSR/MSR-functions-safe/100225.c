@@ -1,0 +1,1 @@
+bool FUN1() const { return true; }
