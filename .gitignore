@@ -1,11 +1,10 @@
 /.vscode
 /best_models
-/Dataset-JULIET/Preprocessing
-/Dataset-MSR/MSR-functions-safe/Preprocessing
-/Dataset-MSR/MSR-functions-safe/java-emb-images
-/Dataset-SARD/Preprocessing
-/Dataset-SARD/java-emb-images
-/embedding-models
+/Dataset-JULIET
+/Dataset-MSR
+/Dataset-SARD
+/embedding-models/*.bin
+/embedding-models/*.zip
 /Helpers
 /Implementations
 /Misc
