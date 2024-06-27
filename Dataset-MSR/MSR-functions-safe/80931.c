@@ -1,1 +1,0 @@
-static inline VAR1 FUN1(unsigned long VAR2) { return 0; }

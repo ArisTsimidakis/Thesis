@@ -1,4 +1,0 @@
-void FUN1(HWND VAR1, HWND VAR2)
-{
-	SendMessage(VAR1, VAR3, (VAR4)VAR2, VAR5);
-}

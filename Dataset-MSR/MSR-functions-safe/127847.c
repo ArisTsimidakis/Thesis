@@ -1,6 +1,0 @@
-VAR1::VAR2 FUN1() {
-    VAR1::string VAR3;
-    FUN2(FUN3()->FUN4()->FUN5(),
-                             "")->FUN6(&VAR3);
-    return VAR3;
-  }

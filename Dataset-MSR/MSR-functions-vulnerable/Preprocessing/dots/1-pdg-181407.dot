@@ -1,7 +1,0 @@
-digraph "FUN1" {  
-"8" [label = <(METHOD,FUN1)<SUB>1</SUB>> ]
-"11" [label = <(METHOD_RETURN,VAR1)<SUB>1</SUB>> ]
-"9" [label = <(PARAM,VAR2)<SUB>1</SUB>> ]
-  "9" -> "11"  [ label = "DDG: VAR2"] 
-  "8" -> "9"  [ label = "DDG: "] 
-}

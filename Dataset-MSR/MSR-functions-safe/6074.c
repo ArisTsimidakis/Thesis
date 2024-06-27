@@ -1,6 +1,0 @@
-FUN1(VAR1 *VAR2, int VAR3, uint32_t VAR4)
-{
-    VAR2->VAR5[VAR3] = VAR4 & 0xffff;
-    FUN2(FUN3(VAR6, VAR3), VAR4);
-    FUN4(VAR2);
-}

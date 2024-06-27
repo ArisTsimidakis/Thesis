@@ -1,8 +1,0 @@
-void VAR1::FUN1(VAR2::VAR3* VAR4) {
-  VAR4->FUN1(VAR5);
-   VAR4->FUN1(VAR6);
-   VAR4->FUN1(VAR7);
-   VAR4->FUN1(VAR8);
-
-
- }
