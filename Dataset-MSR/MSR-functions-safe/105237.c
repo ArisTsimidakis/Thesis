@@ -1,4 +1,0 @@
-VAR1<VAR2> VAR2::FUN1(const VAR3& VAR4, VAR5* VAR6)
-{
-    return FUN2(new FUN3(VAR4, VAR6));
-}

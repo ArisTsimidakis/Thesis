@@ -1,4 +1,0 @@
-void FUN1(VAR1::VAR2* VAR3) {
-  VAR3->FUN2()->FUN3()->FUN4()->FUN5(
-      VAR4::VAR5::FUN6() + VAR4::VAR6::FUN7(1));
-}

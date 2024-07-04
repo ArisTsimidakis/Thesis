@@ -1,4 +1,0 @@
-void FUN1(struct VAR1 *VAR1, struct VAR2 *VAR3, int VAR4)
-{
-	FUN2(VAR1->VAR5.VAR6->VAR4[VAR3->VAR7], VAR4);
-}

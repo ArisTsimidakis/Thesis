@@ -1,1 +1,0 @@
-virtual ~FUN1() {}

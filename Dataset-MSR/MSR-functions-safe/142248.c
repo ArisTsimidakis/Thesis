@@ -1,7 +1,0 @@
-void VAR1::FUN1(
-    VAR2* VAR3,
-    const VAR4::VAR5::VAR6<VAR7>& VAR8,
-    const VAR4::VAR5::VAR6<VAR9>& VAR10) {
-  VAR11->FUN2(
-      VAR4::VAR5::FUN3(VAR3, VAR10));
-}

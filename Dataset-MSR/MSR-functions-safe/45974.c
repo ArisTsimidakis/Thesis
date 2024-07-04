@@ -1,6 +1,0 @@
-FUN1(struct VAR1 *VAR2)
-{
-	if (VAR2 == NULL)
-		return;
-	FUN2(VAR2);
-}

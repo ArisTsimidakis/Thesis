@@ -1,3 +1,0 @@
-void VAR1::FUN1(int VAR2) {
-  VAR3.FUN2().FUN3(VAR4, VAR2);
-}

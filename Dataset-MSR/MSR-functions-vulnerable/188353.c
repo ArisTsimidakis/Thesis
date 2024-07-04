@@ -1,7 +1,0 @@
-VAR1::Kind VAR2::VAR3::FUN1() const
-
-{
-
-    return VAR4;
-
-}

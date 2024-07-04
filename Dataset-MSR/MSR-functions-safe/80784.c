@@ -1,9 +1,0 @@
-VAR1 FUN1(VAR2 *VAR3, VAR4 * VAR5)
-{
-	VAR6 *VAR7 = (VAR6 *)VAR3;
-	FUN2(VAR3, "", VAR5);
-	FUN3(VAR5, "", VAR7->VAR8, VAR7->VAR9);
-	fprintf(VAR5, "");
-	FUN4("", VAR3, VAR5);
-	return VAR10;
-}

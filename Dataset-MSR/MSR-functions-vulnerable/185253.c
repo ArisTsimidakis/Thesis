@@ -1,6 +1,0 @@
-void VAR1::FUN1(DWORD VAR2) {
-
-  VAR3 = VAR2;
-   BOOL VAR4 = FUN2(VAR5);
-   FUN3(VAR4);
- }
