@@ -218,7 +218,8 @@ class CNN_Classifier():
             out, _ = self.model(X.unsqueeze(0))
             probabilities = F.softmax(out, dim = 1)
             prediction = torch.argmax(probabilities, dim = 1).item()
-        
+            
+                    
         return prediction
 
     def eval(self, epoch):

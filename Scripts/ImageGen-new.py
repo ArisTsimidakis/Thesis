@@ -20,10 +20,10 @@ import pygraphviz as pgv
 from tqdm import tqdm
 
 def parse_options():
-    parser = argparse.ArgumentParser(description = 'Generate images from PDGs.')
-    parser.add_argument('-i', '--input', help = 'The path of a dir with .dot files', required = True)
-    parser.add_argument('-o', '--out', help = 'The output path.', required = True)
-    parser.add_argument('-m', '--model', help='The sentence embedding model path', required = True)
+    parser = argparse.ArgumentParser(description='Generate images from PDGs.')
+    parser.add_argument('-i', '--input', help='The path of a dir with .dot files', required=True)
+    parser.add_argument('-o', '--out', help='The output path.', required=True)
+    parser.add_argument('-m', '--model', help='The sentence embedding model path', required=True)
     parser.add_argument('-d', '--debug', action='store_true', help='Enable debug mode (print to console)')
     args = parser.parse_args()
     return args
@@ -86,29 +86,29 @@ def generate_image(dot):
         return None
 
 def export_image(dot, out, existing_files):  
-    dot_name = dot.split('/')[-1].split('.dot')[0]
+    dot_name = os.path.splitext(os.path.basename(dot))[0] 
     
     if dot_name in existing_files:
         return None
-    else:
-        if debug:
-            print("\n\n" + dot_name)
-        channels = generate_image(dot)
+    
+    if debug:
+        print("\n\n" + dot_name)
+    channels = generate_image(dot)
         
-        if channels == None:
-            if debug:
-                print("CHANNELS NONE")
-            return None
-        else:
-            (degree_channel, closeness_channel, katz_channel) = channels
-            out_pkl = out + dot_name + '.pkl'
-            data = [degree_channel, closeness_channel, katz_channel]
+    if channels is None:
+        if debug:
+            print("CHANNELS NONE")
+        return None
+    else:
+        (degree_channel, closeness_channel, katz_channel) = channels
+        out_pkl = os.path.join(out, dot_name + '.pkl')  
+        data = [degree_channel, closeness_channel, katz_channel]
             
-            if debug:
-                print("====> Dumping image to " + out_pkl)
+        if debug:
+            print("====> Dumping image to " + out_pkl)
                 
-            with open(out_pkl, 'wb') as f:
-                pickle.dump(data, f)
+        with open(out_pkl, 'wb') as f:
+            pickle.dump(data, f)
 
 def process_files(files, out, existing_files):
     with tqdm(total=len(files), desc="Processing files") as pbar:

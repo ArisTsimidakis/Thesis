@@ -8,4 +8,7 @@
 /Helpers
 /Implementations
 /Misc
+/sent2vec
 notes.md
+/labeled-datasets
+*/__pycache__

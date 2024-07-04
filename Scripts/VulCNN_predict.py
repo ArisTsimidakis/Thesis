@@ -25,7 +25,7 @@ def load_data(filepath):
     return data
 
 def load_model(language):
-    model_path = "best_models/VulCNN_C.pkl" if language == 'c' else "../best_models/VuLCNN_Java.pkl"    
+    model_path = "../best_models/VulCNN_C.pkl" if language == 'c' else "../best_models/VuLCNN_Java.pkl"    
     model = load_data(model_path)
     
     return model
@@ -106,7 +106,7 @@ def main():
     language = args.language 
     
     try:
-        classifier = load_model()
+        classifier = load_model(language)
         
         max_len = classifier.max_len
         hidden_size = classifier.hidden_size
