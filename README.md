@@ -1,8 +1,26 @@
 #  Transferring an Image-Inspired Deep  Learning Vulnerability Detection System  from C to Java: A Targeted Reproduction of VulCNN
 
 ## Abstract 
-This study is a targeted replication of a Deep Learning-based source code vulnerability detection system VulCNN, originally designed for C, and extends its application to Java. there are three main objectives to this research: a) to evaluate the accuracy and scalability of VulCNN in detecting vulnerabilities in C functions, b) to assess the impact of different sentence embedding techniques on the classification of source code, and c) to train a new VulCNN model for Java and determine if it achieves comparable accuracy when applied to different programming languages and datasets. 
-To achieve these goals, a series of experiments was conducted on both the C and Java implementations of VulCNN, focusing on their performance in classifying vulnerable functions. The experimental results indicate that both implementations achieve similar accuracy levels, which suggests that the approach is likely applicable to a range of programming languages with promising outcomes. However, the results also reveal that sentence embedding methods are not transferable across different programming languages. Consequently, it appears challenging to develop a universal model that is capable of generalizing vulnerability patterns across multiple programming languages while capturing the semantics of source code through sentence embedding without creating a multi-language dataset.  
+This study is a targeted replication of a Deep Learning-based source code vul-
+nerability detection system named VulCNN. VulCNN was originally designed
+for classifying functions written in C, and this study extends its application
+to Java. There are three main objectives to this research: (a) to evaluate the
+performance of VulCNN in detecting vulnerabilities in C functions, (b) to as-
+sess the impact of different sentence embedding techniques on the results of
+the classification, and (c) to train a new VulCNN model for Java and deter-
+mine if it achieves comparable accuracy when applied to different programming
+languages and datasets.
+To achieve these goals, a series of experiments was conducted on both the C
+and Java implementations of VulCNN, focusing on the model’s performance in
+classifying vulnerable functions. The experimental results indicate that both
+implementations achieve similar accuracy levels, suggesting that the approach
+is likely transferable to a range of programming languages with promising out-
+comes. However, the results also reveal significant limitations: the synthetic
+dataset used to train VulCNN does not provide sufficient diversity for the
+model to effectively generalize and distinguish different vulnerability patterns.
+This finding underscores the need for more comprehensive and varied training
+datasets, utilizing source code from real-world products.
+
 
 ## Script usage 
 ### 1. Normalize source code
